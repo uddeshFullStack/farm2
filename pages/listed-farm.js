@@ -1,10 +1,20 @@
 import { useCallback } from "react";
 import { useRouter } from "next/router";
+<<<<<<< HEAD
 
 import Layout from "./layout";
 import FarmCardList from "../components/farm-card/farmCartList";
+=======
+import GroupComponent2 from "../components/group-component2";
+import GroupComponent6 from "../components/group-component6";
+import Footer1 from "../components/footer1";
+import GroupComponent5 from "../components/group-component5";
+import { fetchFarmList } from "../utils/supabaseQuery/FarmQuery";
+>>>>>>> fac44435bb6a9144e5b6e6b2e0e777356cbddef9
 
 const ListedFarm = () => {
+  const farmList = fetchFarmList();
+  console.log("farmList", farmList);
   const router = useRouter();
 
   const onMoreButtonsClick = useCallback(() => {

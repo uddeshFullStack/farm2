@@ -1,10 +1,8 @@
 import { useCallback } from "react";
-import Main from "../components/main";
 import { useRouter } from "next/router";
-import GroupComponent2 from "../components/group-component2";
-import GroupComponent6 from "../components/group-component6";
-import Footer1 from "../components/footer1";
-import GroupComponent5 from "../components/group-component5";
+
+import Layout from "./layout";
+import FarmCardList from "../components/farm-card/farmCartList";
 
 const ListedFarm = () => {
   const router = useRouter();
@@ -14,11 +12,11 @@ const ListedFarm = () => {
   }, [router]);
 
   return (
-    <div className="w-full relative bg-white overflow-hidden flex flex-col items-start justify-start gap-[48px] mix-blend-normal leading-[normal] tracking-[normal] mq750:gap-[24px]">
-      <Main />
+    
+    <Layout>
       <main className="self-stretch flex flex-row items-start justify-start pt-0 px-[65px] pb-[55px] box-border max-w-full mq1275:pb-[23px] mq1275:box-border mq750:pl-8 mq750:pr-8 mq750:pb-5 mq750:box-border">
         <form className="m-0 flex-1 flex flex-col items-end justify-start gap-[51px] max-w-full mq750:gap-[25px]">
-          <div className="self-stretch flex flex-row items-start justify-between max-w-full gap-[20px] mq750:flex-wrap">
+          <div className="self-stretch flex flex-row items-start justify-between max-w-full gap-[20px] mq750:flex-wrap mt-9">
             <div className="flex flex-col items-start justify-start pt-4 px-0 pb-0">
               <h2 className="m-0 relative text-9xl font-bold font-inter text-primary-colour text-center mq450:text-3xl">
                 Listed Farms
@@ -30,11 +28,11 @@ const ListedFarm = () => {
               </div>
             </button>
           </div>
-          <div className="self-stretch flex flex-col items-start justify-start pt-0 px-0 pb-2 box-border gap-[50px] max-w-full mq750:gap-[25px]">
-            <div className="self-stretch shadow-[0px_0px_4px_rgba(0,_0,_0,_0.25)] rounded-md bg-background overflow-x-auto flex flex-row items-start justify-start py-[31px] px-[30px] box-border gap-[49px] max-w-full mq750:gap-[24px]">
-              <div className="h-[114px] w-[1310px] relative shadow-[0px_0px_4px_rgba(0,_0,_0,_0.25)] rounded-md bg-background shrink-0 hidden max-w-full" />
-              <div className="w-96 rounded bg-white box-border shrink-0 flex flex-row items-start justify-between pt-2.5 pb-[9px] pr-[42px] pl-[30px] max-w-[calc(100%_-_866px)] gap-[20px] z-[1] border-[1.5px] border-solid border-star-listed-lite-color mq450:pr-5 mq450:box-border">
-                <div className="h-[52px] w-96 relative rounded bg-white box-border hidden max-w-full border-[1.5px] border-solid border-star-listed-lite-color" />
+      <div className="self-stretch flex flex-col items-start justify-start pt-0 px-0 pb-2 box-border gap-[50px] max-w-full mq750:gap-[25px]">
+        <div className="self-stretch shadow-[0px_0px_4px_rgba(0,_0,_0,_0.25)] rounded-md bg-background overflow-x-auto flex flex-row items-start justify-start py-[31px] px-[30px] box-border gap-[49px] max-w-full mq750:gap-[24px]">
+          <div className="h-[114px] w-[1310px] relative shadow-[0px_0px_4px_rgba(0,_0,_0,_0.25)] rounded-md bg-background shrink-0 hidden max-w-full" />
+            <div className="w-96 rounded bg-white box-border shrink-0 flex flex-row items-start justify-between pt-2.5 pb-[9px] pr-[42px] pl-[30px] max-w-[calc(100%_-_866px)] gap-[20px] z-[1] border-[1.5px] border-solid border-star-listed-lite-color mq450:pr-5 mq450:box-border">
+              <div className="h-[52px] w-96 relative rounded bg-white box-border hidden max-w-full border-[1.5px] border-solid border-star-listed-lite-color" />
                 <div className="relative text-5xl capitalize font-medium font-inter text-star-listed-lite-color text-left z-[2] mq450:text-lgi">
                   Select Farm State
                 </div>
@@ -72,9 +70,9 @@ const ListedFarm = () => {
                   src="/tablersearch.svg"
                 />
               </div>
-            </div>
-            <div className="self-stretch flex flex-row flex-wrap items-start justify-start gap-[40px_48.5px] min-h-[2060px] max-w-full mq750:gap-[24px]">
-              <div className="w-[403px] shadow-[0px_0px_4px_rgba(0,_0,_0,_0.25)] rounded-md bg-white flex flex-col items-start justify-start p-[19px] box-border gap-[15px] min-w-[383px] max-w-full z-[2] mq450:min-w-full">
+        </div>
+      <div>
+              {/* <div className="w-[403px] shadow-[0px_0px_4px_rgba(0,_0,_0,_0.25)] rounded-md bg-white flex flex-col items-start justify-start p-[19px] box-border gap-[15px] min-w-[383px] max-w-full z-[2] mq450:min-w-full">
                 <div className="w-[403px] h-[485px] relative hidden max-w-full">
                   <div className="absolute top-[0px] left-[0px] shadow-[0px_0px_4px_rgba(0,_0,_0,_0.25)] rounded-md bg-white w-full h-full" />
                   <div className="absolute top-[237px] left-[19px] text-lg font-medium font-inter text-primary-colour text-left">
@@ -247,25 +245,14 @@ const ListedFarm = () => {
                     </button>
                   </div>
                 </div>
-              </div>
-              <GroupComponent2 propWidth="403px" propMinWidth="383px" />
-              <GroupComponent6 />
-              <GroupComponent2 propWidth="403px" propMinWidth="383px" />
-              <GroupComponent2 propWidth="403px" propMinWidth="383px" />
-              <GroupComponent6 />
-              <GroupComponent2 propWidth="403px" propMinWidth="383px" />
-              <GroupComponent2 propWidth="403px" propMinWidth="383px" />
-              <GroupComponent2 propWidth="403px" propMinWidth="383px" />
-              <GroupComponent2 propWidth="403px" propMinWidth="383px" />
-              <GroupComponent2 propWidth="403px" propMinWidth="383px" />
-              <GroupComponent2 propWidth="403px" propMinWidth="383px" />
+              </div> */}
+              <FarmCardList/>
             </div>
-          </div>
-          <Footer1 />
+      </div>
+          {/* <Footer1 /> */}
         </form>
       </main>
-      <GroupComponent5 />
-    </div>
+    </Layout>
   );
 };
 

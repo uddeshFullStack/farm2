@@ -5,11 +5,10 @@ import GroupComponent2 from "../components/group-component2";
 import GroupComponent6 from "../components/group-component6";
 import Footer1 from "../components/footer1";
 import GroupComponent5 from "../components/group-component5";
-import { createClient } from "../utils/supabase/server";
+import { fetchFarmList } from "../utils/supabaseQuery/FarmQuery";
 
 const ListedFarm = () => {
-  const supabase = createClient();
-  const { data: farmList } = supabase.from("notes").select();
+  const farmList = fetchFarmList();
   console.log("farmList", farmList);
   const router = useRouter();
 

@@ -1,13 +1,13 @@
 import PropTypes from "prop-types";
 
-const FarmDetailsComponent = ({ className = "" }) => {
+const FarmDetailsComponent = ({ className = "", farmName }) => {
   return (
     <div
-      className={`self-stretch flex flex-col items-start justify-start gap-[28px] max-w-full text-center text-9xl text-primary-colour font-inter ${className}`}
+      className={`self-stretch mt-10 flex flex-col items-start justify-start gap-[28px] max-w-full text-center text-9xl text-primary-colour font-inter ${className}`}
     >
       <div className="w-[498px] flex flex-col items-start justify-start gap-[5px] max-w-full">
-        <h3 className="m-0 self-stretch relative text-inherit tracking-[-0.01em] font-bold font-inherit mq450:text-3xl">
-          Radheshyam Agro Tourism And Farm
+        <h3 className="m-0 relative text-inherit tracking-[-0.01em] font-bold font-inherit mq450:text-3xl">
+          {farmName}
         </h3>
         <div className="flex flex-row items-start justify-start gap-[15px] text-smi text-star-listed-lite-color">
           <div className="flex flex-row items-start justify-start gap-[4px]">
@@ -65,6 +65,7 @@ const FarmDetailsComponent = ({ className = "" }) => {
 
 FarmDetailsComponent.propTypes = {
   className: PropTypes.string,
+  farmName: PropTypes.string.isRequired,
 };
 
 export default FarmDetailsComponent;

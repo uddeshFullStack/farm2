@@ -166,26 +166,26 @@ const Footer = ({ className = "" }) => {
             </div>
           </div>
           <div className="w-[282px] flex flex-col items-start justify-start gap-[8px]">
-            <div className="relative font-semibold inline-block min-w-[109px] z-[2] mq450:text-base">
+            <div className="relative font-semibold inline-block min-w-[109px] mq450:text-base">
               Contact Us
             </div>
             <div className="self-stretch flex flex-row items-start justify-start gap-[11px] text-base text-white">
               <div className="flex flex-col items-start justify-start gap-[7px]">
                 <img
-                  className="w-[25px] h-[22px] relative object-cover z-[2]"
+                  className="w-[25px] h-[22px] relative object-cover "
                   alt=""
                   src="/rotary-dial-telephone@2x.png"
                 />
                 <div className="flex flex-row items-start justify-start py-0 pr-0.5 pl-px">
                   <img
-                    className="h-[22px] w-[22px] relative object-cover z-[2]"
+                    className="h-[22px] w-[22px] relative object-cover "
                     alt=""
                     src="/download-mail@2x.png"
                   />
                 </div>
                 <div className="flex flex-row items-start justify-start py-0 px-px">
                   <img
-                    className="h-[23px] w-[23px] relative object-cover z-[2]"
+                    className="h-[23px] w-[23px] relative object-cover"
                     alt=""
                     src="/interior@2x.png"
                   />
@@ -197,10 +197,10 @@ const Footer = ({ className = "" }) => {
                     +91 9680524270
                   </div>
                   <div className="self-stretch flex flex-col items-start justify-start pt-0 px-0 pb-[11.5px] gap-[10px]">
-                    <div className="relative whitespace-nowrap z-[2]">
+                    <div className="relative whitespace-nowrap">
                       moshinkhanrander@gmail.com
                     </div>
-                    <div className="self-stretch relative z-[2]">
+                    <div className="self-stretch relative ">
                       <p className="[margin-block-start:0] [margin-block-end:2px]">
                         R-CAT, Tonk Rd, Panch Batti,
                       </p>

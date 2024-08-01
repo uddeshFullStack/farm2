@@ -1,21 +1,20 @@
-'use client';
-import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import { Pagination } from 'swiper';
 
-export default function SwiperSlider() {
+// Import Swiper styles
+import 'swiper/css';
+
+export default () => {
   return (
     <Swiper
-      spaceBetween={30}
-      pagination={{ clickable: true }}
-      modules={[Pagination]}
-      className="mySwiper"
+      spaceBetween={10}
+      slidesPerView={1}
+      onSlideChange={() => console.log('slide change')}
+      onSwiper={(swiper) => console.log(swiper)}
     >
       <SwiperSlide>Slide 1</SwiperSlide>
       <SwiperSlide>Slide 2</SwiperSlide>
       <SwiperSlide>Slide 3</SwiperSlide>
+      <SwiperSlide>Slide 4</SwiperSlide>
     </Swiper>
   );
-}
+};

@@ -1,19 +1,17 @@
-import { createClient } from "../supabase/server";
-const supabase = createClient();
 
+import supabase from '../supabase/server'
 export async function fetchFarmList() {
   const { data, error } = await supabase
     .from("FarmList")
-    .select("*")
+    .select('*')
+    console.log(data);
   if (error) throw new Error("Error fetching Break Even Details!");
 
-  return data[0];
+  return data;
 }
 
 export const upsertBreakEvenData = async (data) => {
-  const { error } = await supabase.from("FarmList").upsert(data);
-  if (error) {
-    console.error(error);
-    throw error;
-  }
+  const response = await supabase.from("FarmList").upsert(data);
+  return response
 };
+

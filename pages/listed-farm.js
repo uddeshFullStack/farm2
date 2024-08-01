@@ -1,20 +1,12 @@
 import { useCallback } from "react";
 import { useRouter } from "next/router";
-<<<<<<< HEAD
 
 import Layout from "./layout";
 import FarmCardList from "../components/farm-card/farmCartList";
-=======
-import GroupComponent2 from "../components/group-component2";
-import GroupComponent6 from "../components/group-component6";
-import Footer1 from "../components/footer1";
-import GroupComponent5 from "../components/group-component5";
 import { fetchFarmList } from "../utils/supabaseQuery/FarmQuery";
->>>>>>> fac44435bb6a9144e5b6e6b2e0e777356cbddef9
+import Link from "next/link";
 
 const ListedFarm = () => {
-  const farmList = fetchFarmList();
-  console.log("farmList", farmList);
   const router = useRouter();
 
   const onMoreButtonsClick = useCallback(() => {
@@ -24,7 +16,7 @@ const ListedFarm = () => {
   return (
     
     <Layout>
-      <main className="self-stretch flex flex-row items-start justify-start pt-0 px-[65px] pb-[55px] box-border max-w-full mq1275:pb-[23px] mq1275:box-border mq750:pl-8 mq750:pr-8 mq750:pb-5 mq750:box-border">
+      <main className="self-stretch flex flex-row items-start justify-start pt-0 px-[65px] pb-[55px] box-border max-w-full mq1275:pb-[23px] mq1275:box-border mq750:pl-8 mq750:pr-8 mq750:pb-5 mq750:box-border font-inter">
         <form className="m-0 flex-1 flex flex-col items-end justify-start gap-[51px] max-w-full mq750:gap-[25px]">
           <div className="self-stretch flex flex-row items-start justify-between max-w-full gap-[20px] mq750:flex-wrap mt-9">
             <div className="flex flex-col items-start justify-start pt-4 px-0 pb-0">
@@ -32,11 +24,9 @@ const ListedFarm = () => {
                 Listed Farms
               </h2>
             </div>
-            <button className="cursor-pointer [border:none] py-[13px] px-5 bg-secondary-colour w-[414px] rounded-8xs overflow-hidden shrink-0 flex flex-row items-start justify-center box-border whitespace-nowrap max-w-full hover:bg-goldenrod">
-              <div className="relative text-xl capitalize font-medium font-inter text-primary-colour text-center">
-                Suggest Me AgriTourism
-              </div>
-            </button>
+            <Link href="/agrotourism-suggestion" className="[text-decoration:none] bg-secondary-colour mr-28 rounded text-lg font-semibold w-100 h-13 px-16 py-3 text-primary-colour cursor-pointer hover:scale-105" >
+              Suggest Me AgriTourism
+          </Link>
           </div>
       <div className="self-stretch flex flex-col items-start justify-start pt-0 px-0 pb-2 box-border gap-[50px] max-w-full mq750:gap-[25px]">
         <div className="self-stretch shadow-[0px_0px_4px_rgba(0,_0,_0,_0.25)] rounded-md bg-background overflow-x-auto flex flex-row items-start justify-start py-[31px] px-[30px] box-border gap-[49px] max-w-full mq750:gap-[24px]">
@@ -256,7 +246,7 @@ const ListedFarm = () => {
                   </div>
                 </div>
               </div> */}
-              <FarmCardList/>
+              <FarmCardList propMinWidth={'250px'} propWidth={'350px'}/>
             </div>
       </div>
           {/* <Footer1 /> */}

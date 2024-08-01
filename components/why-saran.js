@@ -1,4 +1,5 @@
-import FrameComponent3 from "./frame-component3";
+import HomePageFrameComponent from "./frame-component3";
+
 import PropTypes from "prop-types";
 
 const WhySaran = ({ className = "" }) => {
@@ -9,7 +10,7 @@ const WhySaran = ({ className = "" }) => {
       <h2 className="m-0 relative text-inherit font-bold font-inherit inline-block max-w-full mq450:text-3xl">
         Why Choose Saran Faram
       </h2>
-      <FrameComponent3
+      <HomePageFrameLeftComponent
         authenticFarmExperiences="Authentic Farm Experiences:"
         handsOnFarmActivities="Hands-on Farm Activities:"
         saranfarmOffersAWideRange=" Saran.farm offers a wide range of hands-on activities, such as planting, harvesting, milking cows, and feeding animals. Visitors can actively participate in these activities, gaining a deeper appreciation for the hard work and dedication of farmers."

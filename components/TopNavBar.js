@@ -1,9 +1,11 @@
 import PropTypes from "prop-types";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 
 const TopNavBar = ({ className = "" }) => {
+  const [showRegisterDropdown, setShowRegisterDropdown] = useState(false);
+  const [showMoreDropdown, setShowMoreDropdown] = useState(false);
   const router = useRouter();
   const onLogoClick = useCallback(() => {
     router.push("/");
@@ -101,24 +103,63 @@ const TopNavBar = ({ className = "" }) => {
             <div className="absolute top-[calc(50%_-_30px)] left-[0px] rounded bg-secondary-colour w-full h-full hidden" />
             <div className="m-0 absolute top-[18px] left-[53px] w-[540px] flex flex-row items-start justify-between max-w-full z-[4] text-left text-lg text-taxt-colour font-inter">
               <div className="m-0 flex-1 flex flex-row items-start justify-between max-w-full gap-[20px] z-[2] text-left text-lg text-taxt-colour font-inter">
-                <Link href="/" className="[text-decoration:none] uppercase font-medium text-[inherit]">
+              <Link href="/" className="[text-decoration:none] uppercase font-medium text-[inherit] hover:text-white transition-colors duration-200">
                   Home
+              </Link>
+            <div className="relative">
+              <button 
+                onClick={() => setShowRegisterDropdown(!showRegisterDropdown)}
+                className="text-black hover:text-white transition-colors duration-200 bg-secondary-colour border-none mr-12 hover:underline"
+                style={{fontSize:'19px'}}
+              >
+                REGISTER FARM
+              </button>
+              <Link href="/book-farm" className="[text-decoration:none] uppercase font-medium text-[inherit] whitespace-nowrap hover:text-white transition-colors duration-200">
+                Book Farm
+              </Link>
+            {showRegisterDropdown && (
+              <div className="left-0 w-63 bg-backgroundColor-custom-green" style={{marginTop:'18px'}}>
+                <Link href="/register-farm" className="  py-[11.5px] [text-decoration:none] block text-black hover:bg-white text-lg px-2">
+                  &gt; APPLY TO LIST YOUR FARM
                 </Link>
-                <Link href="/register-farm" className="[text-decoration:none] uppercase font-medium text-[inherit] whitespace-nowrap">
-                  Register Farm
-                </Link>
-                <Link href="/book-farm" className="[text-decoration:none] uppercase font-medium text-[inherit] whitespace-nowrap">
-                  Book Farm
-                </Link>
-                <Link href="/events" className="[text-decoration:none] uppercase font-medium text-[inherit] whitespace-nowrap">
-                  Events
+                <Link href="/start-agrotourism-form" className=" py-[11.5px] [text-decoration:none] block  text-lg text-black hover:bg-white px-2">
+                  &gt; WANT TO START AGROTOURISM
                 </Link>
               </div>
+            )}
+          </div>
+              
+              <Link href="/events" className="[text-decoration:none] uppercase font-medium text-[inherit] whitespace-nowrap hover:text-white transition-colors duration-200">
+                Events
+              </Link>
+              </div>
             </div>
-            <div className="absolute top-[18px] left-[871px] w-[53px] h-6 z-[4]">
-              <a className="[text-decoration:none] uppercase font-medium text-[inherit]">
-                More
-              </a>
+            <div className="absolute top-[18px] left-[871px] w-[175px] h-6 z-[4]">
+              <div className="relative">
+                <button 
+                  onClick={() => setShowMoreDropdown(!showMoreDropdown)}
+                  className="text-black hover:text-white transition-colors duration-200 bg-secondary-colour border-none mr-12 hover:underline"
+                  style={{fontSize:'19px'}}
+                >
+                  MORE
+                </button>
+              {showMoreDropdown && (
+                <div className="left-0 w-63 bg-backgroundColor-custom-green" style={{marginTop:'18px'}}>
+                  <Link href="/about-us" className="  py-[11.5px] [text-decoration:none] block text-black hover:bg-white text-lg px-2">
+                    &gt; ABOUT US
+                  </Link>
+                  <Link href="/contact-us" className=" py-[11.5px] [text-decoration:none] block  text-lg text-black hover:bg-white px-2">
+                    &gt; CONTACT US
+                  </Link>
+                  <Link href="/gallery" className="  py-[11.5px] [text-decoration:none] block text-black hover:bg-white text-lg px-2">
+                    &gt; GALLERY
+                  </Link>
+                  <Link href="/award" className=" py-[11.5px] [text-decoration:none] block  text-lg text-black hover:bg-white px-2">
+                    &gt; AWARD
+                  </Link>
+                </div>
+              )}
+            </div>
             </div>
           </nav>
         </div>

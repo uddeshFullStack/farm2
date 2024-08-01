@@ -1,39 +1,39 @@
 import PropTypes from "prop-types";
 
-const FrameComponent6 = ({ className = "", booking, eventAccepted }) => {
+const FrameComponent6 = ({ booking, eventAccepted }) => {
   return (
-    <div
-      className={`h-[211px] w-[200px] relative text-center text-lg text-taxt-colour font-inter ${className}`}
-    >
-      <button className="cursor-pointer [border:none] py-2 px-[49px] bg-sienna absolute top-[166px] left-[17px] rounded-sm w-[166px] flex flex-row items-start justify-start box-border z-[1] hover:bg-peru">
-        <div className="h-[45px] w-[166px] relative rounded-sm bg-sienna hidden" />
-        <div className="relative text-5xl font-extrabold font-inter text-white text-left inline-block min-w-[63px] z-[2] mq450:text-lgi">
-          100+
-        </div>
-      </button>
-      <div className="absolute top-[0px] left-[0px] w-full h-[200px]">
-        <div className="absolute top-[92px] left-[62px] font-extrabold z-[1]">
-          <p className="[margin-block-start:0] [margin-block-end:3px]">Total</p>
-          <p className="m-0">{booking}</p>
-        </div>
-        <div className="absolute top-[0px] left-[0px] w-full h-full">
-          <div className="absolute top-[0px] left-[0px] rounded-[50%] bg-sienna w-full h-full" />
+    <div className="relative w-[200px] h-[211px] text-center text-lg font-inter text-taxt-colour mb-10 ml-10">
+      <div 
+        style={{
+          position: 'absolute',
+          inset: '0',
+          borderRadius: '50%',
+          border: '8px solid #A0522D',
+          backgroundColor: 'white',
+        }}
+      >
+        <div className="relative w-full h-full">
           <img
-            className="absolute top-[30px] left-[75px] w-[51px] h-[51px] object-contain z-[1]"
-            loading="lazy"
-            alt=""
+            className="absolute top-[30px] left-1/2 -translate-x-1/2 w-[51px] h-[51px] object-contain"
             src={eventAccepted}
+            alt=""
           />
+          <div className="absolute top-[75px] left-0 right-0 font-extrabold mt-8">
+            <p className="m-0">Total</p>
+            <p className="m-0">{booking}</p>
+          </div>
         </div>
+      </div>
+      <div className="absolute -bottom-[16px] left-[17px] w-[166px] py-2 bg-sienna rounded-sm text-5xl font-extrabold text-white hover:bg-peru">
+        100+
       </div>
     </div>
   );
 };
 
 FrameComponent6.propTypes = {
-  className: PropTypes.string,
-  booking: PropTypes.string,
-  eventAccepted: PropTypes.string,
+  booking: PropTypes.string.isRequired,
+  eventAccepted: PropTypes.string.isRequired,
 };
 
 export default FrameComponent6;

@@ -17,6 +17,10 @@ module.exports = {
           "100": "#338069",
           "200": "#26735c",
         },
+        backgroundColor: {
+          'custom-green': '#e6ffd6',
+          'image':'#FEF1BF'
+        },
         goldenrod: "#c79400",
         "taxt-colour": "#252525",
         mediumspringgreen: {
@@ -34,6 +38,9 @@ module.exports = {
       fontFamily: {
         inter: "Inter",
         inherit: "inherit",
+      },
+      borderColor:{
+        inputColor:'#989898',
       },
       borderRadius: {
         "8xs": "5px",

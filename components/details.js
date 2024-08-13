@@ -142,13 +142,12 @@ const Details = ({
             </ul>
           </div>
         </div>
-        <button className="cursor-pointer [border:none] p-0 bg-[transparent] self-stretch h-[115px] relative whitespace-nowrap">
-          <div
-            className="absolute top-[0px] left-[0px] shadow-[0px_0px_4px_#378805] rounded-3xs bg-primary-colour w-full h-full cursor-pointer"
-            onClick={onButtonBackgroundClick}
-          />
-          <div className="absolute top-[43px] left-[104px] text-5xl tracking-[-0.01em] font-semibold font-inter text-white text-left inline-block w-[117px] min-w-[117px] z-[1]">
-            Book Now
+        <button className="cursor-pointer border-none p-0 w-[80vw] max-w-[200px] h-[20vw] max-h-[80px] relative  text-[4.5vw] sm:text-[3vw] md:text-[2vw] lg:text-[1.5vw]" onClick={()=> onButtonBackgroundClick()}>
+          <div className="absolute inset-0 shadow-[0px_0px_4px_#378805] rounded-3xs bg-primary-colour" />
+          <div className="absolute inset-0 flex items-center justify-center">
+            <span className="tracking-[-0.01em] font-semibold font-inter text-white">
+              Book Now
+            </span>
           </div>
         </button>
       </div>

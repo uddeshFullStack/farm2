@@ -13,16 +13,16 @@ const RegisterFarm = () => {
 
   return (
     <Layout>
-      <div className="container font-inter ">
-        <nav className="flex justify-between items-center py-4 bg-white w-full mx-8 px-8 mt-6">
-          <div className="text-primary-colour text-lg font-semibold">
+      <div className="font-inter w-screen">
+        <nav className="flex flex-wrap justify-center md:justify-between items-center m-[3%]">
+          <div className="text-primary-colour text-lg font-semibold py-4">
             Apply To List Your Farm
           </div>
-          <Link href="/agrotourism-form" className="[text-decoration:none] bg-secondary-colour mr-28 rounded text-lg font-semibold w-100 h-13 px-16 py-3 text-primary-colour cursor-pointer hover:scale-105" >
+          <Link href="/start-agrotourism-form" className="[text-decoration:none] bg-secondary-colour rounded text-lg font-semibold p-[1%] text-primary-colour cursor-pointer hover:scale-105" >
             Want To Start AgroTourism
           </Link>
         </nav>
-        <div className='mx-8 px-8'>
+        <div className='p-[3%] mt-16 sm:mt-0'>
             <CardContainerUpper cards={cards}/>
         </div>
         <div>

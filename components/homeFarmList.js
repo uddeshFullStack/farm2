@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import PropTypes from "prop-types";
 import FarmCard from "./farm-card/farmCard";
 
-const HomeFarmList = ({ className = "" ,propMinWidth,propWidth}) => {
+const HomeFarmList = ({ className = "", propMinWidth, propWidth }) => {
   const farmsData = [
     {
       id: 1,
@@ -85,17 +85,6 @@ const HomeFarmList = ({ className = "" ,propMinWidth,propWidth}) => {
     },
   ];
 
-  // const handleMoreDetailsClick = (link) => {
-  //   router.push(link);
-  // };
-
-  // Chunk farmsData into groups of 3 for rendering
-  const chunkedFarms = farmsData.reduce((acc, _, i) => {
-    if (i % 3 === 0) {
-      acc.push(farmsData.slice(i, i + 3));
-    }
-    return acc;
-  }, []);
   const router = useRouter();
 
   const onFrameButtonClick = useCallback((link) => {
@@ -107,30 +96,23 @@ const HomeFarmList = ({ className = "" ,propMinWidth,propWidth}) => {
   }, [router]);
 
   return (
-    <section
-      className={`self-stretch  bg-background flex flex-row pl-12 items-start justify-start pt-0 px-0 pb-[65px] box-border max-w-full text-center text-9xl text-primary-colour font-inter mq750:pb-[27px] mq750:box-border mq1275:pb-[42px] mq1275:box-border ${className}`}
-    >
-      <div className="flex-1 flex flex-col items-start justify-start pt-[65px] px-[65px] pb-[39px] box-border gap-[49px] max-w-full mq750:gap-[24px] mq750:pt-[27px] mq750:px-8 mq750:pb-5 mq750:box-border mq1275:pt-[42px] mq1275:pb-[25px] mq1275:box-border">
-        <h2 className="m-0 relative text-inherit font-bold font-inherit z-[1] mq450:text-3xl">
-          Latest Listed Farms
-        </h2>
-        <div className="self-stretch flex flex-wrap items-start justify-between gap-[40px] max-w-full text-left text-base text-lite mq750:gap-[20px]">
-        {/* <div className="self-stretch flex flex-wrap items-start justify-start gap-[30px] max-w-full text-left text-base text-lite mq750:gap-[20px]"> */}
-            {chunkedFarms.map((farmGroup, index) => (
-              <div
-                key={index}
-                className="self-stretch grid flex-row items-start justify-start gap-[50.5px] max-w-full grid-cols-[repeat(3,_minmax(302px,_1fr))] z-[1] mq750:gap-[25px] mq750:grid-cols-[minmax(302px,_1fr)] mq1100:justify-center mq1100:grid-cols-[repeat(2,_minmax(302px,_524px))]">
-                {farmGroup.map((farm) => (
-                  <FarmCard
-                    key={farm.id}
-                    propWidth={propWidth}
-                    propMinWidth={propMinWidth}
-                    farm={farm}
-                    onFrameButtonClick={() => onFrameButtonClick(farm.moreDetailsLink)}
-                  />
-                ))}
-              </div>
-            ))}
+<section
+  className={`self-stretch bg-background flex flex-col items-center justify-center mx-[2%] py-[2%] box-border max-w-full text-center text-9xl text-primary-colour font-inter `}
+>
+  <div className="flex-1 flex flex-col items-center justify-center box-border gap-y-10 gap-[5%] max-w-full ">
+    <h2 className="m-0 text-inherit font-bold font-inherit text-center">
+      Latest Listed Farms
+    </h2> 
+        <div className="self-stretch flex flex-wrap justify-center text-left text-base text-lite gap-[5%]">
+          {farmsData.map((farm) => (
+            <FarmCard
+              key={farm.id}
+              propWidth={propWidth}
+              propMinWidth={propMinWidth}
+              farm={farm}
+              onFrameButtonClick={() => onFrameButtonClick(farm.moreDetailsLink)}
+            />
+          ))}
         </div>
         <div className="self-stretch flex flex-row items-start justify-center py-0 px-5">
           <button
@@ -159,6 +141,8 @@ const HomeFarmList = ({ className = "" ,propMinWidth,propWidth}) => {
 
 HomeFarmList.propTypes = {
   className: PropTypes.string,
+  propMinWidth: PropTypes.string,
+  propWidth: PropTypes.string,
 };
 
 export default HomeFarmList;

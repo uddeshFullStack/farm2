@@ -17,59 +17,55 @@ const StarRating = ({ rating }) => {
 
 const ReviewCard = ({ image, name, description, ratings,phoneNumber,email,phoneImage }) => {
   return (
-    <div className="bg-white text-black rounded-xl shadow-md overflow-hidden flex flex-row justify-around font-inter mt-20 gap-x-16">
+    <div className="bg-white text-black rounded-xl shadow-md overflow-hidden flex flex-col md:flex-row justify-start font-inter mt-20 gap-x-20">
         <div className='font-bold text-primary-colour text-xl ml-10'>
             Reviews
         </div>
-        <div className="w-[600px] h-[300px]  flex flex-col">
-            <div className="flex flex-row gap-4">
-                <div>
-                    <Image
-                    className="rounded-full object-cover ml-16"
-                    src={image}
-                    alt={name}
-                    width={65}
-                    height={65}
-                    />
-                </div>
-                <div className="flex flex-col mt-4">
-                    <div className="text-xl font-semibold text-gray-900 justify-start">
-                    {name}
-                    </div>
-                    <div className="">
-                        <StarRating rating={ratings.overall} />
-                    </div>
-                </div>
+    <div className="flex flex-col gap-[1.5vw] m-8">
+        <div className="flex flex-row gap-[2vw] items-center ">
+          <Image
+            className="rounded-full object-cover"
+            src={image}
+            alt={name}
+            width={65}
+            height={65}
+          />
+          <div className="flex flex-col justify-center lg:justify-start ">
+            <div className="font-semibold text-gray-900">
+              {name}
             </div>
-            <div className="text-gray-500 text-justify mx-16 flex flex-col">
-                <div>
-                    {description}
-                </div>
-                <div className="flex flex-row gap-28 mt-4">
-                    <div className="flex flex-col gap-4 ">
-                        <div className="">
-                            <span>Location</span>
-                            <StarRating rating={ratings.location} />
-                        </div>
-                        <div className="">
-                            <span>Quality</span>
-                            <StarRating rating={ratings.quality} />
-                        </div>
-                        </div>
-                        <div className="flex flex-col gap-4">
-                        <div className="">
-                            <span>Comfort</span>
-                            <StarRating rating={ratings.comfort} />
-                        </div>
-                        <div className="">
-                            <span>Price</span>
-                            <StarRating rating={ratings.price} />
-                        </div>
-                    </div>
-                </div>
-            </div>   
+            <StarRating rating={ratings.overall} />
+          </div>
         </div>
-        <div className="max-w-sm mx-auto bg-white rounded-lg shadow-md p-6 border border-gray-200 flex flex-col gap-2 text-justify">
+        <div className="flex flex-col text-gray-500 text-justify max-w-sm">
+          <div>
+            {description}
+          </div>
+          <div className="flex flex-wrap gap-[3vw] mt-[4vw]">
+            <div className="flex flex-col gap-[2vw]">
+              <div>
+                <span>Location</span>
+                <StarRating rating={ratings.location} />
+              </div>
+              <div>
+                <span>Quality</span>
+                <StarRating rating={ratings.quality} />
+              </div>
+            </div>
+            <div className="flex flex-col gap-[2vw]">
+              <div>
+                <span>Comfort</span>
+                <StarRating rating={ratings.comfort} />
+              </div>
+              <div>
+                <span>Price</span>
+                <StarRating rating={ratings.price} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        <div className="max-w-sm bg-white rounded-lg shadow-md p-6 border border-gray-200 flex flex-col gap-2 text-justify">
             <div className=''>
                 <Image src={phoneImage} alt={phoneImage} className='w-[120px] h-[120px] rounded-full justify-center'/>
             </div>

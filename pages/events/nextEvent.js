@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import PropTypes from 'prop-types';
 
-const NextEvent = ({nextEventData}) => {
-    const { eventDate, imageSrc }=nextEventData
+const NextEvent = ({ nextEventData }) => {
+  const { eventDate, imageSrc } = nextEventData;
+
   const calculateTimeLeft = () => {
-    const eventDateTime = new Date(eventDate); // Use the eventDate prop
+    const eventDateTime = new Date(eventDate);
     const now = new Date();
     const difference = eventDateTime - now;
 
@@ -36,46 +37,51 @@ const NextEvent = ({nextEventData}) => {
   }, [timeLeft]);
 
   return (
-    <div className='relative w-screen h-auto font-inter'>
+    <div className="relative w-screen h-auto  font-inter">
       <Image
-        src={imageSrc} // Use the imageSrc prop
+        src={imageSrc}
         alt="Description of the event"
         layout="responsive"
+        className="object-cover"
+        style={{ maxHeight: '100%', maxWidth: '100%' }}
       />
-      <div className='absolute inset-0 flex flex-col items-center gap-[450px]'>
-        <div className='text-[36px] text-white mt-52 font-extrabold'>
-          Up Coming Event 2024
-          <div className=''>
-            <div className="flex flex-row justify-center mt-6">
-              <div className="flex flex-col items-center min-w-12">
-                <div className="text-[30px] font-extrabold" style={{ color: '#ff0000' }}>
-                  {String(timeLeft.days).padStart(2, '0')} <span className='text-white'>:</span>
+      <div className="absolute inset-0 flex flex-col items-center justify-center p-4 lg:p-8 ">
+        <div className="text-center text-white font-extrabold" style={{fontSize:'3vw' ,marginTop:'8vw'}}>
+          Upcoming Event 2024
+          <div className="mt-4 sm:mt-6" >
+            <div className="flex justify-center space-x-1 sm:space-x-2">
+              <div className="flex flex-col items-center">
+                <div className="font-extrabold" style={{ color: '#ff0000', }}>
+                  {String(timeLeft.days).padStart(2, '0')}
+                  <span className="text-white">:</span>
                 </div>
-                <div className="text-[12px] font-semibold">Days</div>
+                <div className=" font-semibold" style={{fontSize:'1.5vw' }}>Days</div>
               </div>
-              <div className="flex flex-col items-center mx-2 min-w-12">
-                <div className="text-[30px] font-extrabold" style={{ color: '#051EFF' }}>
-                  {String(timeLeft.hours).padStart(2, '0')} <span className='text-white'>:</span>
+              <div className="flex flex-col items-center">
+                <div className=" font-extrabold" style={{ color: '#051EFF' }}>
+                  {String(timeLeft.hours).padStart(2, '0')}
+                  <span className="text-white">:</span>
                 </div>
-                <div className="text-[12px] font-semibold">Hours</div>
+                <div className="font-semibold" style={{fontSize:'1.5vw' }}>Hours</div>
               </div>
-              <div className="flex flex-col items-center mx-2 min-w-12">
-                <div className="text-[30px] font-extrabold" style={{ color: '#00FF38' }}>
-                  {String(timeLeft.minutes).padStart(2, '0')} <span className='text-white'>:</span>
+              <div className="flex flex-col items-center">
+                <div className=" font-extrabold" style={{ color: '#00FF38' }}>
+                  {String(timeLeft.minutes).padStart(2, '0')}
+                  <span className="text-white">:</span>
                 </div>
-                <div className="text-[12px] font-semibold">Minutes</div>
+                <div className="font-semibold"style={{fontSize:'1.5vw' }}>Minutes</div>
               </div>
-              <div className="flex flex-col items-center min-w-12">
-                <div className="text-[30px] font-extrabold" style={{ color: '#FBC800' }}>
+              <div className="flex flex-col items-center">
+                <div className="font-extrabold" style={{ color: '#FBC800' }}>
                   {String(timeLeft.seconds).padStart(2, '0')}
                 </div>
-                <div className="text-[12px] font-semibold ml-4">Sec</div>
+                <div className=" font-semibold ml-2 sm:ml-4" style={{fontSize:'1.5vw' }}>Sec</div>
               </div>
             </div>
           </div>
         </div>
-        <div>
-          <button className='bg-secondary-colour text-primary-colour text-3xl font-semibold px-20 py-4 rounded-md ml-12 border-none cursor-pointer'>
+        <div className="mt-[20%]" style={{marginBottom:'12vw',marginLeft:'20vw' ,width:'40vw'}}>
+          <button className="bg-secondary-colour text-primary-colour  rounded-md border-none cursor-pointer w-[50%] h-10 font-extrabold">
             Register Now
           </button>
         </div>
@@ -85,8 +91,10 @@ const NextEvent = ({nextEventData}) => {
 };
 
 NextEvent.propTypes = {
-  eventDate: PropTypes.string.isRequired, // Prop validation for eventDate
-  imageSrc: PropTypes.string.isRequired, // Prop validation for imageSrc
+  nextEventData: PropTypes.shape({
+    eventDate: PropTypes.string.isRequired,
+    imageSrc: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default NextEvent;

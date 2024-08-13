@@ -11,13 +11,13 @@ const Team = () => {
         { icon: <FaTwitter />, url: '#' },
       ];
   return (
-    <div className=' bg-primary-colour pt-20'> 
-          <div className='flex justify-center font-extrabold text-[36px] text-white '>
+    <div className=' bg-primary-colour pt-20 pl-1 md:pl-0'> 
+          <div className='flex justify-start md:justify-center font-extrabold text-[36px] text-white '>
             Meet Our Team
           </div>
-          <div className="flex flex-wrap justify-around gap-x-[52px]">
+          <div className="flex flex-col  md:flex-row md:flex-wrap justify-start md:justify-around md:gap-x-[52px]">
             {profileCards.slice(0, 4).map((card, index) => (
-              <div key={index} className="p-10">
+              <div key={index} className="py-10 px-1 md:p-10">
                 <ProfileCard
                   photo={card.image}
                   name={card.name}
@@ -28,12 +28,12 @@ const Team = () => {
               </div>
             ))}
             </div>
-            <div className='flex justify-center font-extrabold text-[36px] text-white mt-36 '>
+          <div className='flex justify-start md:justify-center font-extrabold text-[36px] text-white '>
             Our Mentors
           </div>
-          <div className="flex flex-wrap justify-around gap-x-[52px]">
+          <div className="flex flex-col justify-start md:flex-row md:flex-wrap  md:justify-around md:gap-x-[52px]">
             {profileCards.slice(4, 8).map((card, index) => (
-              <div key={index} className="p-10">
+              <div key={index} className="py-10 px-1 md:p-10">
                 <ProfileCard
                   photo={card.image}
                   name={card.name}

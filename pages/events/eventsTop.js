@@ -15,14 +15,14 @@ const EventsTop = ({ filePath }) => {
   };
 
   return (
-    <div className='flex flex-row justify-around w-screen font-inter pt-10 pb-8 gap-x-[750px]'>
+    <div className='flex flex-row flex-wrap justify-around w-screen font-inter pt-10 pb-8 gap-x-[750px] '>
       <div className='text-primary-colour font-bold text-5xl'>Events & Conference</div>
-      <div className='text-primary-colour font-bold text-5xl'>
+      <div className='text-primary-colour font-bold text-5xl mt-3 lg:mt-0'>
         <button
           onClick={handleDownload}
           className="bg-primary-colour text-white flex items-center px-4 py-2 rounded font-semibold cursor-pointer"
         >
-          <FontAwesomeIcon icon={faDownload} className="mr-2" />
+          <FontAwesomeIcon icon={faDownload} className="mr-2 " />
           Event Menu Pdf Download
         </button>
       </div>

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const CommonBadge = ({ icon, activity, count, colour }) => {
   return (
-    <div className="relative w-[200px] h-[200px] text-center text-lg font-inter text-taxt-colour mb-10 ml-10">
+    <div className="relative w-[200px] h-[200px] text-center text-lg font-inter text-taxt-colour m-5">
       <div
         style={{
           position: 'absolute',

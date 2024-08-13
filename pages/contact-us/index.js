@@ -6,9 +6,7 @@ import ContactUs from './contactUs'
 const AgroTourismSuggestion = () => {
   return (
     <Layout>
-        <div>
-            <ContactUs/>
-        </div>
+        <ContactUs/>
     </Layout>
   )
 }

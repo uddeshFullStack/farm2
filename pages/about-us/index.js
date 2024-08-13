@@ -19,15 +19,16 @@ const AboutUs = () => {
     <Layout>
       <div className='font-inter'>   
         <div className='self-stretch relative'>
-          <Image src={image1} alt='image1'className='w-full'></Image>
-          <div className='absolute top-12 left-0 w-full h-full flex  justify-center'>
+          <Image src={image1} alt='image1' className='w-full' />
+          <div className='absolute inset-0 flex justify-center items-start'>
             <h1 className='text-4xl font-bold text-white'>About Us</h1>
           </div>
         </div>
+
         <div>
           <InfoSection question={'What is Saran Farm ?'} answer={'Welcome to Saran.farm, a sustainable agritourism startup dedicated to connecting farmers, consumers, and nature enthusiasts. At Saran.farm, we believe in the power of authentic farm experiences to foster a deeper understanding of agriculture, promote sustainable practices, and support local communities.'} image={image1} isTextFirst={true}/>
         </div>
-        <div className='bg-backgroundColor-image w-full pl-12 py-10'>
+        <div className='bg-backgroundColor-image w-full pl-12 py-10 xsm:px-5'>
           <CardContainerUpper cards={cards} classNameUser={classNameUser}/>
         </div>
         <div>

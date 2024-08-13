@@ -3,18 +3,17 @@ import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const AboutUpComing = ({data}) => {
-    // console.log(data);
-  const { eventTitle, eventDetails, videoLink, reasons }=data
+const AboutUpComing = ({ data }) => {
+  const { eventTitle, eventDetails, videoLink, reasons } = data;
   return (
-    <div className='bg-backgroundColor-custom-green font-inter text-justify flex flex-col px-10 w-screen'>
-      <div className='text-primary-colour font-bold text-3xl text-center py-14'>
+    <div className='bg-backgroundColor-custom-green font-inter text-justify flex flex-col  w-screen'>
+      <div className='text-primary-colour font-bold text-2xl sm:text-3xl text-center py-8 sm:py-14'>
         About This Upcoming Event
       </div>
-      <div className='flex flex-row justify-center text-start w-full'>
-        <div className='flex-shrink-0'>
+      <div className='flex flex-col lg:flex-row justify-center text-start w-full ml-8 md:ml-14 lg:ml-0 '>
+        <div className='w-2/3  lg:w-1/4 flex-shrink-0 mb-8 lg:mb-0 lg:mr-8'>
           <iframe
-            className='w-full h-64'
+            className='w-full h-48 sm:h-64'
             src={videoLink}
             title="YouTube video player"
             frameBorder="0"
@@ -22,7 +21,7 @@ const AboutUpComing = ({data}) => {
             allowFullScreen
           ></iframe>
         </div>
-        <div className='flex flex-col bg-white shadow-lg rounded-lg max-w-sm p-6'>
+        <div className='flex flex-col bg-white shadow-lg rounded-lg p-4 w-2/3 lg:w-1/4 sm:text-base sm:p-4 lg:max-w-sm'>
           <div className='font-semibold text-xl text-primary-colour'>
             {eventTitle}
           </div>
@@ -34,14 +33,14 @@ const AboutUpComing = ({data}) => {
           </div>
         </div>
       </div>
-      <div className='flex flex-col justify-center text-center pt-20 pb-4'>
-        <div className='text-primary-colour font-bold text-2xl'>
+      <div className='flex flex-col justify-center text-center pt-16 sm:pt-20 pb-4'>
+        <div className='text-primary-colour font-bold text-xl sm:text-2xl'>
           Why Join Us
         </div>
         <div className='flex flex-col items-center'>
           {reasons?.map((reason, index) => (
-            <div key={index} className='flex items-center mt-2'>
-              <FontAwesomeIcon icon={faCheckCircle} className='text-gray-600 mr-2' />
+            <div key={index} className='flex items-center mt-2 text-sm sm:text-base'>
+              <FontAwesomeIcon icon={faCheckCircle} className='text-gray-600 mr-[.5px] sm:mr-2' />
               <p className='m-0'>{reason}</p>
             </div>
           ))}
@@ -52,13 +51,15 @@ const AboutUpComing = ({data}) => {
 };
 
 AboutUpComing.propTypes = {
-  eventTitle: PropTypes.string.isRequired,
-  eventDetails: PropTypes.shape({
-    date: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired
+  data: PropTypes.shape({
+    eventTitle: PropTypes.string.isRequired,
+    eventDetails: PropTypes.shape({
+      date: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired
+    }).isRequired,
+    videoLink: PropTypes.string.isRequired,
+    reasons: PropTypes.arrayOf(PropTypes.string).isRequired,
   }).isRequired,
-  videoLink: PropTypes.string.isRequired,
-  reasons: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default AboutUpComing;

@@ -2,8 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js",
-  "/events": "pages/events.js",
-  "/book-farm": "pages/book-farm.js",
-  "/farm-details/[id]": "pages/farm-details/[id].js"
+  "/listed-farm": "pages/listed-farm.js",
+  "/farm-details/[id]": "pages/farm-details/[id].js",
+  "/": "pages/index.js"
 }

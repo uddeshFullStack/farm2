@@ -23,10 +23,10 @@ const FarmForm = () => {
   };
 
   return (
-    <div className="max-w-full p-4 mt-40 bg-backgroundColor-custom-green">
-      <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-2 gap-4 mx-20" noValidate>
+    <div className="w-screen pr-2 pt-8 bg-backgroundColor-custom-green">
+      <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-1 md:grid-cols-2 gap-4 mx-4 md:mx-20" noValidate>
         {/* Left Grid - Fields up to Image Upload */}
-        <div className="grid grid-cols-1 gap-4 mr-10">
+        <div className="grid grid-cols-1 gap-4">
           <InputField label="Farm Name" name="farmName" register={register} required errors={errors} />
           <InputField label="Address" name="address" register={register} required errors={errors} />
           <InputField label="Near City" name="nearCity" register={register} required errors={errors} />
@@ -44,12 +44,11 @@ const FarmForm = () => {
             errors={errors} 
             type="file" 
             accept="image/jpeg" 
-            className={'ml-10 text-lg'} 
           />
         </div>
 
         {/* Right Grid - Remaining Fields */}
-        <div className="grid grid-cols-1 gap-4 ml-10">
+        <div className="grid grid-cols-1 gap-4">
           <InputField label="Rent/Day/p" name="rent" register={register} errors={errors} />
           <InputField label="Accommodation" name="accommodation" register={register} errors={errors} />
           <TextArea label="Activities & Facilities" name="activities" register={register} errors={errors} />
@@ -59,10 +58,10 @@ const FarmForm = () => {
         </div>
 
         {/* Submit Button */}
-        <div className="col-span-2 mb-4 flex justify-center">
+        <div className="col-span-1 md:col-span-2 mb-4 flex justify-center">
           <button
             type="submit"
-            className="w-1/4 bg-secondary-colour text-primary-colour font-semibold py-3 rounded cursor-pointer text-2xl border-none"
+            className="w-full md:w-1/4 bg-secondary-colour text-primary-colour font-semibold py-3 rounded cursor-pointer text-lg md:text-2xl border-none"
           >
             Submit
           </button>

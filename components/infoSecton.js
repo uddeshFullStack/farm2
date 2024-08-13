@@ -9,34 +9,39 @@ const InfoSection = ({ question, answer, image, isTextFirst }) => {
   else{
     bg_colour='bg-backgroundColor-custom-green'
   }
-  const className=`w-[1310px] h-[443px] ${bg_colour} flex m-20  md:flex-row`
   const textContent = (
-    <div className="md:w-1/2 p-4 md:flex-row m-10">
-      <h2 className="text-xl font-bold text-green-800 mb-2 md:mr-4">{question}</h2>
-      <p className="text-gray-600 w-[504px] h-[132px] text-[18px] text-justify">{answer}</p>
-    </div>
+    <>
+      <h2 className="text-xl font-bold text-green-800">{question}</h2>
+      <p className="text-gray-600 text-[18px] text-justify">{answer}</p>
+    </>
   );
 
   const imageContent = (
-    <div className="my-10 md:w-1/2 p-4">
-      <Image src={image} alt="Section image" width={538} height={367} />
-    </div>
+      <Image src={image} alt="Section image" className='xsm:max-w-[300px] xsm:h-[240px] sm:max-w-[400px] sm:h-[300px] md:w-[450px] xl:w-[500px]'  />
   );
   
   return (
-    <div className={className}>
+    <>
       {isTextFirst ? (
-        <>
-          {textContent}
-          {imageContent}
-        </>
+        <div className={`flex flex-col lg:flex-row ${bg_colour} p-10 xsm:p-2 sm:m-2 xsm:m-2`}>
+          <div className="m-10 xsm:m-4 xsm:w-[280px] sm:w-[500px] md:w-[600px] xl:flex-1">
+            {textContent}
+          </div>
+          <div className="m-10 xsm:m-4">
+            {imageContent}
+          </div>
+        </div>
       ) : (
-        <>
-          {imageContent}
-          {textContent}
-        </>
+        <div className={`flex flex-col lg:flex-row ${bg_colour} p-10 xsm:p-2 sm:m-2 xsm:m-2`}>
+          <div className="m-10 xsm:m-4">
+            {imageContent}
+          </div>
+          <div className="m-10 xsm:m-4 xsm:w-[280px] sm:w-[500px] md:w-[600px] xl:flex-1">
+            {textContent}
+          </div>
+        </div>
       )}
-    </div>
+    </>
   );
 };
 

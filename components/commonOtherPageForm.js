@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import Image from 'next/image';
-import InputField from './InputField';
-import { TextArea } from './TextArea';
+
 import { useRouter } from 'next/router';
 import { upsertAboutUs } from '../utils/supabaseQuery/AboutUsQuery';
 import { upsertContactUs } from '../utils/supabaseQuery/ContactUsQuery';
 import { upsertAgrotourismSuggestion } from '../utils/supabaseQuery/AgrotourismQuery';
 import CommonThankYouDialog from '../components/CommonThankYouDialog';
 import PhoneNumberInput from './phoneNumberInput';
-
+import { TextArea } from './textArea';
+import InputField from './inputField';
 
 const CommonOtherPageForm = ({ heading, imageUrl, inputFields, buttonText, page }) => {
   const [openThankYou, setOpenThankYou] = useState(false);
@@ -45,7 +45,7 @@ const CommonOtherPageForm = ({ heading, imageUrl, inputFields, buttonText, page 
   const commonInputClass = "w-full p-3 text-lg border border-inputColor rounded";
 
   return (
-    <div className="max-w-full p-4 my-10 font-inter shadow-slate-500 shadow-sm box-border rounded-md" style={{ marginLeft: '200px' }}>
+    <div className="p-4 font-inter shadow-slate-500 shadow-sm box-border rounded-md" style={{width:'100vw'}}>
       <div className="text-center mb-10">
         {heading && (
           <h1 className="text-primary-colour font-bold" style={{ fontSize: '35px' }}>
@@ -54,19 +54,19 @@ const CommonOtherPageForm = ({ heading, imageUrl, inputFields, buttonText, page 
         )}
       </div>
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
-        <div className="flex flex-col">
-          <div className="flex-grow">
-            <div className={`grid ${imageUrl ? 'grid-cols-2' : 'grid-cols-1'} gap-8 mx-20`}>
+        <div className="flex flex-col justify-center items-center">
+          <div className="w-full">
+            <div className={`flex ${imageUrl ? 'flex-col lg:flex-row' : 'flex-col'} md:gap-5 lg:gap-20 justify-center items-center `}>
+              <div>
               {imageUrl && (
-                <div>
                   <Image
                     src={imageUrl}
                     alt="icon"
-                    style={{ width: '100%', height: 'auto', maxHeight: '350px', objectFit: 'cover' }}
+                    style={{ width: '30vw', height: 'auto', maxHeight: '30vw', objectFit: 'cover' }}
                   />
-                </div>
               )}
-              <div className={`flex flex-col space-y-4 ${!imageUrl ? 'mx-auto w-full max-w-2xl' : ''}`}>
+              </div>
+              <div className={`flex flex-col space-y-4 w-2/3 lg:w-1/3 ${!imageUrl ? 'w-[50%]' : ''}`}>
                 {inputFields.map((field, index) => (
                   <div key={index}>
                     {field.type === 'textarea' ? (
@@ -102,7 +102,7 @@ const CommonOtherPageForm = ({ heading, imageUrl, inputFields, buttonText, page 
           <div className="flex justify-center mt-10">
             <button
               type="submit"
-              className="w-2/5 text-primary-colour bg-secondary-colour font-semibold py-3 rounded cursor-pointer text-2xl border-none"
+              className="text-primary-colour bg-secondary-colour font-semibold py-3 rounded cursor-pointer border-none" style={{width:'20vw',fontSize:'2vw'}}
             >
               {buttonText}
             </button>
@@ -114,7 +114,7 @@ const CommonOtherPageForm = ({ heading, imageUrl, inputFields, buttonText, page 
           open={openThankYou}
           onClose={() => setOpenThankYou(false)}
           topMessage={'Thanks for Contacting'}
-          message={'our executive will contact you shortly'}
+          message={'Our executive will contact you shortly'}
           onDone={handleDone}
         />
       )}

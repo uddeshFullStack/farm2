@@ -13,12 +13,15 @@ const AboutDevConf = ({ devConf, className, ...props }) => {
   const displayText = isExpanded ? description : words.slice(0, 80).join(' ') + (words.length > 80 ? '...' : '');
 
   return (
-    <div className={`flex flex-col items-center justify-center p-8 bg-white rounded-lg shadow-lg w-[1440px] font-inter ${className}`} {...props}>
-      <div className='text-primary-colour font-bold text-2xl mb-4'>
+    <div 
+      className={`flex flex-col items-center justify-center p-8 bg-white rounded-lg shadow-lg w-[90vw] max-w-[1440px] font-inter mx-auto ${className}`} 
+      {...props}
+    >
+      <div className='text-primary-colour font-bold text-2xl mb-4 text-center'>
         {title}
       </div>
       <div className='text-justify'>
-        <p className='w-[800px] h-auto'>{displayText}</p>
+        <p className='w-[80vw] max-w-[800px] h-auto mx-auto'>{displayText}</p>
         <div className='w-full flex justify-start mt-4'>
           <button
             onClick={toggleReadMore}
@@ -35,3 +38,6 @@ const AboutDevConf = ({ devConf, className, ...props }) => {
 };
 
 export default AboutDevConf;
+
+
+

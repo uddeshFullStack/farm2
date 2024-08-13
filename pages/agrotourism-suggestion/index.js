@@ -5,9 +5,7 @@ import AgroSuggestion from './suggestionForm'
 const AgroTourismSuggestion = () => {
   return (
     <Layout>
-        <div>
-            <AgroSuggestion/>
-        </div>
+       <AgroSuggestion/>
     </Layout>
   )
 }

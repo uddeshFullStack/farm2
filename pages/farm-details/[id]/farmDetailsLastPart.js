@@ -26,7 +26,7 @@ const ReviewComponent = ({
   email
 }) => {
   return (
-    <div className="container">
+    <div className="">
       <div className="grid grid-cols-2">
         <div className="flex flex-col">
             <div className=''>

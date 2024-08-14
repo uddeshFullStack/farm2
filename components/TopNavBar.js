@@ -2,167 +2,182 @@ import PropTypes from "prop-types";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useCallback, useState } from "react";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { IoMdClose } from "react-icons/io";
 
 const TopNavBar = ({ className = "" }) => {
   const [showRegisterDropdown, setShowRegisterDropdown] = useState(false);
   const [showMoreDropdown, setShowMoreDropdown] = useState(false);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
   const router = useRouter();
+
   const onLogoClick = useCallback(() => {
     router.push("/");
   }, [router]);
 
   return (
     <header
-      className={`self-stretch bg-primary-colour flex flex-row items-end justify-start pt-5 px-[65px] pb-[45px] box-border gap-[40px] max-w-full text-left text-lg text-white font-inter mq750:gap-[20px] mq750:pl-8 mq750:pr-8 mq750:box-border ${className}`}
+      className={`flex flex-row h-10 md:h-24 lg:h-32 md:gap-0 lg:gap-20 gap-4 w-full items-end p-5  md:px-8  md:pb-11 bg-primary-colour text-white font-inter ${className}`}
     >
-      <div className="h-[199px] w-[1440px] relative bg-primary-colour hidden max-w-full" />
-      <div className="flex flex-row items-start justify-start bg-[url('/sf-page0001-1@2x.png')] bg-cover bg-no-repeat bg-[top] z-[1]">
+      <div className="flex items-center cursor-pointer" onClick={onLogoClick}>
         <img
-          className="h-[125px] w-[125px] relative object-cover z-[2] cursor-pointer"
+          className="h-[38px] w-9 md:h-24 md:w-24 lg:h-32 lg:w-32 object-cover"
           loading="lazy"
-          alt=""
+          alt="Logo"
           src="/sf-page0001-1@2x.png"
-          onClick={onLogoClick}
         />
       </div>
-      <div className="flex-1 flex flex-col items-end justify-start gap-[44px] max-w-full mq750:gap-[22px]">
-        <div className="w-[599px] flex flex-row items-start justify-start max-w-full z-[1]">
-          <div className="flex-1 flex flex-row items-start justify-start gap-[30.6px] max-w-full z-[2] mq750:gap-[15px]">
-            <div className="flex flex-row items-start justify-start gap-[8px]">
-              <div className="h-[30px] w-[18.8px] relative">
-                <img
-                  className="absolute top-[0px] left-[0px] w-full h-full"
-                  alt=""
-                  src="/vector.svg"
-                />
-              </div>
-              <div className="flex flex-col items-start justify-start pt-1 px-0 pb-0">
-                <a className="[text-decoration:none] relative text-[inherit] inline-block min-w-[109px] whitespace-nowrap">
-                  +123654897
-                </a>
-              </div>
-            </div>
-            <div className="flex-1 flex flex-row items-start justify-start gap-[8px]">
-              <div className="h-[30px] w-[39px] relative">
-                <img
-                  className="absolute top-[0px] left-[0px] w-full h-full"
-                  alt=""
-                  src="/vector-2.svg"
-                />
-              </div>
-              <div className="flex-1 flex flex-col items-start justify-start pt-1 px-0 pb-0">
-                <a className="[text-decoration:none] relative text-[inherit] whitespace-nowrap">
-                  udh..........ei@gmail.com
-                </a>
-              </div>
-            </div>
-            <div className="flex flex-col items-start justify-start pt-0.5 px-0 pb-0">
-              <div className="flex flex-row items-start justify-start gap-[6.5px]">
-                <div className="h-[26px] w-[26px] relative">
-                  <img
-                    className="absolute top-[0px] left-[0px] w-full h-full"
-                    alt=""
-                    src="/group-1.svg"
-                  />
-                </div>
-                <div className="h-[26px] w-[26px] relative">
-                  <img
-                    className="absolute top-[0px] left-[0px] w-full h-full"
-                    alt=""
-                    src="/vector-4.svg"
-                  />
-                </div>
-                <div className="w-6 h-6 relative">
-                  <img
-                    className="absolute top-[0px] left-[0px] w-full h-full"
-                    alt=""
-                    src="/vector-6.svg"
-                  />
-                </div>
-                <div className="h-[26px] w-[26px] relative">
-                  <img
-                    className="absolute top-[0px] left-[0px] w-full h-full"
-                    alt=""
-                    src="/group.svg"
-                  />
-                </div>
-                <div className="h-[26px] w-[26px] relative">
-                  <img
-                    className="absolute top-[0px] left-[0px] w-full h-full"
-                    alt=""
-                    src="/group-2.svg"
-                  />
-                </div>
-              </div>
-            </div>
+      <div className="flex-1 flex flex-col items-end lg:items-center space-y-4 lg:space-y-10 mr-[8vw]">
+        <div className="hidden md:flex  flex-row space-x-2 md:space-x-8">
+          <div className="flex items-center space-x-2">
+            <img src="/vector.svg" alt="Phone Icon" className="h-7 w-5" />
+            <a href="tel:+123654897" className="text-lg text-white">
+              +123654897
+            </a>
+          </div>
+          <div className="flex items-center space-x-1 md:space-x-2">
+            <img src="/vector-2.svg" alt="Email Icon" className="h-7 w-10" />
+            <a href="mailto:udh..........ei@gmail.com" className="text-lg text-white">
+              udh..........ei@gmail.com
+            </a>
+          </div>
+          <div className="flex items-center justify-start  space-x-1 md:space-x-2">
+            <img src="/group-1.svg" alt="Social Icon 1" className="h-6 w-6" />
+            <img src="/vector-4.svg" alt="Social Icon 2" className="h-6 w-6" />
+            <img src="/vector-6.svg" alt="Social Icon 3" className="h-6 w-6" />
+            <img src="/group.svg" alt="Social Icon 4" className="h-6 w-6" />
+            <img src="/group-2.svg" alt="Social Icon 5" className="h-6 w-6" />
           </div>
         </div>
-        <div className="self-stretch h-[60px] relative rounded bg-secondary-colour max-w-full z-[1]">
-          <div className="absolute top-[calc(50%_-_30px)] left-[0px] rounded bg-secondary-colour w-full h-full hidden" />
-          <nav className="m-0 absolute top-[0px] left-[0px] rounded bg-secondary-colour w-full h-full max-w-full z-[3] text-left text-lg text-taxt-colour font-inter">
-            <div className="absolute top-[calc(50%_-_30px)] left-[0px] rounded bg-secondary-colour w-full h-full hidden" />
-            <div className="m-0 absolute top-[18px] left-[53px] w-[540px] flex flex-row items-start justify-between max-w-full z-[4] text-left text-lg text-taxt-colour font-inter">
-              <div className="m-0 flex-1 flex flex-row items-start justify-between max-w-full gap-[20px] z-[2] text-left text-lg text-taxt-colour font-inter">
-              <Link href="/" className="[text-decoration:none] uppercase font-medium text-[inherit] hover:text-white transition-colors duration-200">
-                  Home
-              </Link>
-            <div className="relative">
-              <button 
-                onClick={() => setShowRegisterDropdown(!showRegisterDropdown)}
-                className="text-black hover:text-white transition-colors duration-200 bg-secondary-colour border-none mr-12 hover:underline"
-                style={{fontSize:'19px'}}
-              >
-                REGISTER FARM
-              </button>
-              <Link href="/book-farm" className="[text-decoration:none] uppercase font-medium text-[inherit] whitespace-nowrap hover:text-white transition-colors duration-200">
-                Book Farm
-              </Link>
-            {showRegisterDropdown && (
-              <div className="left-0 w-63 bg-backgroundColor-custom-green" style={{marginTop:'18px'}}>
-                <Link href="/register-farm" className="  py-[11.5px] [text-decoration:none] block text-black hover:bg-white text-lg px-2">
-                  &gt; APPLY TO LIST YOUR FARM
-                </Link>
-                <Link href="/start-agrotourism-form" className=" py-[11.5px] [text-decoration:none] block  text-lg text-black hover:bg-white px-2">
-                  &gt; WANT TO START AGROTOURISM
-                </Link>
-              </div>
+
+        {/* Hamburger menu for mobile */}
+        <div className="md:hidden flex items-center">
+          <button
+            onClick={() => setShowMobileMenu(!showMobileMenu)}
+            className="bg-secondary-colour border-none rounded-sm"
+          >
+            {showMobileMenu ? (
+              <IoMdClose alt="Close Icon" className="h-8 w-8 bg-secondary-colour" />
+            ) : (
+              <GiHamburgerMenu alt="Menu Icon" className="h-8 w-8 bg-secondary-colour" />
             )}
-          </div>
-              
-              <Link href="/events" className="[text-decoration:none] uppercase font-medium text-[inherit] whitespace-nowrap hover:text-white transition-colors duration-200">
+          </button>
+        </div>
+
+        <nav className="hidden md:block w-[88%]   bg-secondary-colour px-5 py-2 rounded">
+          <div className="flex flex-row  uppercase">
+            <div className="flex space-x-[2vw] lg:space-x-16">
+              <Link href="/" className="text-black no-underline hover:text-white text-[16px] md:text-[20px]">
+                Home
+              </Link>
+              <div className="relative z-[1]">
+                <button
+                  onClick={() => setShowRegisterDropdown(!showRegisterDropdown)}
+                  className="hover:text-white bg-secondary-colour border-none text-[16px] md:text-[20px] uppercase"
+                >
+                  Register Farm
+                </button>
+                {showRegisterDropdown && (
+                  <div className="absolute left-0 w-56 bg-backgroundColor-custom-green shadow-lg rounded-md border border-gray-200" style={{ marginTop: '16px' }}>
+                    <Link href="/register-farm" className="py-2 block text-black hover:bg-white text-lg px-2">
+                      &gt; APPLY TO LIST YOUR FARM
+                    </Link>
+                    <Link href="/start-agrotourism-form" className="py-2 block text-lg text-black hover:bg-white px-2">
+                      &gt; WANT TO START AGROTOURISM
+                    </Link>
+                  </div>
+                )}
+
+              </div>
+              <Link href="/book-farm" className="text-black no-underline hover:text-white text-[16px] md:text-[20px] ml-4 md:ml-20">
+                  Book Farm
+                </Link>
+              <Link href="/events" className="text-black no-underline hover:text-white text-[16px] md:text-[20px]">
                 Events
               </Link>
-              </div>
-            </div>
-            <div className="absolute top-[18px] left-[871px] w-[175px] h-6 z-[4]">
-              <div className="relative">
-                <button 
-                  onClick={() => setShowMoreDropdown(!showMoreDropdown)}
-                  className="text-black hover:text-white transition-colors duration-200 bg-secondary-colour border-none mr-12 hover:underline"
-                  style={{fontSize:'19px'}}
-                >
-                  MORE
-                </button>
+              <div className="relative z-[1] pr-4 md:pr-32 md:mr-80">
+              <button
+                onClick={() => setShowMoreDropdown(!showMoreDropdown)}
+                className="hover:text-white bg-secondary-colour border-none text-[16px] md:text-[20px] uppercase"
+              >
+                More
+              </button>
               {showMoreDropdown && (
-                <div className="left-0 w-63 bg-backgroundColor-custom-green" style={{marginTop:'18px'}}>
-                  <Link href="/about-us" className="  py-[11.5px] [text-decoration:none] block text-black hover:bg-white text-lg px-2">
+                <div className="absolute left-0 w-56 bg-backgroundColor-custom-green shadow-lg rounded-md border border-gray-200" style={{ marginTop: '16px' }}>
+                  <Link href="/about-us" className="py-2 block text-black hover:bg-white text-lg px-2">
                     &gt; ABOUT US
                   </Link>
-                  <Link href="/contact-us" className=" py-[11.5px] [text-decoration:none] block  text-lg text-black hover:bg-white px-2">
+                  <Link href="/contact-us" className="py-2 block text-lg text-black hover:bg-white px-2">
                     &gt; CONTACT US
                   </Link>
-                  <Link href="/gallery" className="  py-[11.5px] [text-decoration:none] block text-black hover:bg-white text-lg px-2">
+                  <Link href="/gallery" className="py-2 block text-black hover:bg-white text-lg px-2">
                     &gt; GALLERY
                   </Link>
-                  <Link href="/award" className=" py-[11.5px] [text-decoration:none] block  text-lg text-black hover:bg-white px-2">
+                  <Link href="/award" className="py-2 block text-black hover:bg-white text-lg px-2">
                     &gt; AWARD
                   </Link>
                 </div>
               )}
             </div>
             </div>
+            
+          </div>
+        </nav>
+
+        {/* Mobile dropdown menu */}
+        {showMobileMenu && (
+          <nav className="md:hidden absolute top-[62px] left-0 w-full bg-secondary-colour z-[2] shadow-lg rounded-md border border-gray-200 pt-4 font-inter">
+            <div className="flex flex-col items-center justify-center space-y-4 uppercase">
+              <Link href="/" className="text-black no-underline hover:text-white text-[16px] " style={{fontWeight:'750'}}>
+                Home
+              </Link>
+              <button
+                onClick={() => setShowRegisterDropdown(!showRegisterDropdown)}
+                className="hover:text-white bg-secondary-colour border-none text-[16px] font-semibold uppercase"
+              >
+                Register Farm
+              </button>
+              {showRegisterDropdown && (
+                <div className="bg-backgroundColor-custom-green shadow-lg rounded-md border border-gray-200 ">
+                  <Link href="/register-farm" className="py-2 block text-black hover:bg-white text-lg px-2">
+                    &gt; Apply to list your farm
+                  </Link>
+                  <Link href="/start-agrotourism-form" className="py-2 block text-lg text-black hover:bg-white px-2">
+                    &gt;  Want to start agrotourism
+                  </Link>
+                </div>
+              )}
+              <Link href="/book-farm" className="text-black no-underline hover:text-white text-[16px] " style={{fontWeight:'750'}}>
+                Book Farm
+              </Link>
+              <Link href="/events" className="text-black no-underline hover:text-white text-[16px]  " style={{fontWeight:'750'}}>
+                Events
+              </Link>
+              <button
+                onClick={() => setShowMoreDropdown(!showMoreDropdown)}
+                className="hover:text-white bg-secondary-colour border-none text-[16px] font-semibold uppercase"
+              >
+                More
+              </button>
+              {showMoreDropdown && (
+                <div className="bg-backgroundColor-custom-green shadow-lg rounded-md border border-gray-200">
+                  <Link href="/about-us" className="py-2 block text-black hover:bg-white text-lg px-2">
+                    &gt; About us
+                  </Link>
+                  <Link href="/contact-us" className="py-2 block text-lg text-black hover:bg-white px-2">
+                    &gt; Contact us
+                  </Link>
+                  <Link href="/gallery" className="py-2 block text-black hover:bg-white text-lg px-2">
+                    &gt; Gallery
+                  </Link>
+                  <Link href="/award" className="py-2 block text-black hover:bg-white text-lg px-2">
+                    &gt; Award
+                  </Link>
+                </div>
+              )}
+            </div>
           </nav>
-        </div>
+        )}
       </div>
     </header>
   );

@@ -56,7 +56,7 @@ const UserReviews = ({ className = "" }) => {
             </div>
           </div>
         </div>
-        <GroupComponent1 propAlignSelf="unset" propWidth="295px" />
+        <GroupComponent1 propAlignSelf="unset" propWidth="295px" imageSrc="/ellipse-37@2x.png" />
       </div>
     </section>
   );

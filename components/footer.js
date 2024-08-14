@@ -1,274 +1,271 @@
+
+import { useRouter } from "next/router";
 import PropTypes from "prop-types";
+import Link from "next/link"; // Import the Link component from Next.js
 
 const Footer = ({ className = "" }) => {
+  const router = useRouter();
+
   return (
-    <section
-      className={`self-stretch flex flex-col items-end justify-start pt-0 px-0 pb-[35px] box-border gap-[47px] max-w-full text-left text-5xl text-primary-colour font-inter mq750:gap-[23px] ${className}`}
+    <footer
+      className={`w-screen  self-stretch bg-primary-colour flex flex-col items-end justify-start pt-[30px] pb-[25.5px] pr-[5px] pl-0 box-border gap-[25.8px] text-left text-xl text-secondary-colour font-inter mq450:pt-5 mq450:pb-5 mq450:box-border ${className}`}
     >
-      <img
-        className="self-stretch relative max-w-full overflow-hidden max-h-full"
-        loading="lazy"
-        alt=""
-        src="/vector-100.svg"
-      />
-      <div className="self-stretch flex flex-row items-start justify-end py-0 pr-16 pl-[69px] box-border max-w-full mq750:pl-[34px] mq750:pr-8 mq750:box-border">
-        <div className="flex-1 flex flex-col items-start justify-start gap-[2px] max-w-full">
-          <div className="w-[436px] flex flex-row flex-wrap items-start justify-start gap-[58px] max-w-full mq450:gap-[29px]">
-            <div className="relative tracking-[-0.01em] font-semibold inline-block min-w-[82px] mq450:text-lgi">
-              Reviws
+      <div className="self-stretch h-[400px] relative bg-primary-colour hidden" />
+      <div className="self-stretch flex flex-row items-start justify-end py-0 pr-[67px] pl-[65px] box-border max-w-full mq750:pl-8 mq750:pr-[33px] mq750:box-border">
+        <div className="flex flex-row items-start justify-between max-w-full gap-[20px] mq1275:flex-wrap">
+          <div className=" flex flex-col items-start justify-start gap-y-5">
+            <div className="">
+              <h1 className="m-0 relative text-inherit font-black font-inherit  mq450:text-xl mq750:text-7xl">
+                <p className="m-0">Saran</p>
+                <p className="m-0 text-white">Farm</p>
+              </h1>
+              <blockquote className="m-0 self-stretch h-24 relative text-base inline-block shrink-0  text-white">
+                <p className="[margin-block-start:0] [margin-block-end:5px]">
+                  <span className="font-inter text-white">{`"Escape to the tranquility of `}</span>
+                  <span className="text-secondary-colour whitespace-pre-wrap">
+                    <span className="font-medium font-inter">Saran.farm</span>
+                  </span>
+                  <span className="whitespace-pre-wrap">
+                    <span className="text-secondary-colour whitespace-pre-wrap">
+                      ,
+                    </span>
+                    <span className="whitespace-pre-wrap">
+                      {" "}
+                      where nature, culture, and authentic farm experiences come
+                      together to create unforgettable memories."
+                    </span>
+                  </span>
+                </p>
+                <p className="m-0">
+                  <span className="whitespace-pre-wrap">
+                    <span className="whitespace-pre-wrap"> "</span>
+                  </span>
+                  <span className="font-medium font-inter text-secondary-colour">
+                    Saran.farm:
+                  </span>
+                  <span className="font-inter text-white">
+                    {" "}
+                    Where city dwellers find solace, farmers find prosperity,
+                    and the beauty of rural life is cherished."
+                  </span>
+                </p>
+              </blockquote>
             </div>
-            <div className="flex-1 flex flex-col items-start justify-start pt-1.5 px-0 pb-0 box-border min-w-[192px] text-lgi text-lite">
-              <div className="self-stretch flex flex-row items-end justify-start gap-[10px]">
-                <img
-                  className="h-[65px] w-[65px] relative rounded-[50%] object-cover"
-                  loading="lazy"
-                  alt=""
-                  src="/ellipse-12@2x.png"
-                />
-                <div className="flex-1 flex flex-col items-start justify-end pt-0 px-0 pb-[5px]">
-                  <div className="self-stretch flex flex-col items-start justify-start gap-[8px]">
-                    <div className="flex flex-row items-start justify-start py-0 px-1">
-                      <div className="flex flex-row items-start justify-start gap-[18px]">
-                        <b className="relative inline-block min-w-[77px]">
-                          Jennifar
-                        </b>
-                        <div className="flex flex-col items-start justify-start pt-1.5 px-0 pb-0 text-xs text-star-listed-lite-color">
-                          <div className="relative font-medium inline-block min-w-[94px]">
-                            (10 March 2019)
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="self-stretch flex flex-row items-start justify-start gap-[15px] text-center text-mini text-taxt-colour">
-                      <div className="flex-1 flex flex-row items-start justify-start gap-[3.3px]">
-                        <img
-                          className="h-[22px] w-[23.2px] relative min-h-[22px]"
-                          loading="lazy"
-                          alt=""
-                          src="/vector-91.svg"
-                        />
-                        <img
-                          className="h-[22px] w-[23.2px] relative min-h-[22px]"
-                          loading="lazy"
-                          alt=""
-                          src="/vector-101.svg"
-                        />
-                        <img
-                          className="h-[22px] w-[23.2px] relative min-h-[22px]"
-                          loading="lazy"
-                          alt=""
-                          src="/vector-11.svg"
-                        />
-                        <img
-                          className="h-[22px] w-[23.2px] relative min-h-[22px]"
-                          loading="lazy"
-                          alt=""
-                          src="/vector-12.svg"
-                        />
-                        <img
-                          className="h-[22px] w-[23.2px] relative min-h-[22px]"
-                          loading="lazy"
-                          alt=""
-                          src="/vector-13.svg"
-                        />
-                      </div>
-                      <div className="flex flex-col items-start justify-start pt-[3px] px-0 pb-0">
-                        <div className="relative font-semibold inline-block min-w-[77px]">
-                          Very Good
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+            <div className=" ">
+              <h2 className="m-0 text-inherit font-semibold font-inherit mq450:text-3xl">
+                Follow us:
+              </h2>
+              <div className="flex flex-col items-start justify-start pt-[5px] px-0 pb-0">
+                <div className="flex flex-row items-start justify-start gap-[10px]">
+                  <img
+                    className="h-6 w-6 relative min-h-[24px] "
+                    loading="lazy"
+                    alt=""
+                    src="/group-1-2.svg"
+                  />
+                  <img
+                    className="h-6 w-6 relative min-h-[24px] "
+                    loading="lazy"
+                    alt=""
+                    src="/vector-70.svg"
+                  />
+                  <img
+                    className="h-6 w-6 relative min-h-[24px] "
+                    loading="lazy"
+                    alt=""
+                    src="/group-2.svg"
+                  />
+                  <img
+                    className="h-6 w-6 relative min-h-[24px] "
+                    alt=""
+                    src="/vector-6.svg"
+                  />
+                  <img
+                    className="h-6 w-6 relative min-h-[24px] "
+                    alt=""
+                    src="/group-2-2.svg"
+                  />
                 </div>
               </div>
             </div>
           </div>
-          <div className="self-stretch flex flex-row items-start justify-end max-w-full text-justify text-xl text-lite">
-            <div className="w-[1166px] flex flex-row items-end justify-between max-w-full gap-[20px] mq1275:flex-wrap">
-              <div className="w-[538px] flex flex-col items-start justify-start gap-[20.5px] min-w-[538px] max-w-full mq1275:flex-1 mq750:min-w-full">
-                <div className="self-stretch relative mq450:text-base">{`Agro-tourism is a form of tourism that involves visiting & staying in farms or rural areas. It is a way to experience the culture, lifestyle, and environment of the countryside Agro-tourism can offer various benefits to both visitors and hosts, such as...........`}</div>
-                <div className="flex flex-row items-end justify-start gap-[43px] text-left text-lg mq750:flex-wrap mq750:gap-[21px]">
-                  <div className="flex flex-col items-start justify-start gap-[19px]">
-                    <div className="relative font-medium inline-block min-w-[75px]">
-                      Location
-                    </div>
-                    <div className="relative font-medium inline-block min-w-[61px]">
-                      Quality
-                    </div>
-                  </div>
-                  <div className="h-[61px] w-[154px] flex flex-col items-start justify-end pt-0 px-0 pb-0.5 box-border">
-                    <div className="w-[110.7px] flex-1 flex flex-row flex-wrap items-start justify-start gap-[23px_2.1px]">
-                      <img
-                        className="h-[18px] w-[18px] relative"
-                        loading="lazy"
-                        alt=""
-                        src="/vector-41.svg"
-                      />
-                      <img
-                        className="h-[18px] w-[18px] relative"
-                        alt=""
-                        src="/vector-5.svg"
-                      />
-                      <img
-                        className="h-[18px] w-[18px] relative"
-                        alt=""
-                        src="/vector-61.svg"
-                      />
-                      <img
-                        className="h-[18px] w-[18px] relative"
-                        alt=""
-                        src="/vector-7.svg"
-                      />
-                      <img
-                        className="h-[18px] w-[18px] relative"
-                        alt=""
-                        src="/vector-81.svg"
-                      />
-                      <img
-                        className="h-[18px] w-[18px] relative"
-                        alt=""
-                        src="/vector-41.svg"
-                      />
-                      <img
-                        className="h-[18px] w-[18px] relative"
-                        alt=""
-                        src="/vector-5.svg"
-                      />
-                      <img
-                        className="h-[18px] w-[18px] relative"
-                        alt=""
-                        src="/vector-61.svg"
-                      />
-                      <img
-                        className="h-[18px] w-[18px] relative"
-                        alt=""
-                        src="/vector-7.svg"
-                      />
-                      <img
-                        className="h-[18px] w-[18px] relative"
-                        alt=""
-                        src="/vector-81.svg"
-                      />
-                    </div>
-                  </div>
-                  <div className="w-[223px] flex flex-col items-start justify-end pt-0 px-0 pb-1 box-border">
-                    <div className="self-stretch flex flex-row items-start justify-between gap-[20px]">
-                      <div className="flex flex-col items-start justify-start gap-[19px] shrink-0">
-                        <div className="relative font-medium inline-block min-w-[72px]">
-                          Comfort
-                        </div>
-                        <div className="relative font-medium inline-block min-w-[44px]">
-                          price
-                        </div>
-                      </div>
-                      <div className="h-[61px] w-[110.7px] flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border">
-                        <div className="self-stretch flex-1 flex flex-row flex-wrap items-start justify-start gap-[23px_2.1px] shrink-0">
-                          <img
-                            className="h-[18px] w-[18px] relative"
-                            alt=""
-                            src="/vector-41.svg"
-                          />
-                          <img
-                            className="h-[18px] w-[18px] relative"
-                            alt=""
-                            src="/vector-5.svg"
-                          />
-                          <img
-                            className="h-[18px] w-[18px] relative"
-                            alt=""
-                            src="/vector-61.svg"
-                          />
-                          <img
-                            className="h-[18px] w-[18px] relative"
-                            alt=""
-                            src="/vector-7.svg"
-                          />
-                          <img
-                            className="h-[18px] w-[18px] relative"
-                            alt=""
-                            src="/vector-81.svg"
-                          />
-                          <img
-                            className="h-[18px] w-[18px] relative"
-                            alt=""
-                            src="/vector-41.svg"
-                          />
-                          <img
-                            className="h-[18px] w-[18px] relative"
-                            alt=""
-                            src="/vector-5.svg"
-                          />
-                          <img
-                            className="h-[18px] w-[18px] relative"
-                            alt=""
-                            src="/vector-61.svg"
-                          />
-                          <img
-                            className="h-[18px] w-[18px] relative"
-                            alt=""
-                            src="/vector-7.svg"
-                          />
-                          <img
-                            className="h-[18px] w-[18px] relative"
-                            alt=""
-                            src="/vector-81.svg"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+          <div className="flex flex-col items-start justify-start py-0 pr-[117px] pl-0 gap-[10px]">
+            <div className="relative font-semibold inline-block min-w-[115px]  mq450:text-base">
+              Direct Links
+            </div>
+            <div className="flex flex-col items-start justify-start gap-[8.5px]  text-base text-white">
+              <div className="flex flex-row items-start justify-start py-0 pr-[11px] pl-0">
+                  <Link href="/" className="[text-decoration:none] relative text-[inherit] inline-block min-w-[75px]">
+                    <ul className="m-0 font-inherit text-inherit pl-[21px]">
+                      <li>Home</li>
+                    </ul>
+                  </Link>
+              </div>
+              <div className="flex flex-row items-start justify-start">
+                  <Link href="/book-farm" className="[text-decoration:none] relative text-[inherit] inline-block min-w-[75px]">
+                    <ul className="m-0 font-inherit text-inherit pl-[21px]">
+                      <li>Book Farm</li>
+                    </ul>
+                  </Link>
+              </div>
+              <div className="flex flex-row items-start justify-start">
+                <Link href="/listed-farm" className="[text-decoration:none] relative text-[inherit] inline-block min-w-[75px]">
+                    <ul className="m-0 font-inherit text-inherit pl-[21px]">
+                      <li>Listed Farm</li>
+                    </ul>
+                  </Link>
+              </div>
+              <div className="flex flex-row items-start justify-start py-0 px-0">
+                <Link href="/register-farm" className="[text-decoration:none] relative text-[inherit] inline-block min-w-[75px]">
+                    <ul className="m-0 font-inherit text-inherit pl-[21px]">
+                      <li>Registered Farm</li>
+                    </ul>
+                  </Link>
+              </div>
+              <div className="flex flex-row items-start justify-start py-0 pr-[5px] pl-0">
+                <Link href="/events" className="[text-decoration:none] relative text-[inherit] inline-block min-w-[75px]">
+                  <ul className="m-0 font-inherit text-inherit pl-[21px]">
+                    <li>Events</li>
+                  </ul>
+                </Link>
+              </div>
+              <div className="flex flex-row items-start justify-start py-0 pr-2.5 pl-0">
+                <Link href="/contact-us" className="[text-decoration:none] relative text-[inherit] inline-block min-w-[109px]">
+                  <ul className="m-0 font-inherit text-inherit pl-[21px]">
+                    <li>Contact Us</li>
+                  </ul>
+                </Link>
+              </div>
+              <div className="flex flex-row items-start justify-start py-0 pr-[17px] pl-0">
+                <Link href="/about-us" className="[text-decoration:none] relative text-[inherit] inline-block min-w-[95px]">
+                  <ul className="m-0 font-inherit text-inherit pl-[21px]">
+                    <li>About Us</li>
+                  </ul>
+                </Link>
+              </div>
+              <div className="flex flex-row items-start justify-start py-0 pr-3 pl-0">
+                <Link href="/gallery" className="[text-decoration:none] relative text-[inherit] inline-block min-w-[77px]">
+                  <ul className="m-0 font-inherit text-inherit pl-[21px]">
+                    <li>Gallery</li>
+                  </ul>
+                </Link>
+              </div>
+              <div className="w-[119px] flex flex-row items-start justify-start">
+              <Link href="/award" className="[text-decoration:none] relative text-[inherit] inline-block min-w-[77px]">
+                  <ul className="m-0 font-inherit text-inherit pl-[21px]">
+                    <li>Award</li>
+                  </ul>
+                </Link>
+              </div>
+            </div>
+          </div>
+          <div className="w-[282px] flex flex-col items-start justify-start gap-[8px]">
+            <div className="relative font-semibold inline-block min-w-[109px] mq450:text-base">
+              Contact Us
+            </div>
+            <div className="self-stretch flex flex-row items-start justify-start gap-[11px] text-base text-white">
+              <div className="flex flex-col items-start justify-start gap-[7px]">
+                <img
+                  className="w-[25px] h-[22px] relative object-cover "
+                  alt=""
+                  src="/rotary-dial-telephone@2x.png"
+                />
+                <div className="flex flex-row items-start justify-start py-0 pr-0.5 pl-px">
+                  <img
+                    className="h-[22px] w-[22px] relative object-cover "
+                    alt=""
+                    src="/download-mail@2x.png"
+                  />
                 </div>
-                <div className="w-[472px] flex flex-row items-start justify-center py-0 px-5 box-border max-w-full">
-                  <div className="flex flex-row items-start justify-start gap-[6.5px]">
-                    <div className="flex flex-col items-start justify-start pt-[2.5px] px-0 pb-0">
-                      <div className="w-[25px] h-[25px] relative rounded-[50%] box-border border-[0px] border-solid border-secondary-colour" />
-                    </div>
-                    <div className="flex flex-col items-start justify-start pt-[1.5px] px-0 pb-0">
-                      <div className="w-[27px] h-[27px] relative rounded-[50%] box-border border-[0px] border-solid border-secondary-colour" />
-                    </div>
-                    <div className="h-[30px] w-[30px] relative rounded-[50%] bg-secondary-colour box-border border-[0px] border-solid border-secondary-colour" />
-                    <div className="flex flex-col items-start justify-start pt-[1.5px] px-0 pb-0">
-                      <div className="w-[27px] h-[27px] relative rounded-[50%] box-border border-[0px] border-solid border-secondary-colour" />
-                    </div>
-                    <div className="flex flex-col items-start justify-start pt-[2.5px] px-0 pb-0">
-                      <div className="w-[25px] h-[25px] relative rounded-[50%] box-border border-[0px] border-solid border-secondary-colour" />
-                    </div>
-                  </div>
+                <div className="flex flex-row items-start justify-start py-0 px-px">
+                  <img
+                    className="h-[23px] w-[23px] relative object-cover"
+                    alt=""
+                    src="/interior@2x.png"
+                  />
                 </div>
               </div>
-              <div className="w-[445px] flex flex-col items-start justify-end pt-0 px-0 pb-px box-border min-w-[445px] max-w-full text-left text-5xl text-primary-colour mq1275:flex-1 mq750:min-w-full">
-                <div className="self-stretch shadow-[0px_0px_4px_#378805] rounded-3xs bg-white flex flex-col items-end justify-start py-[25px] px-[60px] box-border gap-[13px] max-w-full mq450:pl-5 mq450:pr-5 mq450:box-border">
-                  <div className="w-[445px] h-[266px] relative shadow-[0px_0px_4px_#378805] rounded-3xs bg-white hidden max-w-full" />
-                  <div className="self-stretch flex flex-col items-start justify-start gap-[4px]">
-                    <div className="self-stretch flex flex-row items-start justify-center py-0 pr-5 pl-[21px]">
-                      <img
-                        className="h-[100px] w-[100px] relative object-cover z-[1]"
-                        loading="lazy"
-                        alt=""
-                        src="/ringer-volume@2x.png"
-                      />
-                    </div>
-                    <div className="relative tracking-[-0.01em] font-medium z-[1] mq450:text-lgi">{`Need Help? Call & WhatsApp`}</div>
+              <div className="flex-1 flex flex-col items-start justify-start pt-[1.5px] px-0 pb-0">
+                <div className="self-stretch flex flex-col items-start justify-start gap-[10.5px]">
+                  <div className="relative whitespace-nowrap ">
+                    +91 9680524270
                   </div>
-                  <div className="self-stretch flex flex-row items-start justify-end py-0 pr-[17px] pl-[18px] text-11xl text-lite">
-                    <div className="flex-1 flex flex-col items-start justify-start gap-[4px]">
-                      <div className="self-stretch flex flex-row items-start justify-start py-0 pr-[31px] pl-[30px]">
-                        <div className="relative font-semibold whitespace-nowrap z-[1] mq750:text-5xl mq450:text-lg">
-                          +77 2525 9966
-                        </div>
-                      </div>
-                      <h3 className="m-0 relative text-6xl font-normal font-inherit whitespace-nowrap z-[1] mq450:text-xl">
-                        farmsupport@gmail.com
-                      </h3>
+                  <div className="self-stretch flex flex-col items-start justify-start pt-0 px-0 pb-[11.5px] gap-[10px]">
+                    <div className="relative whitespace-nowrap">
+                      moshinkhanrander@gmail.com
+                    </div>
+                    <div className="self-stretch relative ">
+                      <p className="[margin-block-start:0] [margin-block-end:2px]">
+                        R-CAT, Tonk Rd, Panch Batti,
+                      </p>
+                      <p className="[margin-block-start:0] [margin-block-end:2px]">
+                        Sangram Colony, Ashok Nagar,
+                      </p>
+                      <p className="m-0">Jaipur, Rajasthan 302007</p>
                     </div>
                   </div>
+                  <img
+                    className="w-[116.9px] h-[78px] relative object-cover "
+                    loading="lazy"
+                    alt=""
+                    src="/westendlondonmapwithpin-1@2x.png"
+                  />
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+      <img
+        className="self-stretch relative max-w-full overflow-hidden max-h-full "
+        alt=""
+        src="/vector-95-1.svg"
+      />
+      <div className="w-[1413px] flex flex-row items-start justify-end py-0 px-[38px] box-border max-w-full text-sm text-white">
+        <div className="flex-1 flex flex-row items-start justify-between max-w-full gap-[20px] mq1275:flex-wrap">
+          <div className="flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border max-w-full">
+            <div className="relative font-medium ">
+              All images and trademarks belong to their respective owners.
+            </div>
+          </div>
+          <div className="flex flex-row items-start justify-start gap-[14.5px] max-w-full mq1100:flex-wrap">
+            <div className="relative font-medium ">
+              Terms and conditions
+            </div>
+            <div className="flex flex-col items-start justify-start pt-px px-0 pb-0">
+              <img
+                className="w-px h-[15px] relative "
+                alt=""
+                src="/policy-icon.svg"
+              />
+            </div>
+            <Link href="/privacy-policy" className="[text-decoration:none] relative font-medium text-[inherit] inline-block min-w-[94px] ">
+              Privacy Policy
+            </Link>
+            <div className="flex flex-col items-start justify-start pt-px px-0 pb-0">
+              <img
+                className="w-px h-[15px] relative "
+                alt=""
+                src="/policy-icon.svg"
+              />
+            </div>
+            <div className="relative font-medium inline-block min-w-[92px] ">
+              Refund Policy
+            </div>
+            <div className="flex flex-col items-start justify-start pt-px px-0 pb-0">
+              <img
+                className="w-px h-[15px] relative "
+                alt=""
+                src="/policy-icon.svg"
+              />
+            </div>
+            <Link href="/copyright" className="[text-decoration:none] relative font-medium text-[inherit] inline-block max-w-full ">
+              Copyright @ 2023 Saran Farm. All Rights Reserved.
+            </Link>
+          </div>
+        </div>
+      </div>
+    </footer>
   );
 };
 

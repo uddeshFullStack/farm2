@@ -17,6 +17,10 @@ module.exports = {
           "100": "#338069",
           "200": "#26735c",
         },
+        backgroundColor: {
+          'custom-green': '#e6ffd6',
+          'image':'#FEF1BF'
+        },
         goldenrod: "#c79400",
         "taxt-colour": "#252525",
         mediumspringgreen: {
@@ -34,6 +38,9 @@ module.exports = {
       fontFamily: {
         inter: "Inter",
         inherit: "inherit",
+      },
+      borderColor:{
+        inputColor:'#989898',
       },
       borderRadius: {
         "8xs": "5px",
@@ -63,6 +70,13 @@ module.exports = {
       inherit: "inherit",
     },
     screens: {
+      xsm:'340px',
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+      '2xl': '1536px',
+      // Custom breakpoints
       mq1275: {
         raw: "screen and (max-width: 1275px)",
       },

@@ -1,7 +1,9 @@
 import React from 'react'
-import ProfileCard from './profileCard'
-import { profileCards } from './constant'
+// import ProfileCard from './profileCard'
+// import { profileCards } from './constant'
 import { FaLinkedin, FaInstagram, FaFacebook, FaTwitter } from 'react-icons/fa';
+import { profileCards } from '../../constant/aboutUsCard';
+import ProfileCard from '../../components/aboutUsComponent/profileCard';
 
 const Team = () => {
     const socialLinks = [

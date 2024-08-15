@@ -3,7 +3,7 @@ import Layout from '../layout'
 import image1 from '../../public/aboutUs/Rectangle.jpg'
 import Image from 'next/image'
 import InfoSection from '../../components/infoSecton'
-import CardContainerUpper from '../register-farm/cardContainerUpper'
+import CardContainerUpper from '../../components/register-farmComponent/cardContainerUpper'
 
 
 import Team from './team'

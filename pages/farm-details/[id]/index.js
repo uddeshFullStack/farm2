@@ -2,7 +2,7 @@ import FarmDetailsComponent from "../../../components/farm-details-component";
 import Details from "../../../components/details";
 import Layout from "../../layout";
 import ReviewComponent from "./farmDetailsLastPart";
-import ReviewCard from "./reviewCard";
+import ReviewCard from "../../../components/farm-detailsComponent/reviewCard";
 import { farmProps } from "../../../constant/farmDetailsData";
 
 const FarmDetails = () => {

@@ -6,7 +6,6 @@ import FarmForm from './registerFarmForm';
 import CardContainerLower from '../../components/register-farmComponent/cardContainerLower';
 import Link from 'next/link';
 import { cardData, cards } from '../../constant/registerFarmData';
-// import { cards ,cardData } from './contants';
 
 
 const RegisterFarm = () => {

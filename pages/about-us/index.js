@@ -4,12 +4,12 @@ import image1 from '../../public/aboutUs/Rectangle.jpg'
 import Image from 'next/image'
 import InfoSection from '../../components/infoSecton'
 import CardContainerUpper from '../register-farm/cardContainerUpper'
-import { cards, profileCards } from './constant'
 
 
 import Team from './team'
 import AssociateChannels from './associateChannels'
 import GetTouchWith from './getTouchWith'
+import { cardsData } from '../../constant/aboutUsCard'
 
 
 const AboutUs = () => {
@@ -29,7 +29,7 @@ const AboutUs = () => {
           <InfoSection question={'What is Saran Farm ?'} answer={'Welcome to Saran.farm, a sustainable agritourism startup dedicated to connecting farmers, consumers, and nature enthusiasts. At Saran.farm, we believe in the power of authentic farm experiences to foster a deeper understanding of agriculture, promote sustainable practices, and support local communities.'} image={image1} isTextFirst={true}/>
         </div>
         <div className='bg-backgroundColor-image w-full pl-12 py-10 xsm:px-5'>
-          <CardContainerUpper cards={cards} classNameUser={classNameUser}/>
+          <CardContainerUpper cards={cardsData} classNameUser={classNameUser}/>
         </div>
         <div>
           <InfoSection question={'“Our Mission'} answer={'Our mission is to revolutionize the way people engage with farming by offering immersive and educational farm experiences. We strive to bridge the gap between urban and rural communities, creating a platform that celebrates the beauty of nature, the importance of sustainable agriculture, and the rich cultural heritage of farming communities.'} image={image1} isTextFirst={false}/>

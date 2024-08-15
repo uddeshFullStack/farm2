@@ -1,12 +1,11 @@
 import FarmDetailsComponent from "../../../components/farm-details-component";
 import Details from "../../../components/details";
 import Layout from "../../layout";
-import { farmProps } from "./contant";
 import ReviewComponent from "./farmDetailsLastPart";
 import ReviewCard from "./reviewCard";
+import { farmProps } from "../../../constant/farmDetailsData";
 
 const FarmDetails = () => {
-
   const farm = farmProps[1];
 
   return (
@@ -22,7 +21,7 @@ const FarmDetails = () => {
               {farm.about}
             </div>
           </div>
-          <Details 
+          <Details
             address={farm.address}
             farmerName={farm.farmerName}
             special={farm.special}
@@ -49,8 +48,8 @@ const FarmDetails = () => {
             phoneNumber="+77 2525 9966"
             email="farmsupport@gmail.com"
           /> */}
-          <ReviewCard 
-          image={require('../../../public/galleryImages/Rectangle 234.jpg')} 
+        <ReviewCard
+          image={require("../../../public/galleryImages/Rectangle 234.jpg")}
           name={"Jennifer"}
           description="Agro-tourism is a form of tourism that involves visiting & staying in farms or rural areas. It is a way to experience the culture, lifestyle, and environment of the countryside. Agro-tourism can offer various benefits to both visitors and hosts, such as........"
           ratings={{
@@ -58,13 +57,13 @@ const FarmDetails = () => {
             location: 5,
             quality: 4,
             comfort: 5,
-            price: 5
+            price: 5,
           }}
-          phoneNumber={'53652'}
-          email={'gfdsfxcg@gmail.com'}
-          phoneImage={require('../../../public/Ringer Volume.png')}
-          />
-        </div>
+          phoneNumber={"53652"}
+          email={"gfdsfxcg@gmail.com"}
+          phoneImage={require("../../../public/Ringer Volume.png")}
+        />
+      </div>
     </Layout>
   );
 };

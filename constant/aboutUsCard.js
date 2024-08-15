@@ -1,4 +1,4 @@
-export const  cards = [
+export const  cardsData = [
     {
       image: require(`../../public/aboutUs/Sustainability.jpg`).default,
       heading: 'Sustainability:',

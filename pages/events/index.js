@@ -1,11 +1,11 @@
 import React from 'react';
 import Layout from '../layout';
-import { eventData ,recentEventData, devConfData ,nextEventData } from './contants';
-import AboutUpComing from './aboutUpComing';
-import RecentEvents from './recentEvents';
-import AboutDevConf from './aboutDevConf';
+import AboutUpComing from '../../components/eventsComponent/aboutUpComing';
+import RecentEvents from '../../components/eventsComponent/recentEvents';
+import AboutDevConf from '../../components/eventsComponent/aboutDevConf';
 import EventsTop from './eventsTop';
-import NextEvent from './nextEvent';
+import NextEvent from '../../components/eventsComponent/nextEvent';
+import { devConfData, eventData, nextEventData, recentEventData } from '../../constant/eventsData';
 
 
 const Events = () => {

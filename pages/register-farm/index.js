@@ -1,11 +1,12 @@
 import React from 'react';
 import Layout from '../layout';
  // Import the image correctly
-import CardContainerUpper from './cardContainerUpper';
+import CardContainerUpper from '../../components/register-farmComponent/cardContainerUpper';
 import FarmForm from './registerFarmForm';
-import CardContainerLower from './cardContainerLower';
+import CardContainerLower from '../../components/register-farmComponent/cardContainerLower';
 import Link from 'next/link';
-import { cards ,cardData } from './contants';
+import { cardData, cards } from '../../constant/registerFarmData';
+// import { cards ,cardData } from './contants';
 
 
 const RegisterFarm = () => {

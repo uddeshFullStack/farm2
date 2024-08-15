@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import InputField from '../../components/inputField';
-import { indiaStates, countries } from './constant';
 import { useRouter } from 'next/router';
 import { upsertBookFarm } from '../../utils/supabaseQuery/BookFarmQuery';
 import CommonThankYouDialog from '../../components/CommonThankYouDialog';
+import { countries, indiaStates } from '../../constant/bookformData';
 
 const BookForm = () => {
   const router = useRouter();

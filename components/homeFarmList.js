@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 import { useRouter } from "next/router";
 import PropTypes from "prop-types";
-import FarmCard from "./farm-card/farmCard";
+import FarmCard from "./farm-cardComponent/farmCard";
 
 const HomeFarmList = ({ className = "", propMinWidth, propWidth }) => {
   const farmsData = [

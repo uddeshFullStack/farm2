@@ -1,6 +1,5 @@
 import React from 'react';
 import CardComponentLower from './cardComponentLower';
-import SalesBalanceIcon from '../../public/farmFormICons/LowerComponent/2.png';
 
 const CardContainerLower = ({cardData}) => {
  

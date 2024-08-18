@@ -1,4 +1,5 @@
-
+import React from "react";
+import CardComponentLower from "./cardComponentLower";
 
 const CardContainerLower = ({ cardData }) => {
   return (

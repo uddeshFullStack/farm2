@@ -1,6 +1,6 @@
 import React from "react";
 
-const CardComponentLower = ({ key, image, topic, description }) => {
+const CardComponentLower = ({ key, topic, description }) => {
   return (
     <div className="h-50 " style={{ width: "420px" }}>
       <div className="p-4 rounded-md xl:flex md:flex">

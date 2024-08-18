@@ -7,7 +7,7 @@ const CardContainerLower = ({ cardData }) => {
       {cardData.map((item, index) => (
         <CardComponentLower
           key={index}
-          image={images[index]}
+          // image={images[index]}
           topic={item.topic}
           description={item.description}
         />

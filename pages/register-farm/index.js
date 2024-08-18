@@ -1,16 +1,12 @@
-import React from 'react';
-import Layout from '../layout';
- // Import the image correctly
-import CardContainerUpper from '../../components/register-farmComponent/cardContainerUpper';
-import FarmForm from './registerFarmForm';
-import CardContainerLower from '../../components/register-farmComponent/cardContainerLower';
-import Link from 'next/link';
-import { cardData, cards } from '../../constant/registerFarmData';
-
+import React from "react";
+import Layout from "../layout";
+import CardContainerUpper from "../../components/register-farmComponent/cardContainerUpper";
+import CardContainerLower from "../../components/register-farmComponent/cardContainerLower";
+import Link from "next/link";
+import { cardData, cards } from "../../constant/registerFarmData";
+import FarmForm from "../../components/register-farmComponent/registerFarmForm";
 
 const RegisterFarm = () => {
-
-
   return (
     <Layout>
       <div className="font-inter w-screen">
@@ -18,18 +14,21 @@ const RegisterFarm = () => {
           <div className="text-primary-colour text-lg font-semibold py-4">
             Apply To List Your Farm
           </div>
-          <Link href="/start-agrotourism-form" className="[text-decoration:none] bg-secondary-colour rounded text-lg font-semibold p-[1%] text-primary-colour cursor-pointer hover:scale-105" >
+          <Link
+            href="/start-agrotourism-form"
+            className="[text-decoration:none] bg-secondary-colour rounded text-lg font-semibold p-[1%] text-primary-colour cursor-pointer hover:scale-105"
+          >
             Want To Start AgroTourism
           </Link>
         </nav>
-        <div className='p-[3%] mt-16 sm:mt-0'>
-            <CardContainerUpper cards={cards}/>
+        <div className="p-[3%] mt-16 sm:mt-0">
+          <CardContainerUpper cards={cards} />
         </div>
         <div>
-          <FarmForm/>
+          <FarmForm />
         </div>
         <div>
-          <CardContainerLower cardData={cardData}/>
+          <CardContainerLower cardData={cardData} />
         </div>
       </div>
     </Layout>

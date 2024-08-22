@@ -9,6 +9,7 @@ import HomePageFrameRightComponent from "../components/HomePageFrameRightCompone
 import HomePageFrameLeftComponent from "../components/HomePageFrameLeftComponent";
 import { componentsData } from "./constants";
 import GroupComponent1 from "../components/group-component1";
+import ImageSwiper from "../components/swiperSilder/ImageSwiper";
 
 const HomePage = () => {
   const [expandedIndex, setExpandedIndex] = useState(null);
@@ -21,21 +22,7 @@ const HomePage = () => {
     <Layout>
       <section className="self-stretch flex flex-row pt-0 px-0 box-border max-w-full  mq450:box-border  mq750:box-border">
         <div className="flex-1 flex flex-row items-start justify-start relative max-w-full">
-          <Image
-            className="h-[628px] flex-1 relative max-w-full overflow-hidden object-cover"
-            alt=""
-            src="/form@2x.png"
-            width={1000}
-            height={628} 
-          />
-          <Image
-            className="h-9 w-[207px] absolute !m-[0] right-[591px] bottom-[22px] z-[1]"
-            loading="lazy"
-            alt=""
-            src="/group-4.svg"
-            width={207}
-            height={36}
-          />
+          <ImageSwiper images={["/Farm1.jpg", "/Farm2.jpg", "/Farm3.jpg"]} />
         </div>
       </section>
       <div className="flex flex-wrap items-center justify-center py-[3%] lg:py-[4%] w-full" style={{ gap: '3vw' }}>
@@ -86,16 +73,28 @@ const HomePage = () => {
 </section>
 
       <div className="flex flex-col bg-backgroundColor-custom-green p-10 w-full">
-      <div className="w-2/3 sm:w-11/12 md:w-3/4 lg:w-1/2 xl:w-1/3 h-auto font-inter font-bold text-primary-colour text-justify responsive-text">
-          Discover What Our Users Say About Saran Farm: Hear Their Remarkable Experiences and Success Stories
+        <div className="w-2/3 sm:w-11/12 md:w-3/4 lg:w-1/2 xl:w-1/3 h-auto font-inter font-bold text-primary-colour text-justify responsive-text">
+          Discover What Our Users Say About Saran Farm: Hear Their Remarkable
+          Experiences and Success Stories
         </div>
 
         <div className="flex flex-wrap  gap-10 pt-5">
-          <GroupComponent1 propAlignSelf="unset" propWidth="295px" groupData={groupData[0]} />
-          <GroupComponent1 propAlignSelf="unset" propWidth="295px" groupData={groupData[1]} />
-          <GroupComponent1 propAlignSelf="unset" propWidth="295px" groupData={groupData[2]} />   
+          <GroupComponent1
+            propAlignSelf="unset"
+            propWidth="295px"
+            groupData={groupData[0]}
+          />
+          <GroupComponent1
+            propAlignSelf="unset"
+            propWidth="295px"
+            groupData={groupData[1]}
+          />
+          <GroupComponent1
+            propAlignSelf="unset"
+            propWidth="295px"
+            groupData={groupData[2]}
+          />
         </div>
-        
       </div>
       <TouristGlances />
     </Layout>

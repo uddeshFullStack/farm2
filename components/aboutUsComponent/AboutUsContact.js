@@ -1,27 +1,20 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { upsertContactUs } from '../utils/supabaseQuery/ContactUsQuery';
-import { upsertAgrotourismSuggestion } from '../utils/supabaseQuery/AgrotourismQuery';
-import CommonThankYouDialog from '../components/CommonThankYouDialog';
-import PhoneNumberInput from './phoneNumberInput';
-import { TextArea } from './textArea';
-import InputField from './inputField';
 
-const CommonOtherPageForm = ({ heading, imageUrl, inputFields, buttonText, page }) => {
+import CommonThankYouDialog from '../CommonThankYouDialog'
+import PhoneNumberInput from '../phoneNumberInput';
+import { TextArea } from '../textArea';
+import InputField from '../inputField';
+import { upsertAboutUs } from '../../utils/supabaseQuery/AboutUsQuery';
+
+const AboutUsContact = ({ inputFields, buttonText }) => {
   const [openThankYou, setOpenThankYou] = useState(false);
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
   const router = useRouter();
 
   const onSubmit = async (data) => {
-    let response;
-    if (page === 'contactus') {
-      response = await upsertContactUs(data);
-    } else if (page === 'agrotourism') {
-      response = await upsertAgrotourismSuggestion(data);
-    }
-
+    const response = await upsertAboutUs(data)
     if (!response.error) setOpenThankYou(true);
     console.log(data);
   };
@@ -29,38 +22,18 @@ const CommonOtherPageForm = ({ heading, imageUrl, inputFields, buttonText, page 
   const handleDone = () => {
     setOpenThankYou(false);
     reset();
-    if (page === 'contactus') {
-      router.push(`/contact-us`);
-    } else if (page === 'agrotourism') {
-      router.push(`/agrotourism-suggestion`);
-    }
+    router.push(`/about-us`);
   };
 
   const commonInputClass = "w-full p-3 text-lg border border-inputColor rounded";
 
   return (
-    <div className="p-4 font-inter shadow-slate-500 shadow-sm box-border rounded-md w-screen">
-      <div className="text-center mb-10">
-        {heading && (
-          <h1 className="text-primary-colour font-bold" style={{ fontSize: '35px' }}>
-            {heading}
-          </h1>
-        )}
-      </div>
+    <div className="p-4 font-inter shadow-slate-500 w-[85vw] max-w-screen-md shadow-sm box-border rounded-md lg:ml-20">
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
-        <div className={`flex flex-col justify-center items-center`}>
+        <div className="flex flex-col justify-start items-start">
           <div className="w-full">
-            <div className="flex flex-col lg:flex-row justify-center items-center md:gap-5 lg:gap-20">
-              {imageUrl && (
-                <div>
-                  <Image
-                    src={imageUrl}
-                    alt="icon"
-                    style={{ width: '30vw', height: 'auto', maxHeight: '30vw', objectFit: 'cover' }}
-                  />
-                </div>
-              )}
-              <div className={`flex flex-col space-y-4 w-2/3 lg:w-1/3`}>
+            <div className="flex flex-col  md:gap-5 lg:gap-20">
+              <div className="flex flex-col space-y-4 w-full">
                 {inputFields.map((field, index) => (
                   <div key={index}>
                     {field.type === 'textarea' ? (
@@ -68,7 +41,7 @@ const CommonOtherPageForm = ({ heading, imageUrl, inputFields, buttonText, page 
                         name={field.name}
                         register={register}
                         errors={errors}
-                        className={`${commonInputClass} h-24`}
+                        className={`${commonInputClass} h-24 w-[300px]`}
                         placeholder={field.placeholder}
                       />
                     ) : field.type === 'number' ? (
@@ -84,7 +57,7 @@ const CommonOtherPageForm = ({ heading, imageUrl, inputFields, buttonText, page 
                         required={field.required}
                         errors={errors}
                         type={field.type}
-                        className={`${commonInputClass} py-4`}
+                        className={`${commonInputClass} py-4 w-[300px]`}
                         placeholder={field.placeholder}
                       />
                     )}
@@ -93,11 +66,10 @@ const CommonOtherPageForm = ({ heading, imageUrl, inputFields, buttonText, page 
               </div>
             </div>
           </div>
-          <div className="flex justify-center items-center mt-10">
+          <div className="flex justify-start items-start mt-10">
             <button
               type="submit"
-              className="text-primary-colour bg-secondary-colour font-semibold py-3 rounded cursor-pointer border-none"
-              style={{ width: '20vw', fontSize: '2vw' }}
+              className="text-primary-colour bg-secondary-colour font-semibold py-3 rounded cursor-pointer border-none" style={{width:'20vw',fontSize:'2vw'}}
             >
               {buttonText}
             </button>
@@ -117,4 +89,4 @@ const CommonOtherPageForm = ({ heading, imageUrl, inputFields, buttonText, page 
   );
 };
 
-export default CommonOtherPageForm;
+export default AboutUsContact;

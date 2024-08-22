@@ -22,6 +22,7 @@ const FarmDetails = () => {
             </div>
           </div>
           <Details
+            farmName={farm.name}
             address={farm.address}
             farmerName={farm.farmerName}
             special={farm.special}

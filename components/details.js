@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 
 const Details = ({
   className = "",
+  farmName,
   address,
   farmerName,
   special,
@@ -17,8 +18,11 @@ const Details = ({
   const router = useRouter();
 
   const onButtonBackgroundClick = useCallback(() => {
-    router.push("/book-farm");
-  }, [router]);
+    router.push({
+      pathname: "/book-farm",
+      query: { farmName },
+    });
+  }, [router, farmName]);
 
   return (
     <div

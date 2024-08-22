@@ -8,6 +8,7 @@ import { countries, indiaStates } from '../../constant/bookformData';
 
 const BookForm = () => {
   const router = useRouter();
+
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
   const [openThankYou, setOpenThankYou] = useState(false);
 

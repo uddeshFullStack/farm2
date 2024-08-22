@@ -27,7 +27,7 @@ const TopNavBar = ({ className = "" }) => {
           src="/sf-page0001-1@2x.png"
         />
       </div>
-      <div className="flex-1 flex flex-col items-end lg:items-center space-y-4 lg:space-y-10 mr-[8vw]">
+      <div className="flex-1 flex flex-col items-end lg:items-end space-y-4 lg:space-y-10 mr-[8vw]">
         <div className="hidden md:flex  flex-row space-x-2 md:space-x-8">
           <div className="flex items-center space-x-2">
             <img src="/vector.svg" alt="Phone Icon" className="h-7 w-5" />
@@ -78,12 +78,12 @@ const TopNavBar = ({ className = "" }) => {
                   Register Farm
                 </button>
                 {showRegisterDropdown && (
-                  <div className="absolute left-0 w-56 bg-backgroundColor-custom-green shadow-lg rounded-md border border-gray-200" style={{ marginTop: '16px' }}>
-                    <Link href="/register-farm" className="py-2 block text-black hover:bg-white text-lg px-2">
-                      &gt; APPLY TO LIST YOUR FARM
+                  <div className="absolute left-0 w-56 bg-backgroundColor-custom-green shadow-lg rounded-md border border-gray-200" style={{ marginTop: '8px' }}>
+                    <Link href="/register-farm" className="py-2 block text-black hover:bg-white text-lg px-2 no-underline">
+                      APPLY TO LIST YOUR FARM
                     </Link>
-                    <Link href="/start-agrotourism-form" className="py-2 block text-lg text-black hover:bg-white px-2">
-                      &gt; WANT TO START AGROTOURISM
+                    <Link href="/start-agrotourism-form" className="py-2 block text-lg text-black hover:bg-white px-2 no-underline">
+                      WANT TO START AGROTOURISM
                     </Link>
                   </div>
                 )}
@@ -103,18 +103,18 @@ const TopNavBar = ({ className = "" }) => {
                 More
               </button>
               {showMoreDropdown && (
-                <div className="absolute left-0 w-56 bg-backgroundColor-custom-green shadow-lg rounded-md border border-gray-200" style={{ marginTop: '16px' }}>
-                  <Link href="/about-us" className="py-2 block text-black hover:bg-white text-lg px-2">
-                    &gt; ABOUT US
+                <div className="absolute left-0 w-56 bg-backgroundColor-custom-green shadow-lg rounded-md border border-gray-200" style={{ marginTop: '8px' }}>
+                  <Link href="/about-us" className="py-2 block text-black hover:bg-white text-lg px-2 no-underline">
+                    About us
                   </Link>
-                  <Link href="/contact-us" className="py-2 block text-lg text-black hover:bg-white px-2">
-                    &gt; CONTACT US
+                  <Link href="/contact-us" className="py-2 block text-lg text-black hover:bg-white px-2 no-underline">
+                    Contact us
                   </Link>
-                  <Link href="/gallery" className="py-2 block text-black hover:bg-white text-lg px-2">
-                    &gt; GALLERY
+                  <Link href="/gallery" className="py-2 block text-black hover:bg-white text-lg px-2 no-underline">
+                    Gallery
                   </Link>
-                  <Link href="/award" className="py-2 block text-black hover:bg-white text-lg px-2">
-                    &gt; AWARD
+                  <Link href="/award" className="py-2 block text-black hover:bg-white text-lg px-2 no-underline">
+                    Award
                   </Link>
                 </div>
               )}
@@ -139,11 +139,11 @@ const TopNavBar = ({ className = "" }) => {
               </button>
               {showRegisterDropdown && (
                 <div className="bg-backgroundColor-custom-green shadow-lg rounded-md border border-gray-200 ">
-                  <Link href="/register-farm" className="py-2 block text-black hover:bg-white text-lg px-2">
-                    &gt; Apply to list your farm
+                  <Link href="/register-farm" className="py-2 block text-black hover:bg-white text-lg px-2 no-underline">
+                    Apply to list your farm
                   </Link>
-                  <Link href="/start-agrotourism-form" className="py-2 block text-lg text-black hover:bg-white px-2">
-                    &gt;  Want to start agrotourism
+                  <Link href="/start-agrotourism-form" className="py-2 block text-lg text-black hover:bg-white px-2 no-underline">
+                    Want to start agrotourism
                   </Link>
                 </div>
               )}
@@ -160,18 +160,18 @@ const TopNavBar = ({ className = "" }) => {
                 More
               </button>
               {showMoreDropdown && (
-                <div className="bg-backgroundColor-custom-green shadow-lg rounded-md border border-gray-200">
-                  <Link href="/about-us" className="py-2 block text-black hover:bg-white text-lg px-2">
-                    &gt; About us
+                <div className="bg-backgroundColor-custom-green shadow-lg rounded-md border border-gray-200 ">
+                  <Link href="/about-us" className="py-2 block text-black hover:bg-white text-lg px-2 no-underline">
+                    About us
                   </Link>
-                  <Link href="/contact-us" className="py-2 block text-lg text-black hover:bg-white px-2">
-                    &gt; Contact us
+                  <Link href="/contact-us" className="py-2 block text-lg text-black hover:bg-white px-2 no-underline">
+                    Contact us
                   </Link>
-                  <Link href="/gallery" className="py-2 block text-black hover:bg-white text-lg px-2">
-                    &gt; Gallery
+                  <Link href="/gallery" className="py-2 block text-black hover:bg-white text-lg px-2 no-underline">
+                    Gallery
                   </Link>
-                  <Link href="/award" className="py-2 block text-black hover:bg-white text-lg px-2">
-                    &gt; Award
+                  <Link href="/award" className="py-2 block text-black hover:bg-white text-lg px-2 no-underline">
+                    Award
                   </Link>
                 </div>
               )}

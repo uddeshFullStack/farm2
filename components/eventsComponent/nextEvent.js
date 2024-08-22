@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import PropTypes from 'prop-types';
+import { useRouter } from 'next/router';
 
 const NextEvent = ({ nextEventData }) => {
+  const router = useRouter();
   const { eventDate, imageSrc } = nextEventData;
 
   const calculateTimeLeft = () => {
@@ -35,6 +37,9 @@ const NextEvent = ({ nextEventData }) => {
 
     return () => clearTimeout(timer);
   }, [timeLeft]);
+  const handleResgister =()=>{
+    router.push(`events/register-event`);
+  }
 
   return (
     <div className="relative w-screen h-auto  font-inter">
@@ -81,7 +86,7 @@ const NextEvent = ({ nextEventData }) => {
           </div>
         </div>
         <div className="mt-[20%]" style={{marginBottom:'12vw',marginLeft:'20vw' ,width:'40vw'}}>
-          <button className="bg-secondary-colour text-primary-colour  rounded-md border-none cursor-pointer w-[50%] h-10 font-extrabold">
+          <button className="bg-secondary-colour text-primary-colour  rounded-md border-none cursor-pointer w-[50%] h-10 font-extrabold" onClick={()=>handleResgister()}>
             Register Now
           </button>
         </div>

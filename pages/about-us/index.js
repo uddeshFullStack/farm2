@@ -28,7 +28,7 @@ const AboutUs = () => {
         <div>
           <InfoSection question={'What is Saran Farm ?'} answer={'Welcome to Saran.farm, a sustainable agritourism startup dedicated to connecting farmers, consumers, and nature enthusiasts. At Saran.farm, we believe in the power of authentic farm experiences to foster a deeper understanding of agriculture, promote sustainable practices, and support local communities.'} image={image1} isTextFirst={true}/>
         </div>
-        <div className='bg-backgroundColor-image w-full pl-12 py-10 xsm:px-5'>
+        <div className='bg-backgroundColor-image w-screen py-20'>
           <CardContainerUpper cards={cardsData} classNameUser={classNameUser}/>
         </div>
         <div>

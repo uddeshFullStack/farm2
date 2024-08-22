@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import InputField from '../../components/inputField';
-import { TextArea } from '../../components/textArea';
 import { upsertStartAgrotourism } from '../../utils/supabaseQuery/StartAgrotourism';
 import CommonThankYouDialog from '../../components/CommonThankYouDialog';
 import { useRouter } from 'next/router';
@@ -21,11 +20,11 @@ const AgrotourismForm = () => {
     const handleDone = () => {
         setOpenThankYou(false);
         reset();
-        router.push(`/`);
+        router.push(`/start-agrotourism-form`);
     };
 
     return (
-        <div className="p-2 m-3 sm:m-5 md:m-20">
+        <div className="">
             <form
                 onSubmit={handleSubmit(onSubmit)}
                 className="grid grid-cols-1 mx-4 md:grid-cols-2 "

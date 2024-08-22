@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { groupData } from "../components/GroupData";
 import TouristGlances from "../components/tourist-glances";
 import Layout from "./layout";
@@ -19,7 +19,7 @@ const HomePage = () => {
 
   return (
     <Layout>
-      <section className="self-stretch flex flex-row pt-0 px-0 box-border max-w-full mq450:pb-14 mq450:box-border mq750:pb-[86px] mq750:box-border">
+      <section className="self-stretch flex flex-row pt-0 px-0 box-border max-w-full  mq450:box-border  mq750:box-border">
         <div className="flex-1 flex flex-row items-start justify-start relative max-w-full">
           <Image
             className="h-[628px] flex-1 relative max-w-full overflow-hidden object-cover"
@@ -38,36 +38,50 @@ const HomePage = () => {
           />
         </div>
       </section>
-      <div className="flex flex-wrap items-center justify-center py-[4%] w-full" style={{ gap: '3vw' }}>
+      <div className="flex flex-wrap items-center justify-center py-[3%] lg:py-[4%] w-full" style={{ gap: '3vw' }}>
         <CommonBadge activity="Location" count={100} icon={require('../public/badgeIcons/Vector (1).jpg')} colour={"#004c35"} />
         <CommonBadge activity="Farm" count={100} icon={require('../public/badgeIcons/Vector (3).jpg')} colour={"#5a79e6"} />
         <CommonBadge activity="Booking" count={100} icon={require('../public/badgeIcons/Event Accepted.jpg')} colour={"#A0522D"} />
-        <CommonBadge activity="Events Covered" count={100} icon={require('../public/badgeIcons/Stage.jpg')} colour={"#50fb95"} />
+        <CommonBadge activity="Events" count={100} icon={require('../public/badgeIcons/Stage.jpg')} colour={"#50fb95"} />
         <CommonBadge activity="Tourist" count={100} icon={require('../public/badgeIcons/Traveler.jpg')} colour={"#fbc800"} />
       </div>
       <HomeFarmList />
       <section className="self-stretch flex flex-row flex-wrap items-start justify-start pt-0 px-[65px] pb-[114px] box-border max-w-full mq750:pl-8 mq750:pr-8 mq750:pb-[31px] mq750:box-border mq1100:pb-12 mq1100:box-border mq1275:pb-[74px] mq1275:box-border">
-  <div className="flex flex-wrap items-start justify-start gap-[80px]">
-    <h2 className="m-0 relative font-bold text-7xl inline-block max-w-full mq450:text-3xl font-inter text-primary-colour">
+  <div className=" mt-16">
+    <h2 className="relative font-bold text-7xl inline-block max-w-full mq450:text-3xl font-inter text-primary-colour ">
       Why Choose Saran Farm
     </h2>
-    {componentsData.map((data, index) => (
-      index % 2 === 0 ? (
+    <div className="flex flex-wrap items-start justify-start gap-[80px]">
+  {componentsData.map((data, index) => (
+    <React.Fragment key={index}>
+      {/* For large screens (min-width: 1024px), alternate between left and right components */}
+      <div className="hidden lg:block">
+        {index % 2 === 0 ? (
+          <HomePageFrameLeftComponent
+            data={data}
+            isExpanded={expandedIndex === index}
+            onExpand={() => handleExpand(index)}
+          />
+        ) : (
+          <HomePageFrameRightComponent
+            data={data}
+            isExpanded={expandedIndex === index}
+            onExpand={() => handleExpand(index)}
+          />
+        )}
+      </div>
+
+      {/* For small screens (max-width: 1023px), use only the left component */}
+      <div className="lg:hidden">
         <HomePageFrameLeftComponent
-          key={index}
           data={data}
           isExpanded={expandedIndex === index}
           onExpand={() => handleExpand(index)}
         />
-      ) : (
-        <HomePageFrameRightComponent
-          key={index}
-          data={data}
-          isExpanded={expandedIndex === index}
-          onExpand={() => handleExpand(index)}
-        />
-      )
-    ))}
+      </div>
+    </React.Fragment>
+  ))}
+</div>
   </div>
 </section>
 

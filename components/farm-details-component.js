@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import ImageSwiper from "./swiperSilder/ImageSwiper";
 
 const FarmDetailsComponent = ({ className = "", farmName }) => {
   return (
@@ -47,7 +48,8 @@ const FarmDetailsComponent = ({ className = "", farmName }) => {
         </div>
       </div>
       <div className="self-stretch flex flex-row items-start justify-start relative max-w-full">
-        <img
+      <ImageSwiper images={["/Farm1.jpg", "/Farm2.jpg", "/Farm3.jpg"]} />
+        {/* <img
           className="h-[736px] flex-1 relative max-w-full overflow-hidden object-cover"
           alt=""
           src="/map@2x.png"
@@ -57,7 +59,7 @@ const FarmDetailsComponent = ({ className = "", farmName }) => {
           loading="lazy"
           alt=""
           src="/group-342.svg"
-        />
+        /> */}
       </div>
     </div>
   );

@@ -4,14 +4,15 @@ import TouristGlances from "../components/tourist-glances";
 import Layout from "./layout";
 import HomeFarmList from "../components/homeFarmList";
 import CommonBadge from "../components/commonBadge";
-import Image from "next/image";
 import HomePageFrameRightComponent from "../components/HomePageFrameRightComponent";
 import HomePageFrameLeftComponent from "../components/HomePageFrameLeftComponent";
 import { componentsData } from "./constants";
 import GroupComponent1 from "../components/group-component1";
 import ImageSwiper from "../components/swiperSilder/ImageSwiper";
+import { useRouter } from "next/router";
 
 const HomePage = () => {
+  const router=useRouter()
   const [expandedIndex, setExpandedIndex] = useState(null);
 
   const handleExpand = (index) => {
@@ -20,11 +21,23 @@ const HomePage = () => {
 
   return (
     <Layout>
-      <section className="self-stretch flex flex-row pt-0 px-0 box-border max-w-full  mq450:box-border  mq750:box-border">
-        <div className="flex-1 flex flex-row items-start justify-start relative max-w-full">
-          <ImageSwiper images={["/Farm1.jpg", "/Farm2.jpg", "/Farm3.jpg"]} />
-        </div>
-      </section>
+<section className="self-stretch flex flex-row pt-0 px-0 box-border max-w-full mq450:box-border mq750:box-border relative">
+  <div className="flex-1 flex flex-row items-start justify-start relative max-w-full font-inter">
+    <ImageSwiper images={["/Farm1.jpg", "/Farm2.jpg", "/Farm3.jpg"]} />
+    <div className="absolute inset-0 flex flex-col items-center justify-center text-black z-[1] lg:hidden m-4">
+      <h1 className="text-md sm:text-2xl font-bold mb-1 sm:mb-4 mt-0">Discover the Beauty of Our Farms</h1>
+      <p className="text-sm sm:text-lg mb-2 sm:mb-6 mt-0 px-0 xsm:pl-8">Experience authentic farm life and support local communities.</p>
+      <button 
+        className="bg-secondary-colour text-primary-colour rounded-md border-none cursor-pointer px-2 xsm:px-5 h-10 font-extrabold"
+        onClick={() => router.push('/listed-farm')}
+      >
+        Explore Farms
+      </button>
+    </div>
+  </div>
+</section>
+
+
       <div className="flex flex-wrap items-center justify-center py-[3%] lg:py-[4%] w-full" style={{ gap: '3vw' }}>
         <CommonBadge activity="Location" count={100} icon={require('../public/badgeIcons/Vector (1).jpg')} colour={"#004c35"} />
         <CommonBadge activity="Farm" count={100} icon={require('../public/badgeIcons/Vector (3).jpg')} colour={"#5a79e6"} />

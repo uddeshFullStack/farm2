@@ -70,7 +70,7 @@ const TopNavBar = ({ className = "" }) => {
               <Link href="/" className="text-black no-underline hover:text-white text-[16px] md:text-[20px]">
                 Home
               </Link>
-              <div className="relative z-[1]">
+              <div className="relative z-[2]">
                 <button
                   onClick={() => setShowRegisterDropdown(!showRegisterDropdown)}
                   className="hover:text-white bg-secondary-colour border-none text-[16px] md:text-[20px] uppercase"
@@ -95,7 +95,7 @@ const TopNavBar = ({ className = "" }) => {
               <Link href="/events" className="text-black no-underline hover:text-white text-[16px] md:text-[20px]">
                 Events
               </Link>
-              <div className="relative z-[1] pr-4 md:pr-32 md:mr-80">
+              <div className="relative z-[2] pr-4 md:pr-32 md:mr-80">
               <button
                 onClick={() => setShowMoreDropdown(!showMoreDropdown)}
                 className="hover:text-white bg-secondary-colour border-none text-[16px] md:text-[20px] uppercase"

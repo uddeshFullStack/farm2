@@ -22,9 +22,9 @@ const ImageSwiper = ({ images }) => {
     >
       {images.map((image, index) => (
         <SwiperSlide key={index}>
-          <div className="relative !h-[628px] w-full">
+          <div className="relative h-[75%] md:h-[628px] w-full">
             <Image
-              className="!h-[628px] w-full object-cover"
+              className="h-[75%] md:h-[628px] w-full object-cover"
               alt=""
               src={image}
               width={1400}

@@ -38,7 +38,7 @@ const NextEvent = ({ nextEventData }) => {
     return () => clearTimeout(timer);
   }, [timeLeft]);
   const handleResgister =()=>{
-    router.push(`events/register-event`);
+    router.push(`/register-event`);
   }
 
   return (

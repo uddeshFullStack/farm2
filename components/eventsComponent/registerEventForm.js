@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/router';
-import CommonThankYouDialog from '../../../components/CommonThankYouDialog';
-import PhoneNumberInput from '../../../components/phoneNumberInput';
-import { TextArea } from '../../../components/textArea';
-import InputField from '../../../components/inputField';
-import { upsertRegisterEvent } from '../../../utils/supabaseQuery/RegisterEventQuery';
+import { upsertRegisterEvent } from '../../utils/supabaseQuery/RegisterEventQuery';
+import { TextArea } from '../textArea';
+import InputField from '../inputField';
+import CommonThankYouDialog from '../CommonThankYouDialog';
+
 
 const RegisterEventForm = ({ inputFields, buttonText }) => {
   const [openThankYou, setOpenThankYou] = useState(false);
@@ -22,7 +22,7 @@ const RegisterEventForm = ({ inputFields, buttonText }) => {
   const handleDone = () => {
     setOpenThankYou(false);
     reset();
-    router.push(`/events/register-event`);
+    router.push(`/register-event`);
   };
 
   const commonInputClass = "w-full p-3 text-lg border border-inputColor rounded";

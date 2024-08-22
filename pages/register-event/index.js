@@ -1,6 +1,7 @@
 import React from 'react';
-import Layout from '../../layout';
-import RegisterEventForm from './registerEventForm';
+import RegisterEventForm from '../../components/eventsComponent/registerEventForm';
+import Layout from '../layout';
+
 
 const RegisterEvent = () => {
     const inputFields = [
@@ -9,7 +10,6 @@ const RegisterEvent = () => {
         { name: 'email', type: 'email', placeholder: 'E-mail' },
         { name: 'address', type: 'textarea', placeholder: 'Address' }
     ];
-
     return (
         <Layout>
             <div className='font-inter my-10 flex flex-col justify-center items-center gap-10 w-screen'>

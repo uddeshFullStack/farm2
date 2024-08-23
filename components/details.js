@@ -37,10 +37,12 @@ const Details = ({
             <div className="flex-1 flex flex-col items-start justify-start gap-[8px] max-w-full">
               <div className="relative">
                 <ul className="m-0 font-inherit text-inherit pl-6">
-                  <li className="mb-0">{`${address.village}, ${address.post},${address.tehsil}`}</li>
-                  <p className="m-0">District-{address.district}.</p>
+                  {/* <li className="mb-0">{`${address?.village}, ${address?.post}, ${address?.tehsil}`}</li>
+                  <p className="m-0">District-{address?.district}.</p> */}
+                  <li>
+                    {address}
+                  </li>
                 </ul>
-                
               </div>
               <div className="w-[308px] relative inline-block">
                 <ul className="m-0 text-inherit pl-6">
@@ -59,13 +61,11 @@ const Details = ({
           <div className="mb-2 ml-[1.5px] top-[0px] left-[0px] text-5xl tracking-[-0.01em] font-semibold text-primary-colour inline-block min-w-[84px] mq450:text-lgi">
             Special
           </div>
-          {special.map((item, index) => (
-            <div key={index} className="relative">
+          <div className="relative">
             <ul className="m-0 font-inherit text-inherit pl-6">
-              <li>{item}</li>
+              <li>{special}</li>
             </ul>
           </div>
-          ))}
         </div>
         <div className="w-[223px] flex flex-col items-start justify-start gap-[5px]">
           <div className="relative tracking-[-0.01em] font-semibold mq450:text-lgi">
@@ -73,7 +73,7 @@ const Details = ({
           </div>
           <div className="self-stretch relative text-lg font-medium text-lite">
             <ul className="m-0 font-inherit text-inherit pl-6">
-              <li>Number of Rooms - {accommodation.numberOfRooms}</li>
+              <li>Number of Rooms - {accommodation?.numberOfRooms}</li>
             </ul>
           </div>
         </div>
@@ -83,35 +83,31 @@ const Details = ({
           <div className="flex flex-row items-start justify-start pt-0 px-0 pb-[5px] text-5xl text-primary-colour">
             <div className="relative tracking-[-0.01em] font-semibold mq450:text-lgi">{`Activities & Facilities`}</div>
           </div>
-          {activities.map((activity, index) => (
-            <div key={index} className="relative">
-              <ul className="m-0 font-inherit text-inherit pl-6">
-                <li>{activity}</li>
-              </ul>
-            </div>
-          ))}
+          <div className="relative">
+            <ul className="m-0 font-inherit text-inherit pl-6">
+              <li>{activities}</li>
+            </ul>
+          </div>
         </div>
         <div className="flex flex-col items-start justify-start gap-[1px]">
           <div className="flex flex-row items-start justify-start pt-0 px-0 pb-1 text-5xl text-primary-colour">
             <div className="relative tracking-[-0.01em] font-semibold mq450:text-lgi">{`Event or Festival `}</div>
           </div>
-          {events.map((event, index) => (
-            <div key={index} className="relative">
-              <ul className="m-0 font-inherit text-inherit pl-6">
-                <li>{event}</li>
-              </ul>
-            </div>
-          ))}
+          <div className="relative">
+            <ul className="m-0 font-inherit text-inherit pl-6">
+              <li>{events}</li>
+            </ul>
+          </div>
         </div>
         <div className="w-[214px] flex flex-col items-start justify-start gap-[5px] text-5xl text-primary-colour">
           <div className="relative tracking-[-0.01em] font-semibold inline-block min-w-[66px] mq450:text-lgi">{`Other `}</div>
           <div className="self-stretch flex flex-col items-start justify-start gap-[1px] text-lg text-lite">
             <div className="self-stretch relative">
               <ul className="m-0 font-inherit text-inherit pl-6">
-                <li>Farm Area - {other.farmArea}</li>
+                <li>Farm Area - {other?.farmArea}</li>
               </ul>
             </div>
-            {other.freeMilk && (
+            {other?.freeMilk && (
               <div className="relative inline-block min-w-[105px]">
                 <ul className="m-0 font-inherit text-inherit pl-6">
                   <li>Free Milk</li>
@@ -127,13 +123,11 @@ const Details = ({
             Sightseeing
           </div>
           <div className="flex flex-col items-start justify-start text-lg text-lite">
-            {sightseeing.map((sight, index) => (
-              <div key={index} className="relative">
-                <ul className="m-0 font-inherit text-inherit pl-6">
-                  <li>{sight}</li>
-                </ul>
-              </div>
-            ))}
+            <div className="relative">
+              <ul className="m-0 font-inherit text-inherit pl-6">
+                <li>{sightseeing}</li>
+              </ul>
+            </div>
           </div>
         </div>
         <div className="w-[228px] flex flex-col items-start justify-start pt-0 px-0 pb-[9px] box-border gap-[5px]">
@@ -142,11 +136,14 @@ const Details = ({
           </div>
           <div className="self-stretch relative text-lg font-medium text-taxt-colour">
             <ul className="m-0 font-inherit text-inherit pl-6">
-              <li>{`${rentPerDay.min}-${rentPerDay.max}/day/person`}</li>
+              <li>{`${rentPerDay?.min}-${rentPerDay?.max}/day/person`}</li>
             </ul>
           </div>
         </div>
-        <button className="cursor-pointer border-none p-0 w-[80vw] max-w-[200px] h-[20vw] max-h-[80px] relative  text-[4.5vw] sm:text-[3vw] md:text-[2vw] lg:text-[1.5vw]" onClick={()=> onButtonBackgroundClick()}>
+        <button
+          className="cursor-pointer border-none p-0 w-[80vw] max-w-[200px] h-[20vw] max-h-[80px] relative text-[4.5vw] sm:text-[3vw] md:text-[2vw] lg:text-[1.5vw]"
+          onClick={onButtonBackgroundClick}
+        >
           <div className="absolute inset-0 shadow-[0px_0px_4px_#378805] rounded-3xs bg-primary-colour" />
           <div className="absolute inset-0 flex items-center justify-center">
             <span className="tracking-[-0.01em] font-semibold font-inter text-white">
@@ -168,17 +165,17 @@ Details.propTypes = {
     district: PropTypes.string,
   }).isRequired,
   farmerName: PropTypes.string.isRequired,
-  special: PropTypes.arrayOf(PropTypes.string).isRequired,
+  special: PropTypes.string.isRequired,
   accommodation: PropTypes.shape({
     numberOfRooms: PropTypes.number,
   }).isRequired,
-  activities: PropTypes.arrayOf(PropTypes.string).isRequired,
-  events: PropTypes.arrayOf(PropTypes.string).isRequired,
+  activities: PropTypes.string.isRequired,
+  events: PropTypes.string.isRequired,
   other: PropTypes.shape({
     farmArea: PropTypes.string,
     freeMilk: PropTypes.bool,
   }).isRequired,
-  sightseeing: PropTypes.arrayOf(PropTypes.string).isRequired,
+  sightseeing: PropTypes.string.isRequired,
   rentPerDay: PropTypes.shape({
     min: PropTypes.number,
     max: PropTypes.number,

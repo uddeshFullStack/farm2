@@ -4,7 +4,6 @@ export async function fetchFarmList() {
   const { data, error } = await supabase
     .from("FarmList")
     .select('*')
-    console.log(data);
   if (error) throw new Error("Error fetching Break Even Details!");
 
   return data;

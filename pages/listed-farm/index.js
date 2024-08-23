@@ -76,7 +76,6 @@ const ListedFarm = () => {
                 />
               </button>
             </div>
-
             <div>
               <FarmCardList />
             </div>

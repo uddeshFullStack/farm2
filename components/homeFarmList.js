@@ -87,13 +87,9 @@ const HomeFarmList = ({ className = "", propMinWidth, propWidth }) => {
 
   const router = useRouter();
 
-  const onFrameButtonClick = useCallback((link) => {
-    router.push(link);
-  }, [router]);
-
-  const onViewAllButtonClick = useCallback(() => {
+  const onViewAllButtonClick = () => {
     router.push("/listed-farm");
-  }, [router]);
+  };
 
   return (
 <section
@@ -103,15 +99,18 @@ const HomeFarmList = ({ className = "", propMinWidth, propWidth }) => {
     <h2 className="m-0 text-inherit font-bold font-inherit text-center">
       Latest Listed Farms
     </h2> 
-        <div className="self-stretch flex flex-wrap justify-center text-left text-base text-lite gap-[5%]">
+        <div className="flex flex-wrap justify-center items-center sm:gap-10">
           {farmsData.map((farm) => (
-            <FarmCard
+            <div
               key={farm.id}
-              propWidth={propWidth}
-              propMinWidth={propMinWidth}
-              farm={farm}
-              onFrameButtonClick={() => onFrameButtonClick(farm.moreDetailsLink)}
-            />
+              className="min-w-[290px] w-[25vw]"
+            >
+              <FarmCard
+                propWidth={propWidth}
+                propMinWidth={propMinWidth}
+                farm={farm}
+              />
+            </div>
           ))}
         </div>
         <div className="self-stretch flex flex-row items-start justify-center py-0 px-5">

@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import FarmCard from "./farmCard";
@@ -27,24 +27,20 @@ const FarmCardList = ({ propMinWidth, propWidth }) => {
     getFarmList();
   }, []);
 
-  const handleMoreDetailsClick = (link) => {
-    router.push(link);
-  };
-
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error fetching farm list: {error.message}</p>;
 
   return (
-    <div className="flex flex-wrap justify-center items-center sm:gap-5">
+    <div className="flex flex-wrap justify-center items-center sm:gap-10">
       {farmsData.map((farm) => (
         <div
           key={farm.id}
-          className="min-w-[290px] w-[25vw]">
+          className="min-w-[290px] w-[25vw]"
+        >
           <FarmCard
             propWidth={propWidth}
             propMinWidth={propMinWidth}
             farm={farm}
-            onFrameButtonClick={() => handleMoreDetailsClick(farm.moreDetailsLink)}
           />
         </div>
       ))}

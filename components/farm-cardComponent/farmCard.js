@@ -1,24 +1,22 @@
-import React, { useCallback } from "react";
+import React from "react";
 import { useRouter } from "next/router";
 import PropTypes from "prop-types";
 
-const FarmCard = ({ onFrameButtonClick, farm }) => {
+const FarmCard = ({ farm }) => {
   const router = useRouter();
 
-  const handleButtonClick = useCallback(() => {
-    if (onFrameButtonClick) {
-      onFrameButtonClick();
-    } else {
-      router.push("/farm-details");
-    }
-  }, [router, onFrameButtonClick]);
+  const handleButtonClick = (e) => {
+    e.preventDefault(); // Prevent any default behavior
+    const farmData = encodeURIComponent(JSON.stringify(farm));
+    router.push(`/farm-details/${farm.id}?farm=${farmData}`);
+  };
 
   return (
     <div
-      className={`shadow-[0px_0px_4px_rgba(0,_0,_0,_0.25)] rounded-md bg-white flex flex-col my-[1.5%] p-[2.5%] lg:p-[1.5%] box-border text-left text-base text-lite font-inter overflow-hidden`}
+    className={`shadow-[0px_0px_4px_rgba(0,_0,_0,_0.25)] rounded-md bg-white flex flex-col my-[1.5%] p-[2.5%] lg:p-[3.5%] box-border text-left text-base text-lite font-inter overflow-hidden`}
     >
       <img
-        src={farm.photo}
+        src={'/Farm2.jpg'}
         alt={farm.imageAlt}
         className="self-stretch h-[202px] relative max-w-full overflow-hidden shrink-0 object-cover"
       />
@@ -57,7 +55,7 @@ const FarmCard = ({ onFrameButtonClick, farm }) => {
           </div>
         </div>
       </div>
-      <div className="self-stretch flex flex-row items-start justify-start py-0 pr-1.5 pl-1 box-border max-w-full">
+      <div className="self-stretch flex flex-row items-start justify-start my-2 py-0 pr-1.5 pl-1 box-border max-w-full">
         <button
           className="cursor-pointer border-none py-[7px] px-5 bg-secondary-colour flex-1 rounded-8xs overflow-hidden flex flex-row items-start justify-center box-border whitespace-nowrap hover:bg-goldenrod"
           onClick={handleButtonClick}
@@ -72,12 +70,8 @@ const FarmCard = ({ onFrameButtonClick, farm }) => {
 };
 
 FarmCard.propTypes = {
-  className: PropTypes.string,
-  propWidth: PropTypes.any,
-  propMinWidth: PropTypes.any,
-  onFrameButtonClick: PropTypes.func,
   farm: PropTypes.shape({
-    photo: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
     imageAlt: PropTypes.string.isRequired,
     farmName: PropTypes.string.isRequired,
     nearCity: PropTypes.string.isRequired,

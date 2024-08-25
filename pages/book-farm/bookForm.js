@@ -1,15 +1,20 @@
-import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import InputField from '../../components/inputField';
-import { useRouter } from 'next/router';
-import { upsertBookFarm } from '../../utils/supabaseQuery/BookFarmQuery';
-import CommonThankYouDialog from '../../components/CommonThankYouDialog';
-import { countries, indiaStates } from '../../constant/bookformData';
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
+import InputField from "../../components/inputField";
+import { useRouter } from "next/router";
+import { upsertBookFarm } from "../../utils/supabaseQuery/BookFarmQuery";
+import CommonThankYouDialog from "../../components/CommonThankYouDialog";
+import { countries, indiaStates } from "../../constant/bookformData";
 
 const BookForm = () => {
   const router = useRouter();
 
-  const { register, handleSubmit, formState: { errors }, reset } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
   const [openThankYou, setOpenThankYou] = useState(false);
 
   const onSubmit = async (data) => {
@@ -25,7 +30,7 @@ const BookForm = () => {
   };
 
   return (
-    <div className="p-4 mt-10 " style={{width:'95vw'}}>
+    <div className="p-4 mt-10 " style={{ width: "95vw" }}>
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="grid grid-cols-1  md:grid-cols-2 "
@@ -40,7 +45,7 @@ const BookForm = () => {
             required
             errors={errors}
             classNameTop="grid grid-cols-1 gap-2"
-            style={{ width: '80%' }}
+            style={{ width: "80%" }}
           />
           <InputField
             label="Phone No"
@@ -50,7 +55,7 @@ const BookForm = () => {
             errors={errors}
             type="number"
             classNameTop="grid grid-cols-1 gap-2"
-            style={{ width: '80%' }}
+            style={{ width: "80%" }}
           />
           <InputField
             label="State"
@@ -58,7 +63,7 @@ const BookForm = () => {
             register={register}
             errors={errors}
             classNameTop="grid grid-cols-1 gap-2"
-            style={{ width: '80%', height: '45px' }}
+            style={{ width: "80%", height: "45px" }}
             type="select"
             options={indiaStates}
             placeholder="Choose a state"
@@ -86,13 +91,16 @@ const BookForm = () => {
         {/* Right Grid - Remaining Fields */}
         <div className="grid grid-cols-1 gap-4">
           <InputField
+            type="tel"
+            placeholder="Enter your phone number"
+            pattern="[0-9]{10}" // Example pattern for 10 digit numbers
+            required
             label="WhatsApp No"
             name="whatsappNo"
             register={register}
             errors={errors}
-            type="number"
             classNameTop="grid grid-cols-1 gap-2"
-            style={{ width: '80%' }}
+            style={{ width: "80%" }}
           />
           <InputField
             label="E-mail"
@@ -101,7 +109,7 @@ const BookForm = () => {
             errors={errors}
             type="email"
             classNameTop="grid grid-cols-1 gap-2"
-            style={{ width: '80%' }}
+            style={{ width: "80%" }}
           />
           <InputField
             label="Country"
@@ -109,7 +117,7 @@ const BookForm = () => {
             register={register}
             errors={errors}
             classNameTop="grid grid-cols-1 gap-2"
-            style={{ width: '80%', height: '45px' }}
+            style={{ width: "80%", height: "45px" }}
             type="select"
             options={countries}
             placeholder="Choose a Country"
@@ -138,8 +146,8 @@ const BookForm = () => {
         <div className="col-span-1 md:col-span-2 mb-4 flex justify-center">
           <button
             type="submit"
-            className="bg-secondary-colour text-primary-colour font-semibold py-3 rounded cursor-pointer text-xl md:text-2xl border-none" 
-            style={{ marginTop: '60px', width:'40vw' }}
+            className="bg-secondary-colour text-primary-colour font-semibold py-3 rounded cursor-pointer text-xl md:text-2xl border-none"
+            style={{ marginTop: "60px", width: "40vw" }}
           >
             Submit
           </button>
@@ -149,8 +157,8 @@ const BookForm = () => {
         <CommonThankYouDialog
           open={openThankYou}
           onClose={() => setOpenThankYou(false)}
-          topMessage={'Thanks for Booking'}
-          message={'Need Help? Call & WhatsApp'}
+          topMessage={"Thanks for Booking"}
+          message={"Need Help? Call & WhatsApp"}
           contact={"+91 415121"}
           onDone={handleDone}
         />

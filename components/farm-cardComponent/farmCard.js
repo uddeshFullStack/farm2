@@ -1,6 +1,7 @@
 import React from "react";
 import { useRouter } from "next/router";
 import PropTypes from "prop-types";
+import ImageSwiper from "../swiperSilder/ImageSwiper";
 
 const FarmCard = ({ farm }) => {
   const router = useRouter();
@@ -15,13 +16,11 @@ const FarmCard = ({ farm }) => {
     <div
     className={`shadow-[0px_0px_4px_rgba(0,_0,_0,_0.25)] rounded-md bg-white flex flex-col my-[1.5%] p-[2.5%] lg:p-[3.5%] box-border text-left text-base text-lite font-inter overflow-hidden`}
     >
-      <img
-        src={'/Farm2.jpg'}
-        alt={farm.imageAlt}
-        className="self-stretch h-[202px] relative max-w-full overflow-hidden shrink-0 object-cover"
-      />
+      <div>
+       <ImageSwiper images={["/Farm1.jpg", "/Farm2.jpg", "/Farm3.jpg"]} />
+      </div>
       <div className="self-stretch flex flex-col items-start justify-start gap-[6px] w-full">
-        <div className="relative text-primary-colour font-semibold truncate">
+        <div className="relative text-primary-colour w-full font-semibold truncate">
           {farm.farmName}
         </div>
         <div className="flex flex-row items-center justify-start gap-[1.2px] overflow-hidden">

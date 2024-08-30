@@ -1,6 +1,5 @@
 'use client';
 import React, { useEffect, useState } from "react";
-import { useRouter } from "next/router";
 import FarmCard from "./farmCard";
 import { fetchFarmList } from "../../utils/supabaseQuery/FarmQuery";
 
@@ -8,7 +7,7 @@ const FarmCardList = ({ propMinWidth, propWidth }) => {
   const [farmsData, setFarmsData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const router = useRouter();
+ 
 
   useEffect(() => {
     const getFarmList = async () => {
@@ -25,6 +24,7 @@ const FarmCardList = ({ propMinWidth, propWidth }) => {
     };
 
     getFarmList();
+    console.log(farmsData);
   }, []);
 
   if (loading) return <p>Loading...</p>;

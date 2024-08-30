@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-
 import { upsertBreakEvenData } from "../../utils/supabaseQuery/FarmQuery";
 import { useRouter } from "next/router";
 import CommonThankYouDialog from "../CommonThankYouDialog";
 import InputField from "../inputField";
 import { TextArea } from "../textArea";
+import ImageUpload from "./ImageUpload";
 
 const FarmForm = () => {
   const router = useRouter();
@@ -15,9 +15,26 @@ const FarmForm = () => {
     formState: { errors },
   } = useForm();
   const [openThankYou, setOpenThankYou] = useState(false);
+  const [uploadedImages, setUploadedImages] = useState([]); // State to store uploaded images
+  const [isUploadComplete, setIsUploadComplete] = useState(false); // State to track if upload is complete
+
+  const onImagesUpload = (images) => {
+    setUploadedImages(images); // Store uploaded images
+    setIsUploadComplete(true); // Set upload complete to true
+  };
 
   const onSubmit = async (data) => {
-    const response = await upsertBreakEvenData(data);
+    if (!isUploadComplete) {
+      return; // Prevent submission if images are not uploaded
+    }
+
+    // Combine form data with uploaded images
+    const dataWithImages = {
+      ...data,
+      imageDescription: JSON.stringify(uploadedImages), // Convert array to JSON string
+    };
+
+    const response = await upsertBreakEvenData(dataWithImages);
     if (!response.error) setOpenThankYou(true);
   };
 
@@ -98,15 +115,7 @@ const FarmForm = () => {
             errors={errors}
             type="url"
           />
-          <InputField
-            label="Upload Farm photo (jpg format)"
-            name="photo"
-            register={register}
-            required
-            errors={errors}
-            type="file"
-            accept="image/jpeg"
-          />
+          <ImageUpload onImagesUpload={onImagesUpload} />
         </div>
 
         {/* Right Grid - Remaining Fields */}
@@ -153,7 +162,8 @@ const FarmForm = () => {
         <div className="col-span-1 md:col-span-2 mb-4 flex justify-center">
           <button
             type="submit"
-            className="w-full md:w-1/4 bg-secondary-colour text-primary-colour font-semibold py-3 rounded cursor-pointer text-lg md:text-2xl border-none"
+            className={`w-full md:w-1/4 bg-secondary-colour ${!isUploadComplete ?'cursor-not-allowed':''} text-primary-colour font-semibold py-3 rounded text-lg md:text-2xl border-none cursor-pointer`}
+            disabled={!isUploadComplete} // Disable if upload is not complete
           >
             Submit
           </button>

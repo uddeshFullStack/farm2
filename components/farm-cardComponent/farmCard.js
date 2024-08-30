@@ -1,23 +1,41 @@
 import React from "react";
 import { useRouter } from "next/router";
 import PropTypes from "prop-types";
-import ImageSwiper from "../swiperSilder/ImageSwiper";
 
 const FarmCard = ({ farm }) => {
   const router = useRouter();
 
   const handleButtonClick = (e) => {
-    e.preventDefault(); // Prevent any default behavior
-    const farmData = encodeURIComponent(JSON.stringify(farm));
+    e.preventDefault(); 
+    const farmData = encodeURIComponent(
+      JSON.stringify({
+        ...farm,
+        description: JSON.stringify(farm.description),
+      })
+    );
     router.push(`/farm-details/${farm.id}?farm=${farmData}`);
+  };
+
+  // Get the first image URL from the imageDescription object
+  const getFirstImageUrl = () => {
+    const parsedImages = JSON.parse(farm.imageDescription);
+    if (parsedImages && parsedImages.length > 0) {
+
+      return parsedImages[0].imageUrl;
+    }
+    return "/Farm1.jpg"; 
   };
 
   return (
     <div
-    className={`shadow-[0px_0px_4px_rgba(0,_0,_0,_0.25)] rounded-md bg-white flex flex-col my-[1.5%] p-[2.5%] lg:p-[3.5%] box-border text-left text-base text-lite font-inter overflow-hidden`}
+      className={`shadow-[0px_0px_4px_rgba(0,_0,_0,_0.25)] rounded-md bg-white flex flex-col my-[1.5%] p-[2.5%] lg:p-[3.5%] box-border text-left text-base text-lite font-inter overflow-hidden`}
     >
-      <div>
-       <ImageSwiper images={["/Farm1.jpg", "/Farm2.jpg", "/Farm3.jpg"]} />
+      <div style={{ width: "100%" }}>
+        <img
+          src={getFirstImageUrl()}
+          alt={farm.imageAlt || "Farm Image"}
+          style={{ width: "100%" }}
+        />
       </div>
       <div className="self-stretch flex flex-col items-start justify-start gap-[6px] w-full">
         <div className="relative text-primary-colour w-full font-semibold truncate">
@@ -38,7 +56,9 @@ const FarmCard = ({ farm }) => {
         <div className="w-full flex flex-col gap-2">
           <div className="flex justify-between w-full gap-x-4 truncate">
             <div className="font-medium">Nearest City</div>
-            <div className="truncate">{farm.nearCity} ({farm.cityDistance})</div>
+            <div className="truncate">
+              {farm.nearCity} ({farm.cityDistance})
+            </div>
           </div>
           <div className="flex justify-between w-full gap-x-4 truncate">
             <div className="font-medium">Farm Area</div>
@@ -71,13 +91,20 @@ const FarmCard = ({ farm }) => {
 FarmCard.propTypes = {
   farm: PropTypes.shape({
     id: PropTypes.number.isRequired,
-    imageAlt: PropTypes.string.isRequired,
+    imageDescription: PropTypes.objectOf(
+      PropTypes.shape({
+        imageKey: PropTypes.string.isRequired,
+        imageUrl: PropTypes.string.isRequired,
+      })
+    ).isRequired,
+    imageAlt: PropTypes.string,
     farmName: PropTypes.string.isRequired,
     nearCity: PropTypes.string.isRequired,
     cityDistance: PropTypes.string.isRequired,
     farmArea: PropTypes.string.isRequired,
     accommodation: PropTypes.string.isRequired,
     special: PropTypes.string.isRequired,
+    description: PropTypes.string, // Ensure description is part of the prop types
   }).isRequired,
 };
 

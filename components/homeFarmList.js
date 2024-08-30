@@ -1,91 +1,119 @@
-import { useCallback } from "react";
+'use client';
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import PropTypes from "prop-types";
 import FarmCard from "./farm-cardComponent/farmCard";
+// import { fetchFarmList } from "../../utils/supabaseQuery/FarmQuery";
+import { fetchFarmList } from "../utils/supabaseQuery/FarmQuery"
 
 const HomeFarmList = ({ className = "", propMinWidth, propWidth }) => {
-  const farmsData = [
-    {
-      id: 1,
-      farmName: "Radheshyam Agro Tourism And Farm",
-      nearCity: "Jaipur",
-      cityDistance: "20km",
-      farmArea: "2000 Sqm",
-      accommodation: "Yes",
-      special: "Tractor Ride",
-      moreDetailsLink: "/farm-details/1",
-      photo: "/rectangle-185@2x.png",
-      imageAlt: "Farm Image 1",
-      accommodationDetails: "(12,365)",
-    },
-    {
-      id: 2,
-      farmName: "Another Farm Name",
-      nearCity: "Delhi",
-      cityDistance: "30km",
-      farmArea: "1500 Sqm",
-      accommodation: "No",
-      special: "Organic Farming",
-      moreDetailsLink: "/farm-details/2",
-      photo: "/rectangle-185@2x.png",
-      imageAlt: "Farm Image 2",
-      accommodationDetails: "(8,765)",
-    },
-    {
-      id: 3,
-      farmName: "Radheshyam Agro Tourism And Farm",
-      nearCity: "Jaipur",
-      cityDistance: "20km",
-      farmArea: "2000 Sqm",
-      accommodation: "Yes",
-      special: "Tractor Ride",
-      moreDetailsLink: "/farm-details/1",
-      photo: "/rectangle-185@2x.png",
-      imageAlt: "Farm Image 1",
-      accommodationDetails: "(12,365)",
-    },
-    {
-      id: 4,
-      farmName: "Another Farm Name",
-      nearCity: "Delhi",
-      cityDistance: "30km",
-      farmArea: "1500 Sqm",
-      accommodation: "No",
-      special: "Organic Farming",
-      moreDetailsLink: "/farm-details/2",
-      photo: "/rectangle-185@2x.png",
-      imageAlt: "Farm Image 2",
-      accommodationDetails: "(8,765)",
-    },
-    {
-      id: 5,
-      farmName: "Radheshyam Agro Tourism And Farm",
-      nearCity: "Jaipur",
-      cityDistance: "20km",
-      farmArea: "2000 Sqm",
-      accommodation: "Yes",
-      special: "Tractor Ride",
-      moreDetailsLink: "/farm-details/1",
-      photo:"/rectangle-185@2x.png",
-      imageAlt: "Farm Image 1",
-      accommodationDetails: "(12,365)",
-    },
-    {
-      id: 6,
-      farmName: "Another Farm Name",
-      nearCity: "Delhi",
-      cityDistance: "30km",
-      farmArea: "1500 Sqm",
-      accommodation: "No",
-      special: "Organic Farming",
-      moreDetailsLink: "/farm-details/2",
-      photo: "/rectangle-185@2x.png",
-      imageAlt: "Farm Image 2",
-      accommodationDetails: "(8,765)",
-    },
-  ];
-
+  // const farmsData = [
+  //   {
+  //     id: 1,
+  //     farmName: "Radheshyam Agro Tourism And Farm",
+  //     nearCity: "Jaipur",
+  //     cityDistance: "20km",
+  //     farmArea: "2000 Sqm",
+  //     accommodation: "Yes",
+  //     special: "Tractor Ride",
+  //     moreDetailsLink: "/farm-details/1",
+  //     photo: "/rectangle-185@2x.png",
+  //     imageAlt: "Farm Image 1",
+  //     accommodationDetails: "(12,365)",
+  //   },
+  //   {
+  //     id: 2,
+  //     farmName: "Another Farm Name",
+  //     nearCity: "Delhi",
+  //     cityDistance: "30km",
+  //     farmArea: "1500 Sqm",
+  //     accommodation: "No",
+  //     special: "Organic Farming",
+  //     moreDetailsLink: "/farm-details/2",
+  //     photo: "/rectangle-185@2x.png",
+  //     imageAlt: "Farm Image 2",
+  //     accommodationDetails: "(8,765)",
+  //   },
+  //   {
+  //     id: 3,
+  //     farmName: "Radheshyam Agro Tourism And Farm",
+  //     nearCity: "Jaipur",
+  //     cityDistance: "20km",
+  //     farmArea: "2000 Sqm",
+  //     accommodation: "Yes",
+  //     special: "Tractor Ride",
+  //     moreDetailsLink: "/farm-details/1",
+  //     photo: "/rectangle-185@2x.png",
+  //     imageAlt: "Farm Image 1",
+  //     accommodationDetails: "(12,365)",
+  //   },
+  //   {
+  //     id: 4,
+  //     farmName: "Another Farm Name",
+  //     nearCity: "Delhi",
+  //     cityDistance: "30km",
+  //     farmArea: "1500 Sqm",
+  //     accommodation: "No",
+  //     special: "Organic Farming",
+  //     moreDetailsLink: "/farm-details/2",
+  //     photo: "/rectangle-185@2x.png",
+  //     imageAlt: "Farm Image 2",
+  //     accommodationDetails: "(8,765)",
+  //   },
+  //   {
+  //     id: 5,
+  //     farmName: "Radheshyam Agro Tourism And Farm",
+  //     nearCity: "Jaipur",
+  //     cityDistance: "20km",
+  //     farmArea: "2000 Sqm",
+  //     accommodation: "Yes",
+  //     special: "Tractor Ride",
+  //     moreDetailsLink: "/farm-details/1",
+  //     photo:"/rectangle-185@2x.png",
+  //     imageAlt: "Farm Image 1",
+  //     accommodationDetails: "(12,365)",
+  //   },
+  //   {
+  //     id: 6,
+  //     farmName: "Another Farm Name",
+  //     nearCity: "Delhi",
+  //     cityDistance: "30km",
+  //     farmArea: "1500 Sqm",
+  //     accommodation: "No",
+  //     special: "Organic Farming",
+  //     moreDetailsLink: "/farm-details/2",
+  //     photo: "/rectangle-185@2x.png",
+  //     imageAlt: "Farm Image 2",
+  //     accommodationDetails: "(8,765)",
+  //   },
+  // ];
+ 
   const router = useRouter();
+  const [farmsData, setFarmsData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+ 
+
+  useEffect(() => {
+    const getFarmList = async () => {
+      try {
+        const data = await fetchFarmList();
+        const farmsArray = Array.isArray(data) ? data : [data]; 
+        setFarmsData(farmsArray);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching farm list:", error);
+        setError(error);
+        setLoading(false); 
+      }
+    };
+
+    getFarmList();
+    console.log(farmsData);
+  }, []);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error fetching farm list: {error.message}</p>;
 
   const onViewAllButtonClick = () => {
     router.push("/listed-farm");
@@ -100,7 +128,7 @@ const HomeFarmList = ({ className = "", propMinWidth, propWidth }) => {
       Latest Listed Farms
     </h2> 
         <div className="flex flex-wrap justify-center items-center sm:gap-10">
-          {farmsData.map((farm) => (
+          {farmsData.slice(-6).map((farm) => (
             <div
               key={farm.id}
               className="min-w-[290px] w-[25vw]"

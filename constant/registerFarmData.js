@@ -1,30 +1,30 @@
 export const  cards = [
     {
-      image: '',
+      image: require('/public/farmFormICons/UpperComponent/1.png'),
       heading: 'Additional Revenue Streams',
       description:
         'Additional Revenue Streams: Agritourism diversifies farmers income through direct sales, farm experiences, and accommodations. Saran.farm registration enables financial stability and sustainability.',
     },
     {
-      image: '',
+      image: require('/public/farmFormICons/UpperComponent/2.png'),
       heading: 'Increased Visibility',
       description:
         'Registering on Saran.farm increases farmers visibility to a wide audience of potential visitors, including nature enthusiasts, families, food lovers, and eco-conscious travelers seeking authentic farm experiences.',
     },
     {
-      image: '',
+      image: require('/public/farmFormICons/UpperComponent/3.png'),
       heading: 'Preservation of Agricultural Heritage',
       description:
         'Registering on Saran.farm preserves agricultural heritage, showcasing traditional farming practices. Visitors learn about farming s cultural history and gain a deeper appreciation for its importance.',
     },
     {
-      image: '',
+      image: require('/public/farmFormICons/UpperComponent/4.png'),
       heading: 'Diversification of Income',
       description:
         'Agritourism diversifies farmers income beyond traditional practices. Registering on Saran.farm taps into the demand for unique farm experiences, generating additional revenue.',
     },
     {
-      image: '',
+      image: require('/public/farmFormICons/UpperComponent/5.png'),
       heading: 'Educational Opportunities',
       description:
         'Agritourism provides educational opportunities for farmers to share farming techniques, sustainable practices, and the importance of food production, inspiring a new generation interested in agriculture.',

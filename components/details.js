@@ -4,6 +4,8 @@ import PropTypes from "prop-types";
 
 const Details = ({
   className = "",
+  state,
+  district,
   farmName,
   address,
   farmerName,
@@ -40,7 +42,7 @@ const Details = ({
                   {/* <li className="mb-0">{`${address?.village}, ${address?.post}, ${address?.tehsil}`}</li>
                   <p className="m-0">District-{address?.district}.</p> */}
                   <li>
-                    {address}
+                    {address} {district} {state}
                   </li>
                 </ul>
               </div>

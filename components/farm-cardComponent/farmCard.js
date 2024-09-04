@@ -10,21 +10,22 @@ const FarmCard = ({ farm }) => {
     const farmData = encodeURIComponent(
       JSON.stringify({
         ...farm,
-        description: JSON.stringify(farm.description),
+        description: JSON.stringify(farm?.description),
       })
     );
-    router.push(`/farm-details/${farm.id}?farm=${farmData}`);
+    router.push(`/farm-details/${farm.id}`);
   };
 
   // Get the first image URL from the imageDescription object
   const getFirstImageUrl = () => {
-    const parsedImages = JSON.parse(farm.imageDescription);
+    // Safely parse and access the imageDescription
+    const parsedImages = farm?.imageDescription ? JSON.parse(farm.imageDescription) : [];
     if (parsedImages && parsedImages.length > 0) {
-
       return parsedImages[0].imageUrl;
     }
     return "/Farm1.jpg"; 
   };
+  
 
   return (
     <div
@@ -34,7 +35,7 @@ const FarmCard = ({ farm }) => {
         <img
           src={getFirstImageUrl()}
           alt={farm.imageAlt || "Farm Image"}
-          style={{ width: "100%" }}
+          style={{ width: "100%" ,height: "200px" }}
         />
       </div>
       <div className="self-stretch flex flex-col items-start justify-start gap-[6px] w-full">
@@ -91,21 +92,24 @@ const FarmCard = ({ farm }) => {
 FarmCard.propTypes = {
   farm: PropTypes.shape({
     id: PropTypes.number.isRequired,
-    imageDescription: PropTypes.objectOf(
-      PropTypes.shape({
-        imageKey: PropTypes.string.isRequired,
-        imageUrl: PropTypes.string.isRequired,
-      })
-    ).isRequired,
+    imageDescription: PropTypes.oneOfType([
+      PropTypes.objectOf(
+        PropTypes.shape({
+          imageKey: PropTypes.string.isRequired,
+          imageUrl: PropTypes.string.isRequired,
+        })
+      ),
+      PropTypes.oneOf([null]) // Accepts null as a valid value
+    ]),
     imageAlt: PropTypes.string,
     farmName: PropTypes.string.isRequired,
     nearCity: PropTypes.string.isRequired,
-    cityDistance: PropTypes.string.isRequired,
-    farmArea: PropTypes.string.isRequired,
-    accommodation: PropTypes.string.isRequired,
-    special: PropTypes.string.isRequired,
-    description: PropTypes.string, // Ensure description is part of the prop types
+    cityDistance: PropTypes.string,
+    farmArea: PropTypes.string,
+    accommodation: PropTypes.string,
+    special: PropTypes.string,
   }).isRequired,
 };
+
 
 export default FarmCard;

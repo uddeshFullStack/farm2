@@ -63,7 +63,7 @@ const BookForm = () => {
             register={register}
             errors={errors}
             classNameTop="grid grid-cols-1 gap-2"
-            style={{ width: "80%", height: "45px" }}
+            style={{ width: "84%", height: "45px" }}
             type="select"
             options={indiaStates}
             placeholder="Choose a state"
@@ -73,6 +73,7 @@ const BookForm = () => {
               label="Arrival Date"
               name="arrivalDate"
               register={register}
+              style={{ width: "80%" }}
               errors={errors}
               type="date"
               classNameTop="grid grid-cols-1 gap-2"
@@ -82,6 +83,7 @@ const BookForm = () => {
               name="arrivalTime"
               register={register}
               errors={errors}
+              style={{ width: "80%" }}
               type="time"
               classNameTop="grid grid-cols-1 gap-2"
             />
@@ -90,7 +92,7 @@ const BookForm = () => {
 
         {/* Right Grid - Remaining Fields */}
         <div className="grid grid-cols-1 gap-4">
-          <InputField
+          {/* <InputField
             type="tel"
             placeholder="Enter your phone number"
             pattern="[0-9]{10}" // Example pattern for 10 digit numbers
@@ -101,7 +103,7 @@ const BookForm = () => {
             errors={errors}
             classNameTop="grid grid-cols-1 gap-2"
             style={{ width: "80%" }}
-          />
+          /> */}
           <InputField
             label="E-mail"
             name="email"
@@ -117,7 +119,7 @@ const BookForm = () => {
             register={register}
             errors={errors}
             classNameTop="grid grid-cols-1 gap-2"
-            style={{ width: "80%", height: "45px" }}
+            style={{ width: "84%", height: "45px" }}
             type="select"
             options={countries}
             placeholder="Choose a Country"
@@ -127,6 +129,7 @@ const BookForm = () => {
               label="Departure Date"
               name="departureDate"
               register={register}
+              style={{ width: "80%" }}
               errors={errors}
               type="date"
               classNameTop="grid grid-cols-1 gap-2"
@@ -134,6 +137,7 @@ const BookForm = () => {
             <InputField
               label="Departure Time"
               name="departureTime"
+              style={{ width: "80%" }}
               register={register}
               errors={errors}
               type="time"

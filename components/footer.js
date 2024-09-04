@@ -11,7 +11,7 @@ const Footer = ({ className = "" }) => {
       className={`w-screen  self-stretch bg-primary-colour flex flex-col items-end justify-start pt-[30px] pb-[25.5px] pr-[5px] pl-0 box-border gap-[25.8px] text-left text-xl text-secondary-colour font-inter mq450:pt-5 mq450:pb-5 mq450:box-border ${className}`}
     >
       <div className="self-stretch h-[400px] relative bg-primary-colour hidden" />
-      <div className="self-stretch flex flex-row items-start justify-end py-0 pr-[67px] pl-[65px] box-border max-w-full mq750:pl-8 mq750:pr-[33px] mq750:box-border">
+      <div className="self-stretch flex flex-row items-start justify-end py-0  box-border max-w-full mq750:pl-2 mq750:pr-[3px] mq750:box-border">
         <div className="flex flex-row items-start justify-between max-w-full gap-[20px] mq1275:flex-wrap">
           <div className=" flex flex-col items-start justify-start gap-y-5">
             <div className="">
@@ -89,7 +89,7 @@ const Footer = ({ className = "" }) => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col items-start justify-start py-0 pr-[117px] pl-0 gap-[10px]">
+          {/* <div className="flex flex-col items-start justify-start py-0  pl-0 gap-[10px]">
             <div className="relative font-semibold inline-block min-w-[115px]  mq450:text-base">
               Direct Links
             </div>
@@ -158,7 +158,87 @@ const Footer = ({ className = "" }) => {
                 </Link>
               </div>
             </div>
-          </div>
+          </div> */}
+          <div className="flex flex-col items-start justify-start py-0 pl-0 gap-[10px]">
+  <div className="relative font-semibold inline-block min-w-[115px] md:text-base">
+    Direct Links
+  </div>
+  
+  <div className="grid grid-cols-2 gap-y-[8.5px] text-base text-white md:grid-cols-1">
+    <div className="flex flex-row items-start justify-start py-0 pr-[11px] pl-0">
+      <Link href="/" className="[text-decoration:none] relative text-[inherit] inline-block min-w-[75px]">
+        <ul className="m-0 font-inherit text-inherit pl-[21px]">
+          <li>Home</li>
+        </ul>
+      </Link>
+    </div>
+
+    <div className="flex flex-row items-start justify-start">
+      <Link href="/book-farm" className="[text-decoration:none] relative text-[inherit] inline-block min-w-[75px]">
+        <ul className="m-0 font-inherit text-inherit pl-[21px]">
+          <li>Book Farm</li>
+        </ul>
+      </Link>
+    </div>
+
+    <div className="flex flex-row items-start justify-start">
+      <Link href="/listed-farm" className="[text-decoration:none] relative text-[inherit] inline-block min-w-[75px]">
+        <ul className="m-0 font-inherit text-inherit pl-[21px]">
+          <li>Listed Farm</li>
+        </ul>
+      </Link>
+    </div>
+
+    <div className="flex flex-row items-start justify-start py-0 px-0">
+      <Link href="/register-farm" className="[text-decoration:none] relative text-[inherit] inline-block min-w-[170px]">
+        <ul className="m-0 font-inherit text-inherit pl-[21px]">
+          <li>Registered Farm</li>
+        </ul>
+      </Link>
+    </div>
+
+    <div className="flex flex-row items-start justify-start py-0 pr-[5px] pl-0">
+      <Link href="/events" className="[text-decoration:none] relative text-[inherit] inline-block min-w-[75px]">
+        <ul className="m-0 font-inherit text-inherit pl-[21px]">
+          <li>Events</li>
+        </ul>
+      </Link>
+    </div>
+
+    <div className="flex flex-row items-start justify-start py-0 pr-2.5 pl-0">
+      <Link href="/contact-us" className="[text-decoration:none] relative text-[inherit] inline-block min-w-[109px]">
+        <ul className="m-0 font-inherit text-inherit pl-[21px]">
+          <li>Contact Us</li>
+        </ul>
+      </Link>
+    </div>
+
+    <div className="flex flex-row items-start justify-start py-0 pr-[17px] pl-0">
+      <Link href="/about-us" className="[text-decoration:none] relative text-[inherit] inline-block min-w-[95px]">
+        <ul className="m-0 font-inherit text-inherit pl-[21px]">
+          <li>About Us</li>
+        </ul>
+      </Link>
+    </div>
+
+    <div className="flex flex-row items-start justify-start py-0 pr-3 pl-0">
+      <Link href="/gallery" className="[text-decoration:none] relative text-[inherit] inline-block min-w-[77px]">
+        <ul className="m-0 font-inherit text-inherit pl-[21px]">
+          <li>Gallery</li>
+        </ul>
+      </Link>
+    </div>
+
+    <div className="w-[119px] flex flex-row items-start justify-start">
+      <Link href="/award" className="[text-decoration:none] relative text-[inherit] inline-block min-w-[77px]">
+        <ul className="m-0 font-inherit text-inherit pl-[21px]">
+          <li>Award</li>
+        </ul>
+      </Link>
+    </div>
+  </div>
+</div>
+
           <div className="w-[282px] flex flex-col items-start justify-start gap-[8px]">
             <div className="relative font-semibold inline-block min-w-[109px] mq450:text-base">
               Contact Us
@@ -185,7 +265,7 @@ const Footer = ({ className = "" }) => {
                   />
                 </div>
               </div>
-              <div className="flex-1 flex flex-col items-start justify-start pt-[1.5px] px-0 pb-0">
+              {/* <div className="flex-1 flex flex-col items-start justify-start pt-[1.5px] px-0 pb-0">
                 <div className="self-stretch flex flex-col items-start justify-start gap-[10.5px]">
                   <div className="relative whitespace-nowrap ">
                     +91 9680524270
@@ -211,7 +291,39 @@ const Footer = ({ className = "" }) => {
                     src="/westendlondonmapwithpin-1@2x.png"
                   />
                 </div>
-              </div>
+              </div> */}
+              <div className="flex-1 flex flex-col items-start justify-start pt-[1.5px] px-0 pb-0">
+  <div className="self-stretch flex flex-col items-start justify-start gap-[10.5px]">
+    <div className="relative whitespace-nowrap">
+      +91 9680524270
+    </div>
+    <div className="flex flex-col sm:flex-col xsm:flex-row gap-2 md:flex-col md:gap-x-0 md:gap-y-[10.5px]">
+      <div className="self-stretch flex flex-col items-start justify-start pt-0 px-0 pb-[11.5px] gap-[10px]">
+        <div className="relative whitespace-nowrap">
+          moshinkhanrander@gmail.com
+        </div>
+        <div className="self-stretch relative">
+          <p className="[margin-block-start:0] [margin-block-end:2px]">
+            R-CAT, Tonk Rd, Panch Batti,
+          </p>
+          <p className="[margin-block-start:0] [margin-block-end:2px]">
+            Sangram Colony, Ashok Nagar,
+          </p>
+          <p className="m-0">Jaipur, Rajasthan 302007</p>
+        </div>
+      </div>
+      <div className="sm:w-[30vw] w-[25vw] md:w-[116.9px] md:h-[108px]">
+        <img
+          className="w-full h-full object-cover"
+          loading="lazy"
+          alt=""
+          src="/westendlondonmapwithpin-1@2x.png"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
             </div>
           </div>
         </div>

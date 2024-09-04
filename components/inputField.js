@@ -14,6 +14,7 @@ const InputField = ({
   classNameTop,
   classNameLabel,
   options = [], // New prop for dropdown options
+  onChange, // onChange event handler
 }) => (
   <div className={classNameTop || `flex mb-4`}>
     {label && (
@@ -29,6 +30,7 @@ const InputField = ({
           className || "flex-1 p-2 border border-inputColor rounded h-6 w-40"
         }
         style={style || { boxShadow: "inset 0 1px 12px rgba(0, 0, 0, 0.1)" }}
+        onChange={onChange} // Ensure onChange is passed here
       >
         <option value="">{placeholder || "Select an option"}</option>
         {options.map((option, index) => (
@@ -51,6 +53,7 @@ const InputField = ({
         }
         accept={accept}
         placeholder={placeholder ? `${placeholder}` : ""}
+        onChange={onChange} // Ensure onChange is passed here
       />
     )}
     {errors[name] && (

@@ -6,6 +6,7 @@ import CommonThankYouDialog from "../CommonThankYouDialog";
 import InputField from "../inputField";
 import { TextArea } from "../textArea";
 import ImageUpload from "./ImageUpload";
+import { stateDistricts } from "../../constant/stateDistrict";
 
 const FarmForm = () => {
   const router = useRouter();
@@ -17,6 +18,8 @@ const FarmForm = () => {
   const [openThankYou, setOpenThankYou] = useState(false);
   const [uploadedImages, setUploadedImages] = useState([]); // State to store uploaded images
   const [isUploadComplete, setIsUploadComplete] = useState(false); // State to track if upload is complete
+  const [selectedState, setSelectedState] = useState(""); // State to track selected state
+  const [districtOptions, setDistrictOptions] = useState([]); // State to store district options
 
   const onImagesUpload = (images) => {
     setUploadedImages(images); // Store uploaded images
@@ -40,6 +43,13 @@ const FarmForm = () => {
 
   const handleDone = () => {
     router.push(`/listed-farm`);
+  };
+
+  const handleStateChange = (e) => {
+    const state = e.target.value;
+    setSelectedState(state);
+    const updatedDistrictOptions = stateDistricts[state] || [];
+    setDistrictOptions(updatedDistrictOptions);
   };
 
   return (
@@ -73,11 +83,33 @@ const FarmForm = () => {
             errors={errors}
           />
           <InputField
+            style={{height:"35px"}}
+            label="State"
+            name="state"
+            register={register}
+            required
+            errors={errors}
+            type="select"
+            options={Object.keys(stateDistricts).map((state) => ({
+              value: state,
+              label: state,
+            }))}
+            placeholder="Select a state"
+            onChange={handleStateChange} // Pass the onChange event here
+          />
+          <InputField
+            style={{height:"35px"}}
             label="District"
             name="district"
             register={register}
             required
             errors={errors}
+            type="select"
+            options={districtOptions.map((district) => ({
+              value: district,
+              label: district,
+            }))}
+            placeholder="Select a district"
           />
           <InputField
             label="Phone No"

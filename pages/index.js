@@ -7,9 +7,11 @@ import CommonBadge from "../components/commonBadge";
 import HomePageFrameRightComponent from "../components/HomePageFrameRightComponent";
 import HomePageFrameLeftComponent from "../components/HomePageFrameLeftComponent";
 import { componentsData } from "./constants";
-import GroupComponent1 from "../components/group-component1";
+
 import ImageSwiper from "../components/swiperSilder/ImageSwiper";
 import { useRouter } from "next/router";
+import Review from "../components/homeComponent/Review";
+import ChooseSaranFarm from "../components/homeComponent/ChooseSaranFarm";
 
 const HomePage = () => {
   const router = useRouter();
@@ -77,7 +79,7 @@ const HomePage = () => {
         />
       </div>
       <HomeFarmList />
-      <section className="self-stretch flex flex-row flex-wrap items-start justify-start pt-0 px-[65px] pb-[114px] box-border max-w-full mq750:pl-8 mq750:pr-8 mq750:pb-[31px] mq750:box-border mq1100:pb-12 mq1100:box-border mq1275:pb-[74px] mq1275:box-border">
+      {/* <section className="self-stretch flex flex-row flex-wrap items-start justify-start pt-0 px-[65px] pb-[114px] box-border max-w-full mq750:pl-8 mq750:pr-8 mq750:pb-[31px] mq750:box-border mq1100:pb-12 mq1100:box-border mq1275:pb-[74px] mq1275:box-border">
         <div className=" mt-16">
           <h2 className="relative font-bold text-7xl inline-block max-w-full mq450:text-3xl font-inter text-primary-colour ">
             Why Choose Saran Farm
@@ -85,7 +87,7 @@ const HomePage = () => {
           <div className="flex flex-wrap items-start justify-start gap-[80px]">
             {componentsData.map((data, index) => (
               <React.Fragment key={index}>
-                {/* For large screens (min-width: 1024px), alternate between left and right components */}
+              
                 <div className="hidden lg:block">
                   {index % 2 === 0 ? (
                     <HomePageFrameLeftComponent
@@ -102,7 +104,7 @@ const HomePage = () => {
                   )}
                 </div>
 
-                {/* For small screens (max-width: 1023px), use only the left component */}
+  
                 <div className="lg:hidden">
                   <HomePageFrameLeftComponent
                     data={data}
@@ -114,9 +116,13 @@ const HomePage = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
+      
+        <ChooseSaranFarm componentsData={componentsData} expandedIndex={expandedIndex} handleExpand={handleExpand}/>
+ 
+      
 
-      <div className="flex flex-col bg-backgroundColor-custom-green p-10 w-full">
+      {/* <div className="flex flex-col bg-backgroundColor-custom-green p-10 w-full">
         <div className="w-2/3 sm:w-11/12 md:w-3/4 lg:w-1/2 xl:w-1/3 h-auto font-inter font-bold text-primary-colour text-justify responsive-text">
           Discover What Our Users Say About Saran Farm: Hear Their Remarkable
           Experiences and Success Stories
@@ -139,7 +145,8 @@ const HomePage = () => {
             groupData={groupData[2]}
           />
         </div>
-      </div>
+      </div> */}
+      <Review groupData={groupData}/>
       <TouristGlances />
     </Layout>
   );

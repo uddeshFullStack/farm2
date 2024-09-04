@@ -4,24 +4,14 @@ import { useRouter } from "next/router";
 import Layout from "../layout";
 import FarmCardList from "../../components/farm-cardComponent/farmCartList";
 import Link from "next/link";
+import FarmLocationFilter from "../../components/listFamComponent/FarmLocationFilter";
 
 const ListedFarm = () => {
   const router = useRouter();
-  
-  // State management for state and district
-  const [state, setState] = useState("");
-  const [district, setDistrict] = useState("");
-
-  const onSearchClick = useCallback(() => {
-    console.log("Selected State:", state);
-    console.log("Selected District:", district);
-    router.push("/farm-details");
-  }, [state, district, router]);
-
   return (
     <Layout>
-      <main className="flex flex-col items-start justify-start px-[4vw] py-[2.5vw] font-inter">
-        <form className="w-full flex flex-col items-end gap-[3vw]">
+      <main className="flex flex-col items-center justify-center  py-[2.5vw] font-inter">
+        <form className="w-[95vw] md:w-[90vw] flex flex-col items-center gap-[3vw] p-1 xsm:p-2 sm:p-5">
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between w-full mt-[1vw] gap-[2vw]">
             <h2 className="text-[5vw] lg:text-[2vw] font-bold text-primary-colour">
               Listed Farms
@@ -35,13 +25,13 @@ const ListedFarm = () => {
           </div>
 
           <div className="flex flex-col gap-[3vw] w-full">
-            <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between w-[95%] gap-[2vw] bg-background shadow-md rounded-md p-[2vw]">
+            {/* <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between w-[95%] gap-[2vw] bg-background shadow-md rounded-md p-[2vw]">
               
               <div className="relative flex flex-row items-center gap-[1vw] border border-solid border-gray-300 p-[1vw] rounded w-full lg:w-[30%]">
                 <select
                   value={state}
                   onChange={(e) => setState(e.target.value)}
-                  className="w-[70%] lg:w-full text-[4vw] lg:text-[1.5vw] font-medium text-gray-600"
+                  className="w-[70%] lg:w-full text-[4vw] sm:text-[3vw] md:text-[2.5vw] lg:text-[1.5vw] font-medium text-gray-600"
                 >
                   <option value="" disabled>Select Farm State</option>
                   <option value="State1">State 1</option>
@@ -54,7 +44,7 @@ const ListedFarm = () => {
                 <select
                   value={district}
                   onChange={(e) => setDistrict(e.target.value)}
-                  className="w-[70%] lg:w-full text-[4vw] lg:text-[1.5vw] font-medium text-gray-600"
+                  className="w-[70%] lg:w-full text-[4vw] sm:text-[3vw] md:text-[2.5vw] lg:text-[1.5vw] font-medium text-gray-600"
                 >
                   <option value="" disabled>Select Farm District</option>
                   <option value="District1">District 1</option>
@@ -66,19 +56,20 @@ const ListedFarm = () => {
               <button
                 type="button"
                 onClick={onSearchClick}
-                className="flex flex-row items-center justify-center bg-primary-colour text-white text-[4vw] lg:text-[1.5vw] font-medium rounded p-[1vw] lg:p-[0.5vw] w-full lg:w-[30%]"
+                className="flex flex-row items-center justify-center bg-primary-colour text-white text-[4vw] sm:text-[3vw] md:text-[2.5vw] lg:text-[1.5vw] font-medium rounded p-[1vw] lg:p-[0.5vw] w-full lg:w-[30%]"
               >
                 Search
                 <img
-                  className="w-[6vw] lg:w-[1.5vw] h-[6vw] lg:h-[1.5vw] ml-[1vw]"
+                  className="w-[6vw] text-[4vw] sm:text-[3vw] md:text-[2.5vw] lg:text-[1.5vw] h-[6vw] sm:h-[3vw] md:h-[2.5vw] lg:h-[1.5vw] ml-[1vw]"
                   alt="search-icon"
                   src="/tablersearch.svg"
                 />
               </button>
-            </div>
-            <div>
+            </div> */}
+            <FarmLocationFilter/>
+  
               <FarmCardList />
-            </div>
+
           </div>
         </form>
       </main>

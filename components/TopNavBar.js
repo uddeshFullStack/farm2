@@ -89,7 +89,7 @@ const TopNavBar = ({ className = "" }) => {
                 )}
 
               </div>
-              <Link href="/book-farm" className="text-black no-underline hover:text-white text-[16px] md:text-[20px] ml-4 md:ml-20">
+              <Link href="/listed-farm" className="text-black no-underline hover:text-white text-[16px] md:text-[20px] ml-4 md:ml-20">
                   Book Farm
                 </Link>
               <Link href="/events" className="text-black no-underline hover:text-white text-[16px] md:text-[20px]">
@@ -147,7 +147,7 @@ const TopNavBar = ({ className = "" }) => {
                   </Link>
                 </div>
               )}
-              <Link href="/book-farm" className="text-black no-underline hover:text-white text-[16px] " style={{fontWeight:'750'}}>
+              <Link href="/listed-farm" className="text-black no-underline hover:text-white text-[16px] " style={{fontWeight:'750'}}>
                 Book Farm
               </Link>
               <Link href="/events" className="text-black no-underline hover:text-white text-[16px]  " style={{fontWeight:'750'}}>

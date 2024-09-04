@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import supabase from '../../utils/supabase/server';
+import Image from 'next/image';
 
 const ImageUpload = ({ onImagesUpload }) => {
   const [files, setFiles] = useState([]);
@@ -82,22 +83,30 @@ const ImageUpload = ({ onImagesUpload }) => {
   };
 
   return (
-    <div className='flex flex-row gap-x-20'>
+    <div className='flex flex-row gap-x-4 md:gap-x-20'>
       <label>Upload Farm photos (PNG, JPG, JPEG formats)</label>
-      <div className=''>
+      <div className='flex flex-wrap'>
         <input type="file" multiple onChange={handleFileChange} />
-        <button onClick={handleUpload} disabled={uploading} className='m-2'>
+        <button onClick={handleUpload} disabled={uploading} className='md:mt-2'>
           {uploading ? 'Uploading...' : 'Upload'}
         </button>
         {error && <p style={{ color: 'red' }}>{error}</p>}
         {Object.keys(uploadedImages).length > 0 && (
-          <div className='gap-5'>
-            <p>Uploaded Images:</p>
+          <div>
+          <p>Uploaded Images:</p>
+          <div className='flex flex-wrap gap-2 md:gap-5 mt-5'>
             {Object.entries(uploadedImages).map(([imageId, image], index) => (
               <div key={index} className='gap-4'>
-                <img src={image.imageUrl} alt="Uploaded" style={{ width: '200px' }} />
-              </div>
+              <Image 
+                src={image.imageUrl} 
+                alt="Uploaded" 
+                width={70} 
+                height={70} 
+                className='w-[55px] md:w-[70px] lg:w-[120px]'
+              />
+            </div>
             ))}
+          </div>
           </div>
         )}
       </div>

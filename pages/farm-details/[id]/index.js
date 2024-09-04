@@ -51,6 +51,8 @@ const FarmDetails = () => {
           <Details
             farmName={farm.farmName}
             address={farm.address}
+            state={farm?.state}
+            district={farm?.district}
             farmerName={farm.farmerName}
             special={farm.special}
             accommodation={farm.accommodation}

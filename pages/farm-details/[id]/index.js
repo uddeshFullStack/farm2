@@ -4,42 +4,41 @@ import FarmDetailsComponent from "../../../components/farm-details-component";
 import Details from "../../../components/details";
 import Layout from "../../layout";
 import ReviewCard from "../../../components/farm-detailsComponent/reviewCard";
+import { fetchFarmDetailsById } from "../../../utils/supabaseQuery/FarmQuery";
+
 
 const FarmDetails = () => {
-    // const farmD=farmProps[0]
-    // Initialize the router and get the query parameters
-    const router = useRouter();
-    const { query } = router;
-    console.log("query: ", query);
-  
-    // State to store the farm data
-   const [farmND, setFarmND] = useState(null);
-    useEffect(() => {
-      if (query.farm) {
+  const router = useRouter();
+  const { query } = router;
+  const id = query.id;
+
+  const [farmND, setFarmND] = useState(null);
+
+  useEffect(() => {
+    if (id) {
+      const fetchData = async () => {
         try {
-          // Parse the farm data from the query parameter
-          const parsedFarmData = JSON.parse(decodeURIComponent(query.farm));
-          setFarmND(parsedFarmData);
-          console.log("farm: ", parsedFarmData);
+          const farmDetails = await fetchFarmDetailsById(id);
+          setFarmND(farmDetails);
         } catch (error) {
-          console.error("Failed to parse farm data from query", error);
+          console.error("Error fetching farm details:", error);
         }
-      }
-    }, [query]);
-  
-    if (!farmND) return null;
-  
+      };
 
-    const farm = farmND;
+      fetchData();
+    }
+  }, [id]);
 
-    
-    const FarmImages=JSON.parse(farm.imageDescription)
+  if (!farmND) return <div>Loading...</div>; // Optionally, add a loading state
+
+  const farm = farmND;
+  const FarmImages = farm.imageDescription ? JSON.parse(farm.imageDescription) : [];
 
   return (
     <Layout>
       <section className="self-stretch flex flex-row items-start justify-start pt-0 px-[65px] pb-[15px] box-border max-w-full text-left text-5xl text-primary-colour font-inter mq750:pl-8 mq750:pr-8 mq750:box-border">
         <div className="flex-1 flex flex-col items-start justify-start gap-[60px] max-w-full mq750:gap-[30px]">
-          <FarmDetailsComponent farmName={farm.farmName} farmImages={FarmImages}/>
+          <FarmDetailsComponent farmName={farm.farmName} farmImages={FarmImages} />
           <div className="self-stretch flex flex-col items-start justify-start pt-0 px-0 pb-[15px] gap-[13px]">
             <div className="relative tracking-[-0.01em] font-semibold mq450:text-lgi">
               About Farm
@@ -51,8 +50,8 @@ const FarmDetails = () => {
           <Details
             farmName={farm.farmName}
             address={farm.address}
-            state={farm?.state}
-            district={farm?.district}
+            state={farm.state}
+            district={farm.district}
             farmerName={farm.farmerName}
             special={farm.special}
             accommodation={farm.accommodation}

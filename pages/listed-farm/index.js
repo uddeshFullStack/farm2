@@ -66,9 +66,9 @@ const ListedFarm = () => {
                 />
               </button>
             </div> */}
-            <FarmLocationFilter/>
+            {/* <FarmLocationFilter/> */}
   
-              <FarmCardList />
+            <FarmCardList  />
 
           </div>
         </form>

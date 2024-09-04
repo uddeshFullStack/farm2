@@ -1,9 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
+import debounce from "lodash.debounce";
 import { stateDistricts } from "../../constant/stateDistrict";
+import { fetchFarmList } from "../../utils/supabaseQuery/FarmQuery";
 
-const FarmLocationFilter = ({ onSearchClick }) => {
+
+const FarmLocationFilter = () => {
   const [state, setState] = useState("");
   const [district, setDistrict] = useState("");
+
+  // Debounced search function
+  const debouncedSearch = useCallback(
+    debounce(async () => {
+      try {
+        const { data, count } = await fetchFarmList(10, 0, state, district); // Fetch max 10 farms
+        console.log("Search results:", data);
+        // Handle the fetched data (e.g., update state, display farms)
+      } catch (error) {
+        console.error("Error fetching farms:", error.message);
+      }
+    }, 500), // 500ms debounce delay
+    [state, district]
+  );
+
+  const handleSearchClick = () => {
+    debouncedSearch();
+  };
 
   return (
     <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between w-[95%] gap-[2vw] bg-background shadow-md rounded-md p-[2vw]">
@@ -44,7 +65,7 @@ const FarmLocationFilter = ({ onSearchClick }) => {
 
       <button
         type="button"
-        onClick={onSearchClick}
+        onClick={handleSearchClick}
         className="flex flex-row items-center justify-center bg-primary-colour text-white text-[4vw] sm:text-[3vw] md:text-[2.5vw] lg:text-[1.5vw] font-medium rounded p-[1vw] lg:p-[0.5vw] w-full lg:w-[30%]"
       >
         Search

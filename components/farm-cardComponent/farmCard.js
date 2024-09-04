@@ -13,7 +13,7 @@ const FarmCard = ({ farm }) => {
         description: JSON.stringify(farm?.description),
       })
     );
-    router.push(`/farm-details/${farm.id}?farm=${farmData}`);
+    router.push(`/farm-details/${farm.id}`);
   };
 
   // Get the first image URL from the imageDescription object
@@ -35,7 +35,7 @@ const FarmCard = ({ farm }) => {
         <img
           src={getFirstImageUrl()}
           alt={farm.imageAlt || "Farm Image"}
-          style={{ width: "100%" }}
+          style={{ width: "100%" ,height: "200px" }}
         />
       </div>
       <div className="self-stretch flex flex-col items-start justify-start gap-[6px] w-full">

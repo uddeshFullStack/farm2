@@ -30,7 +30,7 @@ const AboutUsContact = ({ inputFields, buttonText }) => {
   return (
     <div className="p-4 font-inter shadow-slate-500 w-[85vw] max-w-screen-md shadow-sm box-border rounded-md lg:ml-20">
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
-        <div className="flex flex-col justify-start items-start">
+        <div className="flex flex-col justify-center items-center">
           <div className="w-full">
             <div className="flex flex-col  md:gap-5 lg:gap-20">
               <div className="flex flex-col space-y-4 w-full">
@@ -66,10 +66,10 @@ const AboutUsContact = ({ inputFields, buttonText }) => {
               </div>
             </div>
           </div>
-          <div className="flex justify-start items-start mt-10">
+          <div className="">
             <button
               type="submit"
-              className="text-primary-colour bg-secondary-colour font-semibold py-3 rounded cursor-pointer border-none" style={{width:'20vw',fontSize:'2vw'}}
+              className="text-primary-colour bg-secondary-colour font-extrabold py-3 w-[50vw] md:w-[35vw] rounded cursor-pointer border-none "
             >
               {buttonText}
             </button>

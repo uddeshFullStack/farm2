@@ -87,7 +87,7 @@ const ImageUpload = ({ onImagesUpload }) => {
       <label>Upload Farm photos (PNG, JPG, JPEG formats)</label>
       <div className='flex flex-wrap'>
         <input type="file" multiple onChange={handleFileChange} />
-        <button onClick={handleUpload} disabled={uploading} className='md:mt-2'>
+        <button onClick={handleUpload} disabled={uploading} className='md:p-0 h-7 p-1'>
           {uploading ? 'Uploading...' : 'Upload'}
         </button>
         {error && <p style={{ color: 'red' }}>{error}</p>}

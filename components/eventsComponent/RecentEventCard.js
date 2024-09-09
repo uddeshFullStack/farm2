@@ -3,11 +3,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 import AboutDevConf from './aboutDevConf';
 
-const RecentEventCard = ({ event }) => {
+const RecentEventCard = ({ event, onSeeMore,onSeeLess }) => {
     console.log("event data :", event);
   return (
-    <>
-        <div className='relative w-[90vw] mb-10 mx-auto'>
+    <div className='w-full mb-10 mx-auto'>
+        <div className='relative '>
         <img src={event.image} alt={event.title} className="w-full h-auto" />
         <div className='absolute top-0 flex h-[55%] w-2/3 sm:h-[55%] sm:w-3/5 p-5 bg-[rgba(34,197,94,0.2)] bg-opacity-20 z-[2]'>
             <div className='relative w-full sm:px-5 pt-[5%] flex flex-row sm:flex-col'>
@@ -45,9 +45,9 @@ const RecentEventCard = ({ event }) => {
             </div>
             </div>
         </div>
-        </div>
-        <AboutDevConf devConf={event.devConfData} />
-    </>
+        </div> 
+        <AboutDevConf devConf={event.devConfData}  onSeeMore={onSeeMore} onSeeLess={onSeeLess}/>
+    </div>
   );
 };
 

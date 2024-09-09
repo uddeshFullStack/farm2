@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const ProfileCard = ({ photo, name, title, description, socialLinks }) => {
   return (
-    <div className="flex bg-primary-colour rounded-lg w-[394px] h-[140px] gap-x-4">
+    <div className="flex bg-primary-colour rounded-lg w-[90w] md:w-[394px] h-auto gap-x-4">
       {/* Left column for image */}
       <div>
         <Image 

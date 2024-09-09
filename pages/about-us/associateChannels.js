@@ -3,7 +3,7 @@ import React from 'react'
 
 const AssociateChannels = () => {
   return (
-    <div className='w-full bg-backgroundColor-image relative flex flex-col justify-center items-center py-10'>
+    <div className='w-full bg-backgroundColor-image relative flex flex-col justify-center items-center py-0'>
       <div className='w-full h-auto flex flex-col md:flex-row flex-wrap justify-center items-center md:justify-around mt-20'>
         <div className='text-[36px] text-primary-colour font-bold mb-8 md:mb-0'>
           Associate Channels

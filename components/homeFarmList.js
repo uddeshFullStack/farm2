@@ -58,18 +58,11 @@ const HomeFarmList = ({ className = "", propMinWidth, propWidth }) => {
           Latest Listed Farms
         </h2>
 
-        {isMobile ? (
-          <FarmCardSwiper
-            farms={farmsData.slice(-6)} // Pass the farms data to the Swiper
-            propWidth={propWidth}
-            propMinWidth={propMinWidth}
-          />
-        ) : (
           <div className="flex flex-wrap justify-center items-center sm:gap-10">
             {farmsData.slice(-6).map((farm) => (
               <div
                 key={farm.id}
-                className="min-w-[290px] w-[25vw]"
+                className="w-full sm:min-w-[290px] sm:w-[25vw]"
               >
                 <FarmCard
                   propWidth={propWidth}
@@ -79,7 +72,6 @@ const HomeFarmList = ({ className = "", propMinWidth, propWidth }) => {
               </div>
             ))}
           </div>
-        )}
 
         <div className="self-stretch flex flex-row items-start justify-center py-0 px-5">
           <button

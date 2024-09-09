@@ -23,7 +23,7 @@ const FarmCardSwiper = ({ farms, propWidth, propMinWidth }) => {
     >
       {farms.map((farm) => (
         <SwiperSlide key={farm.id} style={{ display: "flex", justifyContent: "center" }}>
-          <div className="w-[80%] sm:w-[70%]" style={{ minWidth: propMinWidth, maxWidth: propWidth }}>
+          <div className="w-full " style={{ minWidth: propMinWidth, maxWidth: propWidth }}>
             <FarmCard
               propWidth={propWidth}
               propMinWidth={propMinWidth}

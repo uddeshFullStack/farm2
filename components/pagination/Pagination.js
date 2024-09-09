@@ -38,7 +38,7 @@ const Pagination = ({ currentPage, setCurrentPage, totalPages }) => {
   };
 
   return (
-    <div className="flex justify-center mt-4">
+    <div className="flex  justify-start md:justify-center mt-4">
       {/* Previous Button */}
       <button
         onClick={handlePrevious}
@@ -53,8 +53,9 @@ const Pagination = ({ currentPage, setCurrentPage, totalPages }) => {
         <button
           key={pageNumber}
           onClick={() => handlePageChange(pageNumber)}
-          className={`px-3 py-1 mx-1 border rounded ${
-            currentPage === pageNumber ? "bg-blue-500 text-white" : "bg-white"
+          className={`px-3 py-1 mx-1 border-primary-colour border-3 rounded-lg 
+          ${
+            currentPage === pageNumber ? "bg-secondary-colour text-primary-colour" : "bg-white"
           }`}
         >
           {pageNumber}

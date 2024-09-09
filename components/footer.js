@@ -174,7 +174,7 @@ const Footer = ({ className = "" }) => {
     </div>
 
     <div className="flex flex-row items-start justify-start">
-      <Link href="/book-farm" className="[text-decoration:none] relative text-[inherit] inline-block min-w-[75px]">
+      <Link href="/listed-farm" className="[text-decoration:none] relative text-[inherit] inline-block min-w-[75px]">
         <ul className="m-0 font-inherit text-inherit pl-[21px]">
           <li>Book Farm</li>
         </ul>

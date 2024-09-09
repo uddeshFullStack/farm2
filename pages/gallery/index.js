@@ -12,19 +12,21 @@ const images = Array.from({ length: 29 }, (_, index) => ({
 const Gallery = () => {
   return (
     <Layout>
-      <div className='inline-block  justify-center font-extrabold font-inter text-3xl text-primary-colour my-10' style={{marginLeft:"650px"}}>
-           Photo Gallery
-      </div>
+      <div className='flex flex-col justify-center items-center  '>
+        <div className=' font-extrabold font-inter text-3xl text-primary-colour my-10'>
+            Photo Gallery
+        </div>
 
-      <div className="flex flex-wrap gap-5 justify-center font-inter">
-        {images.map((image, index) => (
-          <GalleryCard
-            key={index}
-            image={image.src}
-            text={image.text}
-            numberOfPictures={image.numberOfPictures}
-          />
-        ))}
+        <div className="flex flex-wrap gap-5 justify-center font-inter">
+          {images.map((image, index) => (
+            <GalleryCard
+              key={index}
+              image={image.src}
+              text={image.text}
+              numberOfPictures={image.numberOfPictures}
+            />
+          ))}
+        </div>
       </div>
     </Layout>
   );

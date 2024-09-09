@@ -33,7 +33,7 @@ const Review = ({ groupData }) => {
         >
           {groupData.map((data, index) => (
             <SwiperSlide className="mr-0" key={index} style={{ display: "flex", justifyContent: "center" }}>
-            <div className="w-[300px]">
+            <div className="w-[95%]">
               <GroupComponent1
                 propAlignSelf="unset"
 
@@ -44,7 +44,7 @@ const Review = ({ groupData }) => {
           ))}
         </Swiper>
       ) : (
-        <div className="flex flex-wrap gap-10 pt-5">
+        <div className="flex flex-row flex-wrap justify-around items-center gap-10 pt-5">
           {groupData.map((data, index) => (
             <GroupComponent1
               key={index}

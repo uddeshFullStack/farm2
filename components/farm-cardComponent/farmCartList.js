@@ -118,7 +118,7 @@ const FarmCardList = ({ propMinWidth, propWidth }) => {
 
       <div className="flex flex-wrap justify-center items-center sm:gap-10">
         {allFarmsData?.data?.map((farm) => (
-          <div key={farm.id} className="min-w-[290px] w-[25vw]">
+          <div key={farm.id} className="w-full md:min-w-[290px] md:w-[25vw]">
             <FarmCard
               propWidth={propWidth}
               propMinWidth={propMinWidth}

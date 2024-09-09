@@ -17,31 +17,31 @@ const InfoSection = ({ question, answer, image, isTextFirst }) => {
   );
 
   const imageContent = (
-      <Image src={image} alt="Section image" className='xsm:max-w-[300px] xsm:h-[240px] sm:max-w-[400px] sm:h-[300px] md:w-[450px] xl:w-[500px]'  />
+      <Image src={image} alt="Section image" className='w-full h-[250px] sm:h-[300px] lg:w-[350px]'  />
   );
   
   return (
-    <>
+    <div className='w-[100vw]'>
       {isTextFirst ? (
-        <div className={`flex flex-col lg:flex-row ${bg_colour} p-10 xsm:p-2 sm:m-2 xsm:m-2`}>
-          <div className="m-10 xsm:m-4 xsm:w-[280px] sm:w-[500px] md:w-[600px] xl:flex-1">
+        <div className={`flex flex-col lg:flex-row p-5 sm:p-10 ${bg_colour} gap-x-4`}>
+          <div className="">
             {textContent}
           </div>
-          <div className="m-10 xsm:m-4">
+          <div className="">
             {imageContent}
           </div>
         </div>
       ) : (
-        <div className={`flex flex-col lg:flex-row ${bg_colour} p-10 xsm:p-2 sm:m-2 xsm:m-2`}>
-          <div className="m-10 xsm:m-4">
+        <div className={`flex  p-5 sm:p-10  flex-col lg:flex-row ${bg_colour} gap-x-4 `}>
+          <div className="">
             {imageContent}
           </div>
-          <div className="m-10 xsm:m-4 xsm:w-[280px] sm:w-[500px] md:w-[600px] xl:flex-1">
+          <div className="">
             {textContent}
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

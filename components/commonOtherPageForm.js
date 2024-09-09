@@ -60,7 +60,7 @@ const CommonOtherPageForm = ({ heading, imageUrl, inputFields, buttonText, page 
                   />
                 </div>
               )}
-              <div className={`flex flex-col space-y-4 w-2/3 lg:w-1/3`}>
+              <div className={`flex flex-col space-y-4 w-full sm:w-2/3 lg:w-1/3`}>
                 {inputFields.map((field, index) => (
                   <div key={index}>
                     {field.type === 'textarea' ? (
@@ -96,8 +96,7 @@ const CommonOtherPageForm = ({ heading, imageUrl, inputFields, buttonText, page 
           <div className="flex justify-center items-center mt-10">
             <button
               type="submit"
-              className="text-primary-colour bg-secondary-colour font-semibold py-3 rounded cursor-pointer border-none"
-              style={{ width: '20vw', fontSize: '2vw' }}
+              className="text-primary-colour bg-secondary-colour py-3 rounded cursor-pointer border-none w-[50vw] md:w-[30vw] font-extrabold text-[4vw] md:text-[2vw] lg:text-[1vw]"
             >
               {buttonText}
             </button>

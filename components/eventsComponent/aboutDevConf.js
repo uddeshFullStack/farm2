@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
 
-const AboutDevConf = ({ devConf, className, ...props }) => {
+const AboutDevConf = ({ devConf, onSeeMore, onSeeLess, className, ...props }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const toggleReadMore = () => {
     setIsExpanded(!isExpanded);
+    if (!isExpanded && onSeeMore) {
+      onSeeMore(); // Call onSeeMore when 'See More' is clicked
+    } else if (isExpanded && onSeeLess) {
+      onSeeLess(); // Call onSeeLess when 'Read Less' is clicked
+    }
   };
 
   const { title, description } = devConf;
@@ -14,14 +19,14 @@ const AboutDevConf = ({ devConf, className, ...props }) => {
 
   return (
     <div 
-      className={`flex flex-col items-center justify-center p-8 bg-white rounded-lg shadow-lg w-[90vw] max-w-[1440px] font-inter mx-auto ${className}`} 
+      className={`flex flex-col items-center justify-center  bg-white rounded-lg mt-5`} 
       {...props}
     >
       <div className='text-primary-colour font-bold text-2xl mb-4 text-center'>
         {title}
       </div>
       <div className='text-justify'>
-        <p className='w-[80vw] max-w-[800px] h-auto mx-auto'>{displayText}</p>
+        <p className='h-auto mx-auto'>{displayText}</p>
         <div className='w-full flex justify-start mt-4'>
           <button
             onClick={toggleReadMore}
@@ -38,6 +43,3 @@ const AboutDevConf = ({ devConf, className, ...props }) => {
 };
 
 export default AboutDevConf;
-
-
-

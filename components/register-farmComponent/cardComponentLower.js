@@ -12,6 +12,7 @@ const CardComponentLower = ({ key, topic, description, image }) => {
             height={64}
             src={image}
             alt="icon"
+            unoptimized={true}
             className="bg-backgroundColor-image p-4 rounded-md"
           />
         </div>

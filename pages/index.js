@@ -42,7 +42,7 @@ const HomePage = () => {
               Experience authentic farm life and support local communities.
             </p>
             <button
-              className="bg-secondary-colour text-primary-colour rounded-md border-none cursor-pointer px-2 xsm:px-5 h-10 font-extrabold"
+              className="bg-secondary-colour text-primary-colour rounded-full border-none cursor-pointer px-2 xsm:px-5 h-10 font-extrabold"
               onClick={() => router.push("/listed-farm")}
             >
               Explore Farms

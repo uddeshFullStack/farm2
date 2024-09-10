@@ -6,9 +6,9 @@ import InfoSection from '../../components/infoSecton'
 import CardContainerUpper from '../../components/register-farmComponent/cardContainerUpper'
 
 
-import Team from './team'
-import AssociateChannels from './associateChannels'
-import GetTouchWith from './getTouchWith'
+import Team from '../../components/aboutUsComponent/team'
+import AssociateChannels from '../../components/aboutUsComponent/associateChannels'
+import GetTouchWith from '../../components/aboutUsComponent/getTouchWith'
 import { cardsData } from '../../constant/aboutUsCard'
 
 

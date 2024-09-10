@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import Layout from "../layout";
-import BookForm from "./bookForm";
+import BookForm from "../../components/bookFarmComponent/bookForm";
+
 
 const BookFarm = () => {
   const router = useRouter();

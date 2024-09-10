@@ -28,7 +28,7 @@ const RegisterEventForm = ({ inputFields, buttonText }) => {
   const commonInputClass = "w-full p-3 text-lg border border-inputColor rounded";
 
   return (
-    <div className="p-4 font-inter shadow-slate-500 w-[85vw] max-w-screen-md shadow-sm box-border rounded-md lg:ml-20  justify-center items-center">
+    <div className="p-4 font-inter shadow-slate-500 w-[95vw] sm:w-[85vw] max-w-screen-md shadow-sm box-border rounded-md lg:ml-20  ">
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <div className="flex flex-col">
           <div className="w-full">
@@ -70,14 +70,15 @@ const RegisterEventForm = ({ inputFields, buttonText }) => {
               </div>
             </div>
           </div>
-          <div className="flex justify-start items-start mt-10">
+          <div className="w-full flex justify-center">
             <button
               type="submit"
-              className="text-primary-colour bg-secondary-colour font-semibold py-3 rounded cursor-pointer border-none" style={{width:'20vw',fontSize:'2vw'}}
+              className="text-primary-colour w-2/3 md:w-1/3 bg-secondary-colour font-semibold py-3 rounded cursor-pointer border-none"
             >
               {buttonText}
             </button>
           </div>
+
         </div>
       </form>
       {openThankYou && (

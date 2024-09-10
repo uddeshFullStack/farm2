@@ -1,6 +1,7 @@
 import React from 'react'
 import Layout from '../layout';
-import AgrotourismForm from './agrotourismForm';
+import AgrotourismForm from '../../components/startAgrotourism/agrotourismForm';
+
 
 const AgroTourism = () => {
     

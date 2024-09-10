@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../layout';
-import GalleryCard from './galleryCard';
+import GalleryCard from '../../components/galleryComponent/galleryCard';
 
 // Generate the array of image objects
 const images = Array.from({ length: 29 }, (_, index) => ({

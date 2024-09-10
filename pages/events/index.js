@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from '../layout';
 import AboutUpComing from '../../components/eventsComponent/aboutUpComing';
 import RecentEvents from '../../components/eventsComponent/recentEvents';
-import EventsTop from './eventsTop';
+import EventsTop from '../../components/eventsComponent/eventsTop';
 import NextEvent from '../../components/eventsComponent/nextEvent';
 import { eventData, nextEventData, reasons, recentEventData } from '../../constant/eventsData';
 

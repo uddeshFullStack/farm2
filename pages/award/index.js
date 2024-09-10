@@ -1,8 +1,11 @@
 import React from 'react'
+import MobileNavBar from '../../components/mobileNavBar/MobileNavBar'
 
 const Award = () => {
   return (
-    <div>Award</div>
+    <div>
+      <MobileNavBar/>
+    </div>
   )
 }
 

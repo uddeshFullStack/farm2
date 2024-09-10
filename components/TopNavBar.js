@@ -2,13 +2,10 @@ import PropTypes from "prop-types";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useCallback, useState } from "react";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { IoMdClose } from "react-icons/io";
 
 const TopNavBar = ({ className = "" }) => {
   const [showRegisterDropdown, setShowRegisterDropdown] = useState(false);
   const [showMoreDropdown, setShowMoreDropdown] = useState(false);
-  const [showMobileMenu, setShowMobileMenu] = useState(false);
   const router = useRouter();
 
   const onLogoClick = useCallback(() => {
@@ -50,21 +47,7 @@ const TopNavBar = ({ className = "" }) => {
           </div>
         </div>
 
-        {/* Hamburger menu for mobile */}
-        <div className="md:hidden flex items-center">
-          <button
-            onClick={() => setShowMobileMenu(!showMobileMenu)}
-            className="bg-secondary-colour border-none rounded-sm"
-          >
-            {showMobileMenu ? (
-              <IoMdClose alt="Close Icon" className="h-8 w-8 bg-secondary-colour" />
-            ) : (
-              <GiHamburgerMenu alt="Menu Icon" className="h-8 w-8 bg-secondary-colour" />
-            )}
-          </button>
-        </div>
-
-        <nav className="hidden md:block w-[88%]   bg-secondary-colour px-5 py-2 rounded">
+        <nav className="hidden md:block w-[88%] bg-secondary-colour px-5 py-2 rounded">
           <div className="flex flex-row  uppercase">
             <div className="flex space-x-[2vw] lg:space-x-16">
               <Link href="/" className="text-black no-underline hover:text-white text-[16px] md:text-[20px]">
@@ -87,97 +70,40 @@ const TopNavBar = ({ className = "" }) => {
                     </Link>
                   </div>
                 )}
-
               </div>
               <Link href="/listed-farm" className="text-black no-underline hover:text-white text-[16px] md:text-[20px] ml-4 md:ml-20">
-                  Book Farm
-                </Link>
+                Book Farm
+              </Link>
               <Link href="/events" className="text-black no-underline hover:text-white text-[16px] md:text-[20px]">
                 Events
               </Link>
               <div className="relative z-[2] pr-4 md:pr-32 md:mr-80">
-              <button
-                onClick={() => setShowMoreDropdown(!showMoreDropdown)}
-                className="hover:text-white bg-secondary-colour border-none text-[16px] md:text-[20px] uppercase"
-              >
-                More
-              </button>
-              {showMoreDropdown && (
-                <div className="absolute left-0 w-56 bg-backgroundColor-custom-green shadow-lg rounded-md border border-gray-200" style={{ marginTop: '8px' }}>
-                  <Link href="/about-us" className="py-2 block text-black hover:bg-white text-lg px-2 no-underline">
-                    About us
-                  </Link>
-                  <Link href="/contact-us" className="py-2 block text-lg text-black hover:bg-white px-2 no-underline">
-                    Contact us
-                  </Link>
-                  <Link href="/gallery" className="py-2 block text-black hover:bg-white text-lg px-2 no-underline">
-                    Gallery
-                  </Link>
-                  <Link href="/award" className="py-2 block text-black hover:bg-white text-lg px-2 no-underline">
-                    Award
-                  </Link>
-                </div>
-              )}
+                <button
+                  onClick={() => setShowMoreDropdown(!showMoreDropdown)}
+                  className="hover:text-white bg-secondary-colour border-none text-[16px] md:text-[20px] uppercase"
+                >
+                  More
+                </button>
+                {showMoreDropdown && (
+                  <div className="absolute left-0 w-56 bg-backgroundColor-custom-green shadow-lg rounded-md border border-gray-200" style={{ marginTop: '8px' }}>
+                    <Link href="/about-us" className="py-2 block text-black hover:bg-white text-lg px-2 no-underline">
+                      About us
+                    </Link>
+                    <Link href="/contact-us" className="py-2 block text-lg text-black hover:bg-white px-2 no-underline">
+                      Contact us
+                    </Link>
+                    <Link href="/gallery" className="py-2 block text-black hover:bg-white text-lg px-2 no-underline">
+                      Gallery
+                    </Link>
+                    <Link href="/award" className="py-2 block text-black hover:bg-white text-lg px-2 no-underline">
+                      Award
+                    </Link>
+                  </div>
+                )}
+              </div>
             </div>
-            </div>
-            
           </div>
         </nav>
-
-        {/* Mobile dropdown menu */}
-        {showMobileMenu && (
-          <nav className="md:hidden absolute top-[62px] left-0 w-full bg-secondary-colour z-[2] shadow-lg rounded-md border border-gray-200 pt-4 font-inter">
-            <div className="flex flex-col items-center justify-center space-y-4 uppercase">
-              <Link href="/" className="text-black no-underline hover:text-white text-[16px] " style={{fontWeight:'750'}}>
-                Home
-              </Link>
-              <button
-                onClick={() => setShowRegisterDropdown(!showRegisterDropdown)}
-                className="hover:text-white bg-secondary-colour border-none text-[16px] font-semibold uppercase"
-              >
-                Register Farm
-              </button>
-              {showRegisterDropdown && (
-                <div className="bg-backgroundColor-custom-green shadow-lg rounded-md border border-gray-200 ">
-                  <Link href="/register-farm" className="py-2 block text-black hover:bg-white text-lg px-2 no-underline">
-                    Apply to list your farm
-                  </Link>
-                  <Link href="/start-agrotourism-form" className="py-2 block text-lg text-black hover:bg-white px-2 no-underline">
-                    Want to start agrotourism
-                  </Link>
-                </div>
-              )}
-              <Link href="/listed-farm" className="text-black no-underline hover:text-white text-[16px] " style={{fontWeight:'750'}}>
-                Book Farm
-              </Link>
-              <Link href="/events" className="text-black no-underline hover:text-white text-[16px]  " style={{fontWeight:'750'}}>
-                Events
-              </Link>
-              <button
-                onClick={() => setShowMoreDropdown(!showMoreDropdown)}
-                className="hover:text-white bg-secondary-colour border-none text-[16px] font-semibold uppercase"
-              >
-                More
-              </button>
-              {showMoreDropdown && (
-                <div className="bg-backgroundColor-custom-green shadow-lg rounded-md border border-gray-200 ">
-                  <Link href="/about-us" className="py-2 block text-black hover:bg-white text-lg px-2 no-underline">
-                    About us
-                  </Link>
-                  <Link href="/contact-us" className="py-2 block text-lg text-black hover:bg-white px-2 no-underline">
-                    Contact us
-                  </Link>
-                  <Link href="/gallery" className="py-2 block text-black hover:bg-white text-lg px-2 no-underline">
-                    Gallery
-                  </Link>
-                  <Link href="/award" className="py-2 block text-black hover:bg-white text-lg px-2 no-underline">
-                    Award
-                  </Link>
-                </div>
-              )}
-            </div>
-          </nav>
-        )}
       </div>
     </header>
   );

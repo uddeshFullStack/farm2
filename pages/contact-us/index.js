@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '../layout'
-import ContactUs from './contactUs'
+import ContactUs from '../../components/contactUsComponent/contactUs'
 
 
 const AgroTourismSuggestion = () => {

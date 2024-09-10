@@ -2,8 +2,9 @@ import { useState, useEffect } from "react";
 import Footer from "../components/footer";
 import PropTypes from "prop-types";
 import { useMediaQuery } from "react-responsive";
-import MobileNavBar from "../components/mobileNavBar/MobileNavBar";
+
 import TopNavBar from "../components/TopNavBar";
+import MobileNavBar from "../components/mobileNavBar2/MobileNavBar";
 
 const Layout = ({ children }) => {
   const [hasMounted, setHasMounted] = useState(false);

@@ -32,3 +32,8 @@ export async function fetchFarmDetailsById(id) {
 
   return data;
 }
+export const upsertBreakEvenData = async (data) => {
+  // console.log("ContactUs in upssert ", data);
+  const response = await supabase.from("FarmList").upsert(data);
+  return response
+};

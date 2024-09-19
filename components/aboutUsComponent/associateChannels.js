@@ -1,54 +1,34 @@
-import Image from 'next/image'
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import AssociateChannelsMobile from './associateChannelsMobile';
+import AssociateChannelsDesktop from './associateChannelsDesktop';
+
 
 const AssociateChannels = () => {
-  return (
-    <div className='w-full bg-backgroundColor-image relative flex flex-col justify-center items-center py-0'>
-      <div className='w-full h-auto flex flex-col md:flex-row flex-wrap justify-center items-center md:justify-around mt-20'>
-        <div className='text-[36px] text-primary-colour font-bold mb-8 md:mb-0'>
-          Associate Channels
-        </div>
-        <div>
-          <Image
-            src={require('../../public/aboutUs/Ellipse 41.jpg').default}
-            alt="Associate Channels"
-            width={140}
-            height={140}
-            className="rounded-full"
-          />
-          </div>
-          <div>
-            <Image
-            src={require('../../public/aboutUs/Ellipse 41.jpg').default}
-            alt="Associate Channels"
-            width={140}
-            height={140}
-            className="rounded-full"
-            />
-          </div>
-        </div>
-        <div className='w-full h-auto flex flex-col md:flex-row flex-wrap justify-center items-center md:justify-around md:mb-20 md:px-40'>
-          <div>
-            <Image
-              src={require('../../public/aboutUs/Ellipse 41.jpg').default}
-              alt="Associate Channels"
-              width={140}
-              height={140}
-              className="rounded-full"
-            />
-            </div>
-            <div>
-              <Image
-              src={require('../../public/aboutUs/Ellipse 41.jpg').default}
-              alt="Associate Channels"
-              width={140}
-              height={140}
-              className="rounded-full"
-              />
-            </div>
-          </div>
-        </div>
-  )
-}
+  const [isMobile, setIsMobile] = useState(false);
 
-export default AssociateChannels
+  // Check for screen size change
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768); // Set to true if the screen width is smaller than 768px (md breakpoint)
+    };
+
+    // Initial check
+    handleResize();
+
+    // Listen for resize events
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup listener on unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  return (
+    <>
+      {isMobile ? <AssociateChannelsMobile /> : <AssociateChannelsDesktop />}
+    </>
+  );
+};
+
+export default AssociateChannels;

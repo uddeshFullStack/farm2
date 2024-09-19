@@ -8,7 +8,7 @@ import HomePageFrameRightComponent from "../HomePageFrameRightComponent";
 import { useMediaQuery } from 'react-responsive';
 
 const ChooseSaranFarm = ({ componentsData, expandedIndex, handleExpand, swiperRef }) => {
-  const isMobile = useMediaQuery({ maxWidth: 767 });
+  const isMobile = useMediaQuery({ maxWidth: 1023 });
 
   return (
     <div className="self-stretch flex flex-row flex-wrap items-start justify-start font-inter px-[65px] pb-[114px] box-border max-w-full mq750:pl-8 mq750:pr-8 mq750:pb-[31px] mq750:box-border mq1100:pb-12 mq1100:box-border mq1275:pb-[74px] mq1275:box-border pt-10">

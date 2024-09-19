@@ -21,7 +21,7 @@ const HomePageFrameLeftComponent = ({ data, className = "", maxWords = 30, isExp
             <ul className="m-0 text-inherit pl-[27px]">
               {data.points.map((point, index) => (
                 <li key={index} className={index === 0 ? "mb-0" : ""}>
-                  <span className="font-medium font-inter">{point.title}: </span>
+                  <div className=" font-inter font-bold">{point.title}: </div>
                   <span>{isExpanded ? point.description : truncateText(point.description, maxWords)}</span>
                 </li>
               ))}

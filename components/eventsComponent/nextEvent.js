@@ -85,11 +85,11 @@ const NextEvent = ({ nextEventData }) => {
             </div>
           </div>
         </div>
-        <div className="mt-[20%]" style={{marginBottom:'12vw',marginLeft:'20vw' ,width:'40vw'}}>
-          <button className="bg-secondary-colour text-primary-colour  rounded-md border-none cursor-pointer w-[50%] h-10 font-extrabold" onClick={()=>handleResgister()}>
-            Register Now
-          </button>
-        </div>
+    
+        <button className="bg-secondary-colour m-4 text-primary-colour  rounded-md border-none cursor-pointer  h-6 text-[10px] sm:h-8 sm:text-[12px] lg:h-10 lg:text-[16px] lg:my-14 font-extrabold" onClick={()=>handleResgister()}>
+          Register Now
+        </button>
+
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import Layout from "../layout";
 import CardContainerUpper from "../../components/register-farmComponent/cardContainerUpper";
 import CardContainerLower from "../../components/register-farmComponent/cardContainerLower";
 import Link from "next/link";
-import { cardData, cards } from "../../constant/registerFarmData";
+import { lowerCardData, cards } from "../../constant/registerFarmData";
 import FarmForm from "../../components/register-farmComponent/registerFarmForm";
 
 const RegisterFarm = () => {
@@ -28,7 +28,7 @@ const RegisterFarm = () => {
           <FarmForm />
         </div>
         <div>
-          <CardContainerLower cardData={cardData} />
+          <CardContainerLower cardData={lowerCardData} />
         </div>
       </div>
     </Layout>

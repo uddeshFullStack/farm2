@@ -11,7 +11,7 @@ const CardComponentLower = ({ key, topic, description, image }) => {
             height={64}
             src={image}
             alt="icon"
-            className="bg-backgroundColor-image p-4 rounded-md"
+            // className="bg-backgroundColor-image p-4 rounded-md"
           />
         </div>
         <div className="ml-4">

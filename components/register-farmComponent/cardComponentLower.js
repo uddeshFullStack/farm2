@@ -2,7 +2,6 @@ import Image from "next/image";
 import React from "react";
 
 const CardComponentLower = ({ key, topic, description, image }) => {
-  console.log({ image });
   return (
     <div className="h-50 " style={{ width: "420px" }}>
       <div className="p-4 rounded-md xl:flex md:flex">
@@ -12,7 +11,6 @@ const CardComponentLower = ({ key, topic, description, image }) => {
             height={64}
             src={image}
             alt="icon"
-            unoptimized={true}
             className="bg-backgroundColor-image p-4 rounded-md"
           />
         </div>

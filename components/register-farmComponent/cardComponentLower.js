@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React from "react";
-
 const CardComponentLower = ({ key, topic, description, image }) => {
   return (
     <div className="h-50 " style={{ width: "420px" }}>

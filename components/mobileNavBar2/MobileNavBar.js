@@ -51,7 +51,7 @@ const MobileNavBar = () => {
   return (
     <div className="relative font-inter w-full">
       {/* Navbar Header */}
-      <div className="flex justify-between md:justify-center items-center p-4 bg-primary-colour shadow-md">
+      <div className="flex justify-between md:justify-center items-center p-1 px-4 sm:p-2 bg-primary-colour shadow-md">
         {/* Toggle Icon */}
         {isOpen ? (
           <FaTimes className="text-3xl cursor-pointer h-8 w-8 bg-secondary-colour rounded-sm" onClick={toggleSidebar} />

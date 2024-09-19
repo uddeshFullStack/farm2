@@ -4,11 +4,11 @@ import TouristGlances from "../components/tourist-glances";
 import Layout from "./layout";
 import HomeFarmList from "../components/homeFarmList";
 import CommonBadge from "../components/commonBadge";
-import { componentsData } from "./constants";
 import ImageSwiper from "../components/swiperSilder/ImageSwiper";
 import { useRouter } from "next/router";
 import Review from "../components/homeComponent/Review";
 import ChooseSaranFarm from "../components/homeComponent/ChooseSaranFarm";
+import { componentsData } from "../constant/homePageLowerPartData";
 
 const HomePage = () => {
   const swiperRef = useRef(null); // Ref for Swiper instance

@@ -10,8 +10,8 @@ const Footer = ({ className = "" }) => {
     <footer
       className={`w-screen  self-stretch bg-primary-colour flex flex-col items-end justify-start pt-[30px] pb-[25.5px] pr-[5px] pl-0 box-border gap-[25.8px] text-left text-xl text-secondary-colour font-inter mq450:pt-5 mq450:pb-5 mq450:box-border ${className}`}
     >
-      <div className="self-stretch h-[400px] relative bg-primary-colour hidden" />
-      <div className="self-stretch flex flex-row items-start justify-end py-0  box-border max-w-full mq750:pl-2 mq750:pr-[3px] mq750:box-border">
+      <div className=" self-stretch h-[400px] relative bg-primary-colour hidden" />
+      <div className="md:mx-8 self-stretch flex flex-row items-start justify-end py-0  box-border max-w-full mq750:pl-2 mq750:pr-[3px] mq750:box-border">
         <div className="flex flex-row items-start justify-between max-w-full gap-[20px] mq1275:flex-wrap">
           <div className=" flex flex-col items-start justify-start gap-y-5">
             <div className="">

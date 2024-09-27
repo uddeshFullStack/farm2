@@ -5,7 +5,7 @@ import "swiper/css/pagination";
 import { Pagination, Autoplay } from "swiper/modules";
 import Image from "next/image";
 
-const ImageSwiper = ({classNamehomeList, images ,classNameAssociateChannelsMobile }) => {
+const ImageSwiper = ({ classNamehomeList, images, classNameAssociateChannelsMobile }) => {
   return (
     <Swiper
       spaceBetween={30}
@@ -22,9 +22,9 @@ const ImageSwiper = ({classNamehomeList, images ,classNameAssociateChannelsMobil
     >
       {images.map((image, index) => (
         <SwiperSlide key={index}>
-          <div className={`relative ${classNamehomeList ? "md:h-[628px]":"" } h-[75%] w-full`}>
+          <div className={`relative ${classNamehomeList ? " md:max-h-[628px]" : ""} h-[75%] w-full`}>
             <Image
-              className={`h-[75%] md:h-[628px] w-full object-cover ${classNameAssociateChannelsMobile ? "rounded-full":"" }`}
+              className={`h-[75%]  md:max-h-[628px] w-full object-cover ${classNameAssociateChannelsMobile ? "rounded-full" : ""}`}
               alt=""
               src={image}
               width={1400}

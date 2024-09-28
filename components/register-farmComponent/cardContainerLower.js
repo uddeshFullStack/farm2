@@ -1,17 +1,17 @@
 import React from "react";
 import CardComponentLower from "./cardComponentLower";
-const images = [
-  "/farmFormIcons/LowerComponent/1.png",
-  "/farmFormIcons/LowerComponent/2.png",
-  "/farmFormIcons/LowerComponent/3.png",
-  "/farmFormIcons/LowerComponent/4.png",
-  "/farmFormIcons/LowerComponent/5.png",
-  "/farmFormIcons/LowerComponent/6.png",
-  "/farmFormIcons/LowerComponent/7.png",
-  "/farmFormIcons/LowerComponent/8.png",
-  "/farmFormIcons/LowerComponent/9.png",
-  "/farmFormIcons/LowerComponent/10.png",
-];
+// const images = [
+//   "/farmFormIcons/LowerComponent/1.png",
+//   "/farmFormIcons/LowerComponent/2.png",
+//   "/farmFormIcons/LowerComponent/3.png",
+//   "/farmFormIcons/LowerComponent/4.png",
+//   "/farmFormIcons/LowerComponent/5.png",
+//   "/farmFormIcons/LowerComponent/6.png",
+//   "/farmFormIcons/LowerComponent/7.png",
+//   "/farmFormIcons/LowerComponent/8.png",
+//   "/farmFormIcons/LowerComponent/9.png",
+//   "/farmFormIcons/LowerComponent/10.png",
+// ];
 
 const CardContainerLower = ({ cardData }) => {
   return (
@@ -19,7 +19,7 @@ const CardContainerLower = ({ cardData }) => {
       {cardData.map((item, index) => (
         <CardComponentLower
           key={index}
-          image={images[index]}
+          // image={images[index]}
           topic={item.topic}
           description={item.description}
         />

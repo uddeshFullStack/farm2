@@ -1,25 +1,31 @@
-import Image from "next/image";
 import React from "react";
-const CardComponentLower = ({ key, topic, description, image }) => {
+import CardComponentLower from "./cardComponentLower";
+const images = [
+  "/farmFormIcons/LowerComponent/1.png",
+  "/farmFormIcons/LowerComponent/2.png",
+  "/farmFormIcons/LowerComponent/3.png",
+  "/farmFormIcons/LowerComponent/4.png",
+  "/farmFormIcons/LowerComponent/5.png",
+  "/farmFormIcons/LowerComponent/6.png",
+  "/farmFormIcons/LowerComponent/7.png",
+  "/farmFormIcons/LowerComponent/8.png",
+  "/farmFormIcons/LowerComponent/9.png",
+  "/farmFormIcons/LowerComponent/10.png",
+];
+
+const CardContainerLower = ({ cardData }) => {
   return (
-    <div className="h-50 " style={{ width: "420px" }}>
-      <div className="p-4 rounded-md xl:flex md:flex">
-        <div className="flex justify-center items-start">
-          <Image
-            width={64}
-            height={64}
-            src={image}
-            alt="icon"
-            className="bg-backgroundColor-image p-4 rounded-md"
-          />
-        </div>
-        <div className="ml-4">
-          <div className="font-bold text-lg text-primary-colour">{topic}</div>
-          <div className=" text-justify pt-1">{description}</div>
-        </div>
-      </div>
+    <div className="flex flex-wrap justify-center items-center  gap-y-10 md:gap-x-10 mt-10">
+      {cardData.map((item, index) => (
+        <CardComponentLower
+          key={index}
+          image={images[index]}
+          topic={item.topic}
+          description={item.description}
+        />
+      ))}
     </div>
   );
 };
 
-export default CardComponentLower;
+export default CardContainerLower;

@@ -34,7 +34,7 @@ const HomePage = () => {
       <section className="self-stretch flex flex-row pt-0 px-0 box-border max-w-full mq450:box-border mq750:box-border relative">
         <div className="flex-1 flex flex-row items-start justify-start relative max-w-full font-inter">
           <ImageSwiper images={["/Farm1.jpg", "/Farm2.jpg", "/Farm3.jpg"]} />
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-black z-[1] lg:hidden m-4">
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-black z-[1] md:hidden m-4">
             <h1 className="text-md sm:text-2xl font-bold mb-1 sm:mb-4 mt-0">
               Discover the Beauty of Our Farms
             </h1>
@@ -52,8 +52,7 @@ const HomePage = () => {
       </section>
 
       <div
-        className="flex flex-wrap items-center justify-center py-[3%] lg:py-[4%] w-full"
-        style={{ gap: "2vw" }}
+        className="flex flex-wrap items-center justify-center py-[3%] lg:py-[4%] w-full gap-[2vw]"
       >
         <CommonBadge
           activity="Location"

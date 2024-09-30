@@ -1,9 +1,10 @@
+import React from 'react';
+import AssociateImageSwiper from '../swiperSilder/AssociateImageSwiper';
 
-import React from 'react'
-import ImageSwiper from '../swiperSilder/ImageSwiper';
 
 const AssociateChannelsMobile = () => {
   const images = [
+    require('../../public/aboutUs/Ellipse 41.jpg').default,
     require('../../public/aboutUs/Ellipse 41.jpg').default,
     require('../../public/aboutUs/Ellipse 41.jpg').default,
     require('../../public/aboutUs/Ellipse 41.jpg').default,
@@ -17,7 +18,7 @@ const AssociateChannelsMobile = () => {
           Associate Channels
         </div>
         <div className='w-[50%] rounded-full'>
-          <ImageSwiper classNameAssociateChannelsMobile={"rounded-full"}  images={images} />
+          <AssociateImageSwiper classNameAssociateChannelsMobile={"rounded-full"} images={images} />
         </div>
       </div>
     </div>

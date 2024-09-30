@@ -37,8 +37,8 @@ const YouTubeSwiper = ({ data }) => {
     >
       {data.map((video, index) => (
         <SwiperSlide key={index}>
-          <div className="flex flex-row gap-1 justify-center items-center relative h-[200px]">
-            <div className="w-2/3 xsm:w-2/5 lg:w-1/4 h-[200px]">
+          <div className="flex flex-col md:flex-row gap-1 justify-center items-center relative  md:h-[300px]">
+            <div className="w-[75vw] md:w-2/5 h-[200px] md:h-[300px]">
               <ReactPlayer
                 url={video.videoLink}
                 playing={isPlaying[video.videoLink] || false}
@@ -49,14 +49,14 @@ const YouTubeSwiper = ({ data }) => {
                 onPause={() => handlePause(video.videoLink)} // Call handlePause on video pause
               />
             </div>
-            <div className="flex flex-col bg-white shadow-lg rounded-lg p-4 w-2/3 xsm:w-2/5 lg:w-1/4 h-[180px] py-10 sm:text-base sm:p-4 overflow-y-auto">
-              <div className="font-semibold text-xl text-primary-colour">
+            <div className="flex flex-col bg-white shadow-lg rounded-lg p-2 md:p-4 w-[73vw] md:w-2/5 h-[180px] md:h-[280px] sm:text-base sm:p-4 overflow-y-auto">
+              <div className="font-semibold text-xl md:text-3xl text-primary-colour">
                 {video?.eventTitle}
               </div>
-              <div className="text-lg mt-1">
+              <div className="text-lg md:text-2xl mt-1">
                 {video?.eventDetails?.date}
               </div>
-              <div className="mt-4 text-sm text-gray-700">
+              <div className="mt-4 text-sm md:text-[20px] text-gray-700">
                 {video?.eventDetails?.description}
               </div>
             </div>

@@ -1,13 +1,41 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination, Autoplay } from "swiper/modules";
 import GroupComponent1 from "../group-component1";
 import { useMediaQuery } from 'react-responsive';
+import { fetchHomeReview } from '../../utils/supabaseQuery/HomeReviewQuery'
 
-const Review = ({ groupData }) => {
+const Review = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
+  const [groupData, setGroupData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  // Fetch data from Supabase
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        const data = await fetchHomeReview();
+        setGroupData(data);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadData();
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
 
   return (
     <div className="flex flex-col bg-backgroundColor-custom-green py-10 w-full">
@@ -33,13 +61,12 @@ const Review = ({ groupData }) => {
         >
           {groupData.map((data, index) => (
             <SwiperSlide className="mr-0" key={index} style={{ display: "flex", justifyContent: "center" }}>
-            <div className="w-[95%]">
-              <GroupComponent1
-                propAlignSelf="unset"
-
-                groupData={data}
-              />
-            </div>
+              <div className="w-[95%]">
+                <GroupComponent1
+                  propAlignSelf="unset"
+                  groupData={data}
+                />
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>

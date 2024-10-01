@@ -9,9 +9,9 @@ const AwardCard = ({ image, text, numberOfPictures, onClick }) => {
       alt={text} 
       height={300}
       width={300}
-      className="w-full h-[250px] "
+      className="w-full h-[250px]"
     />
-    <div className="">
+    <div className="m-2">
       <h3 className="text-lg font-semibold mb-2">{text}</h3>
       <p className="text-sm text-gray-600">{numberOfPictures} pictures</p>
     </div>

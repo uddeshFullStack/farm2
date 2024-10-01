@@ -26,7 +26,7 @@ const CommonBadge = ({ icon, activity, count, colour }) => {
   }, []);
 
   return (
-    <div className="relative w-[40px] h-[40px] xsm:w-[55px] xsm:h-[55px] sm:w-[80px] sm:h-[80px] lg:w-[150px] lg:h-[150px] xl:w-[200px] xl:h-[200px] text-center text-sm lg:text-lg font-inter text-taxt-colour m-2 lg:m-5">
+    <div className="relative w-[40px] h-[40px] xsm:w-[55px] xsm:h-[55px] sm:w-[80px] sm:h-[80px] lg:w-[150px] lg:h-[150px] xl:w-[190px] xl:h-[190px] text-center text-sm lg:text-lg font-inter text-taxt-colour m-2 lg:m-5">
       <div
       style={{
         position: 'absolute',
@@ -49,7 +49,7 @@ const CommonBadge = ({ icon, activity, count, colour }) => {
         </div>
       </div>
       <div 
-        className="absolute -bottom-[13px] text-[8px] left-[2px] w-[35px] xsm:-bottom-[10px] xsm:w-[50px] xsm:left-[3px]   sm:w-[75px]  md:-bottom-[5px] sm:left-[3px] md:w-[75px] md:left-[3px] lg:-bottom-[20px]   lg:left-[6px]  lg:w-[140px] xl:-bottom-[16px]   xl:left-[17px]  xl:w-[166px] py-1 lg:py-2 rounded-sm  xsm:text-xsm lg:text-3xl xl:text-5xl font-extrabold text-white hover:bg-peru"
+        className="absolute -bottom-[13px] text-[8px] left-[2px] w-[35px] xsm:-bottom-[10px] xsm:w-[50px] xsm:left-[3px]   sm:w-[75px]  md:-bottom-[5px] sm:left-[3px] md:w-[75px] md:left-[3px] lg:-bottom-[20px]   lg:left-[6px]  lg:w-[140px] xl:-bottom-[16px]   xl:left-[6px]  xl:w-[180px] py-1 lg:py-2 rounded-sm  xsm:text-xsm lg:text-3xl xl:text-5xl font-extrabold text-white hover:bg-peru"
         style={{ backgroundColor: colour }}
       >
         {count}+

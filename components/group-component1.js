@@ -1,5 +1,21 @@
 import { useMemo } from "react";
 import PropTypes from "prop-types";
+import { FaStar } from "react-icons/fa";
+import Image from "next/image";
+
+
+const StarRating = ({ rating }) => {
+  return (
+    <div className="flex ">
+      {[...Array(5)].map((_, index) => (
+        <FaStar 
+          key={index} 
+          className={`w-5 h-5 ${index < rating ? "text-yellow-400" : "text-gray-300"}`}
+        />
+      ))}
+    </div>
+  );
+};
 
 
 const GroupComponent1 = ({ className = "", propAlignSelf, propWidth, groupData}) => {
@@ -10,7 +26,9 @@ const GroupComponent1 = ({ className = "", propAlignSelf, propWidth, groupData})
     };
   }, [propAlignSelf, propWidth]);
 
-  const { name, state, description, imageSrc, ratingImageSrc } = groupData;
+  const { name, state, description, image_src, rating } = groupData;
+
+  console.log("image: ",image_src);
 
   return (
     <div
@@ -21,12 +39,15 @@ const GroupComponent1 = ({ className = "", propAlignSelf, propWidth, groupData})
       <div className="self-stretch flex flex-col items-start justify-start gap-[19px]">
         <div className="self-stretch shadow-[0px_1px_2px_rgba(0,_0,_0,_0.13)] rounded-t-md rounded-b-none bg-white flex flex-row items-end justify-start pt-[18px] px-6 pb-2.5 gap-[11px] z-[1] mq450:flex-wrap">
           <div className="h-[83px] w-[295px] relative shadow-[0px_1px_2px_rgba(0,_0,_0,_0.13)] rounded-t-md rounded-b-none bg-white hidden" />
-          <img
-            className="h-[55px] w-[55px] relative rounded-[50%] object-contain z-[2]"
-            loading="lazy"
-            alt=""
-            src={imageSrc}
-          />
+          <Image
+              src={image_src || require('/public/ellipse-12@2x.png')} // Fallback to default profile image
+              alt="Profile Image"
+              width={55}
+              height={55}
+              className="rounded-full object-contain"
+              loading="lazy"
+            />
+
           <div className="flex flex-col items-start justify-end pt-0 px-0 pb-[7px]">
             <div className="flex flex-col items-start justify-start gap-[2px]">
               <div className="relative font-semibold inline-block min-w-[40px] z-[2]">
@@ -42,16 +63,14 @@ const GroupComponent1 = ({ className = "", propAlignSelf, propWidth, groupData})
           <div className="flex-1 relative tracking-[0.03em] z-[1]">
             {description}
           </div>
+          
         </div>
+        <div className="ml-5">
+        <StarRating rating={rating}/>
+        </div>
+        
       </div>
-      <div className="flex flex-row items-start justify-start py-0 px-6">
-        <img
-          className="h-[19px] w-28 relative z-[1]"
-          loading="lazy"
-          alt=""
-          src={ratingImageSrc}
-        />
-      </div>
+      
     </div>
   );
 };

@@ -14,7 +14,7 @@ const TopNavBar = ({ className = "" }) => {
 
   return (
     <header
-      className={`flex flex-row h-10 md:h-24 lg:h-32 md:gap-0 lg:gap-20 gap-4 w-full items-end p-5  md:px-8  md:pb-11 bg-primary-colour text-white font-inter ${className}`}
+      className={`flex flex-row h-10 md:h-24 lg:h-32 md:gap-0 lg:gap-20 gap-4 w-full items-end p-5  md:px-8  md:pb-5 bg-primary-colour text-white font-inter ${className}`}
     >
       <div className="flex items-center cursor-pointer" onClick={onLogoClick}>
         <img
@@ -46,10 +46,9 @@ const TopNavBar = ({ className = "" }) => {
             <img src="/group-2.svg" alt="Social Icon 5" className="h-6 w-6" />
           </div>
         </div>
-
-        <nav className="hidden md:block w-[88%] bg-secondary-colour px-5 py-2 rounded">
-          <div className="flex flex-row  uppercase">
-            <div className="flex space-x-[2vw] lg:space-x-16">
+        <nav className="flex flex-row w-[88%] bg-secondary-colour px-5 py-2 rounded justify-between">
+          <div className="flex flex-row uppercase justify-between">
+            <div className="flex space-x-[3vw] lg:space-x-6 xl:space-x-16 ">
               <Link href="/" className="text-black no-underline hover:text-white text-[16px] md:text-[20px]">
                 Home
               </Link>
@@ -77,33 +76,36 @@ const TopNavBar = ({ className = "" }) => {
               <Link href="/events" className="text-black no-underline hover:text-white text-[16px] md:text-[20px]">
                 Events
               </Link>
-              <div className="relative z-[2] pr-4 md:pr-32 md:mr-80">
-                <button
-                  onClick={() => setShowMoreDropdown(!showMoreDropdown)}
-                  className="hover:text-white bg-secondary-colour border-none text-[16px] md:text-[20px] uppercase"
-                >
-                  More
-                </button>
-                {showMoreDropdown && (
-                  <div className="absolute left-0 w-56 bg-backgroundColor-custom-green shadow-lg rounded-md border border-gray-200" style={{ marginTop: '8px' }}>
-                    <Link href="/about-us" className="py-2 block text-black hover:bg-white text-lg px-2 no-underline">
-                      About us
-                    </Link>
-                    <Link href="/contact-us" className="py-2 block text-lg text-black hover:bg-white px-2 no-underline">
-                      Contact us
-                    </Link>
-                    <Link href="/gallery" className="py-2 block text-black hover:bg-white text-lg px-2 no-underline">
-                      Gallery
-                    </Link>
-                    <Link href="/award" className="py-2 block text-black hover:bg-white text-lg px-2 no-underline">
-                      Award
-                    </Link>
-                  </div>
-                )}
-              </div>
+            </div>
+          </div>
+          <div className="flex uppercase md:mr-auto lg:mr-16">
+            <div className="relative z-[2] ">
+              <button
+                onClick={() => setShowMoreDropdown(!showMoreDropdown)}
+                className="hover:text-white bg-secondary-colour border-none text-[16px] md:text-[20px] uppercase"
+              >
+                More
+              </button>
+              {showMoreDropdown && (
+                <div className="absolute left-0 md:w-auto lg:w-[155px] bg-backgroundColor-custom-green shadow-lg rounded-md border border-gray-200" style={{ marginTop: '8px' }}>
+                  <Link href="/about-us" className="py-2 block text-black hover:bg-white text-lg px-2 no-underline">
+                    About us
+                  </Link>
+                  <Link href="/contact-us" className="py-2 block text-lg text-black hover:bg-white px-2 no-underline">
+                    Contact us
+                  </Link>
+                  <Link href="/gallery" className="py-2 block text-black hover:bg-white text-lg px-2 no-underline">
+                    Gallery
+                  </Link>
+                  <Link href="/award" className="py-2 block text-black hover:bg-white text-lg px-2 no-underline">
+                    Award
+                  </Link>
+                </div>
+              )}
             </div>
           </div>
         </nav>
+
       </div>
     </header>
   );

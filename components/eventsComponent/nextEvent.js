@@ -42,7 +42,7 @@ const NextEvent = ({ nextEventData }) => {
   }
 
   return (
-    <div className="relative w-screen h-[628px]  font-inter">
+    <div className="relative w-screen h-auto  font-inter">
       <Image
         src={imageSrc}
         alt="Description of the event"

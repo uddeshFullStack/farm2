@@ -8,7 +8,7 @@ const RecentEventCard = ({ event, onSeeMore,onSeeLess }) => {
   return (
     <div className='w-full mb-10 mx-auto'>
         <div className='relative '>
-        <img src={event.image} alt={event.title} className="w-full h-auto" />
+        <img src={event.image} alt={event.title} className="w-full h-[628px]" />
         <div className='absolute top-0 flex h-[55%] w-2/3 sm:h-[55%] sm:w-3/5 p-5 bg-[rgba(34,197,94,0.2)] bg-opacity-20 z-[2]'>
             <div className='relative w-full sm:px-5 pt-[5%] flex flex-row sm:flex-col'>
             <div className='text-justify text-white xsm:pt-2 sm:pt-3 md:pt-4 lg:pt-6 text-[6px] xsm:text-[8px] sm:text-[16px] md:text-[18px] lg:text-[24px] bg-transparent translate-x-[10%] font-extrabold'>
@@ -34,7 +34,7 @@ const RecentEventCard = ({ event, onSeeMore,onSeeLess }) => {
             </div>
             <div className='text-white font-extrabold text-[10px] sm:text-[14px] md:text-3xl lg:text-7xl'>
             <div className='flex flex-col items-center'>
-                {event.days}+
+                {event.days}
                 <span className='font-normal text-primary-colour'>Days</span>
             </div>
             </div>

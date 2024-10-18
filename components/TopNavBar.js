@@ -14,7 +14,7 @@ const TopNavBar = ({ className = "" }) => {
 
   return (
     <header
-      className={`flex flex-row h-10 md:h-24 lg:h-32 md:gap-0 lg:gap-20 gap-4 w-full items-end p-5  md:px-8  md:pb-5 bg-primary-colour text-white font-inter ${className}`}
+      className={`flex flex-row h-10 md:h-24 lg:h-32 md:gap-0 lg:gap-20 gap-4 w-full items-end p-3 pt-3  md:px-8 bg-primary-colour text-white font-inter ${className}`}
     >
       <div className="flex items-center cursor-pointer" onClick={onLogoClick}>
         <img

@@ -56,7 +56,7 @@ const FarmForm = () => {
     <div className="w-screen pr-2 pt-8 bg-backgroundColor-custom-green">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="grid grid-cols-1 md:grid-cols-2 gap-4 mx-4 md:mx-20"
+        className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-14 mx-4 md:mx-20"
         noValidate
       >
         {/* Left Grid - Fields up to Image Upload */}

@@ -12,7 +12,7 @@ const InfoSection = ({ question, answer, image, isTextFirst }) => {
   const textContent = (
     <>
       <h2 className="text-xl font-bold text-green-800">{question}</h2>
-      <p className="text-gray-600 text-[18px] text-justify">{answer}</p>
+      <p className="text-gray-600 text-[18px]  text-justify">{answer}</p>
     </>
   );
 
@@ -24,20 +24,24 @@ const InfoSection = ({ question, answer, image, isTextFirst }) => {
     <div className='w-[100vw]'>
       {isTextFirst ? (
         <div className={`flex flex-col lg:flex-row p-5 sm:p-10 ${bg_colour} gap-x-4`}>
-          <div className="">
-            {textContent}
+          <div className="lg:w-[950px]">
+            <div className="max-w-[800px]">
+              {textContent}
+            </div>
           </div>
           <div className="">
             {imageContent}
           </div>
         </div>
       ) : (
-        <div className={`flex  p-5 sm:p-10  flex-col lg:flex-row ${bg_colour} gap-x-4 `}>
+        <div className={`flex  p-5 sm:p-10  flex-col lg:flex-row ${bg_colour} gap-x-4 lg:gap-x-40 lg:pl-32`}>
           <div className="">
             {imageContent}
           </div>
-          <div className="">
-            {textContent}
+          <div className="lg:w-[950px]">
+            <div className="max-w-[800px]">
+              {textContent}
+            </div>
           </div>
         </div>
       )}

@@ -20,7 +20,7 @@ const InputField = ({
     {label && (
       <label className={classNameLabel || "block w-40"}>
         {label}
-        {required && <span className="text-red-500">*</span>}:
+        {required && <span className="text-red-500 ">*</span>}
       </label>
     )}
     {type === "select" ? (

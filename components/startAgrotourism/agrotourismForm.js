@@ -136,7 +136,7 @@ const AgrotourismForm = () => {
                 <div className="col-span-1 md:col-span-2 mb-4 flex justify-center">
                     <button
                         type="submit"
-                        className=" w-screen bg-secondary-colour text-primary-colour font-semibold py-3 rounded cursor-pointer text-xl md:text-2xl border-none"
+                        className=" w-screen md:w-[55%] lg:w-[40%] bg-secondary-colour text-primary-colour font-semibold py-3 rounded cursor-pointer text-xl md:text-2xl border-none"
                         style={{ marginTop: '60px' }}
                     >
                         Submit

@@ -71,7 +71,7 @@ const FarmDetails = () => {
           ratings={{
             overall: 5,
             location: 5,
-            quality: 4,
+            quality: 5,
             comfort: 5,
             price: 5,
           }}

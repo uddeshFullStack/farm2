@@ -56,7 +56,7 @@ const imagesToDisplay = fetch?.length >= 3
         </div>
       </div>
       <div className="self-stretch flex flex-row items-start justify-start relative max-w-full">
-      <ImageSwiper images={imagesToDisplay} />
+      <ImageSwiper classNamehomeList={'md:max-h-[500px]'} images={imagesToDisplay} />
       </div>
     </div>
   );

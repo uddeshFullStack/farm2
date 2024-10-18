@@ -17,7 +17,7 @@ const Team = () => {
           <div className='flex justify-start md:justify-center font-extrabold text-[36px] text-white '>
             Meet Our Team
           </div>
-          <div className="flex flex-col  md:flex-row md:flex-wrap justify-start  md:justify-around md:gap-x-[52px]">
+          <div className="flex flex-col  md:flex-row md:flex-wrap justify-start  md:justify-center md:gap-x-[80px]">
             {profileCards.slice(0, 4).map((card, index) => (
               <div key={index} className="py-10 px-1 md:p-10">
                 <ProfileCard
@@ -33,7 +33,7 @@ const Team = () => {
           <div className='flex justify-start md:justify-center font-extrabold text-[36px] text-white '>
             Our Mentors
           </div>
-          <div className="flex flex-col justify-start md:flex-row md:flex-wrap  md:justify-around md:gap-x-[52px]">
+          <div className="flex flex-col justify-start md:flex-row md:flex-wrap  md:justify-center md:gap-x-[80px]">
             {profileCards.slice(4, 8).map((card, index) => (
               <div key={index} className="py-10 px-1 md:p-10">
                 <ProfileCard

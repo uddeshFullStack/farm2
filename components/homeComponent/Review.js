@@ -38,7 +38,7 @@ const Review = () => {
   }
 
   return (
-    <div className="flex flex-col bg-backgroundColor-custom-green py-10 w-full">
+    <div className="flex flex-col bg-backgroundColor-custom-green pt-1 pb-10 w-full">
       <div className="p-7 w-2/3 sm:w-11/12 md:w-3/4 lg:w-1/2 xl:w-1/3 h-auto font-inter font-bold text-primary-colour text-justify responsive-text">
         Discover What Our Users Say About Saran Farm: Hear Their Remarkable
         Experiences and Success Stories

@@ -52,7 +52,7 @@ const HomePage = () => {
       </section>
 
       <div
-        className="flex flex-wrap items-center justify-center py-[3%] lg:py-[4%] w-full gap-[2vw]"
+        className="flex flex-wrap items-center justify-center py-[3%] lg:py-[.5%] w-full gap-[2vw]"
       >
         <CommonBadge
           activity="Location"

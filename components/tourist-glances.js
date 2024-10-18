@@ -11,9 +11,9 @@ const TouristGlances = ({ className = "" }) => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
   return (
     <section
-    className={`self-stretch flex flex-row items-start justify-start pt-0 px-[65px] pb-[100px] box-border max-w-full text-left text-9xl text-primary-colour font-inter mq750:pl-8 mq750:pr-8 mq750:pb-[65px] mq750:box-border mt-10 ${className}`}
+    className={`self-stretch flex flex-row items-start justify-start mt-4 px-[65px] pb-[25px] box-border max-w-full text-left text-9xl text-primary-colour font-inter mq750:pl-8 mq750:pr-8 mq750:pb-[65px] mq750:box-border ${className}`}
   >
-    <div className="flex-1 flex flex-col items-start justify-start gap-[50px] max-w-full mq750:gap-[25px]">
+    <div className="flex-1 flex flex-col items-start justify-start gap-[25px] max-w-full mq750:gap-[25px]">
       <h2 className="m-0 relative text-inherit font-bold font-inherit mq450:text-3xl">
         Some Tourist Glances
       </h2>

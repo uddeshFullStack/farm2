@@ -2,8 +2,8 @@ import React from 'react'
 import Layout from '../layout'
 import missionImage from '../../public/aboutUs/ourMission.jpg'
 import ourExperienceImage from '../../public/aboutUs/Experienece.jpg'
-import AboutImage from '../../public/Farm3.jpg'
-import whySaranImage from '../../public/aboutUs/whySaranFarm.jpg'
+import AboutImage from '../../public/aboutUs/AboutImage2.jpg'
+import whySaranImage from '../../public/aboutUs/whySaranMain.jpg'
 import Image from 'next/image'
 import InfoSection from '../../components/infoSecton'
 import CardContainerUpper from '../../components/register-farmComponent/cardContainerUpper'
@@ -22,7 +22,7 @@ const AboutUs = () => {
         <div className='self-stretch relative'>
           <Image src={AboutImage} alt='image1' className='w-full h-[628px]' />
           <div className='absolute inset-0 flex justify-center items-start'>
-            <h1 className='text-4xl font-bold text-white'>About Us</h1>
+            <h1 className='text-4xl font-bold text-black'>About Us</h1>
           </div>
         </div>
 

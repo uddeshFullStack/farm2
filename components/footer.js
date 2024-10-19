@@ -27,7 +27,7 @@ const Footer = ({ className = "" }) => {
         alt=""
         src="/vector-95-1.svg"
       />
-      <div className="flex flex-row justify-start gap-4  text-sm text-white w-[95vw]">
+      <div className="flex flex-wrap md:flex-row justify-start gap-4  text-sm text-white w-[95vw]">
           <div className="lg:pl-10">All images and trademarks belong to their respective owners.</div>
           <div className="lg:pl-48">Terms and conditions  <span className="text-gray-500"> | </span> </div>
           <div>Privacy Policy <span className="text-gray-500"> | </span> </div>

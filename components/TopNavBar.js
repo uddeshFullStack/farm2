@@ -14,11 +14,11 @@ const TopNavBar = ({ className = "" }) => {
 
   return (
     <header
-      className={`flex flex-row h-10 md:h-24 lg:h-32 md:gap-0 lg:gap-20 gap-4 w-full items-end p-3 pt-3  md:px-8 bg-primary-colour text-white font-inter ${className}`}
+      className={`flex flex-row h-10 md:h-24 lg:h-32 md:gap-0 lg:gap-20 gap-4 w-full items-end px-3 pb-5  md:px-8 bg-primary-colour text-white font-inter ${className}`}
     >
       <div className="flex items-center cursor-pointer" onClick={onLogoClick}>
         <img
-          className="h-[38px] w-9 md:h-24 md:w-24 lg:h-32 lg:w-32 object-cover"
+          className="h-[38px] w-9 md:h-24 md:w-24 lg:h-28 lg:w-32 object-cover"
           loading="lazy"
           alt="Logo"
           src="/sf-page0001-1@2x.png"
@@ -38,13 +38,33 @@ const TopNavBar = ({ className = "" }) => {
               udh..........ei@gmail.com
             </a>
           </div>
-          <div className="flex items-center justify-start  space-x-1 md:space-x-2">
-            <img src="/group-1.svg" alt="Social Icon 1" className="h-6 w-6" />
-            <img src="/vector-4.svg" alt="Social Icon 2" className="h-6 w-6" />
-            <img src="/vector-6.svg" alt="Social Icon 3" className="h-6 w-6" />
-            <img src="/group.svg" alt="Social Icon 4" className="h-6 w-6" />
-            <img src="/group-2.svg" alt="Social Icon 5" className="h-6 w-6" />
-          </div>
+          <div className="flex items-center justify-start space-x-1 md:space-x-2">
+      <Link href="https://www.linkedin.com" legacyBehavior passHref>
+        <a target="_blank" rel="noopener noreferrer">
+          <img src="/group-1.svg" alt="LinkedIn" className="h-6 w-6" />
+        </a>
+      </Link>
+      <Link href="https://www.facebook.com" legacyBehavior passHref>
+        <a target="_blank" rel="noopener noreferrer">
+          <img src="/vector-4.svg" alt="Facebook" className="h-6 w-6" />
+        </a>
+      </Link>
+      <Link href="https://www.instagram.com" legacyBehavior passHref>
+        <a target="_blank" rel="noopener noreferrer">
+          <img src="/vector-6.svg" alt="Instagram" className="h-6 w-6" />
+        </a>
+      </Link>
+      <Link href="https://www.youtube.com" legacyBehavior passHref>
+        <a target="_blank" rel="noopener noreferrer">
+          <img src="/group.svg" alt="YouTube" className="h-6 w-6" />
+        </a>
+      </Link>
+      <Link href="https://www.twitter.com" legacyBehavior passHref>
+        <a target="_blank" rel="noopener noreferrer">
+          <img src="/group-2-2.svg" alt="Twitter" className="h-6 w-6" />
+        </a>
+      </Link>
+    </div>
         </div>
         <nav className="flex flex-row w-[88%] bg-secondary-colour px-5 py-2 rounded justify-between">
           <div className="flex flex-row uppercase justify-between">

@@ -71,7 +71,7 @@ const Review = () => {
           ))}
         </Swiper>
       ) : (
-        <div className="flex flex-row flex-wrap justify-around items-center gap-10 pt-5">
+        <div className="flex flex-row justify-center items-center gap-16 pt-5">
           {groupData.map((data, index) => (
             <GroupComponent1
               key={index}

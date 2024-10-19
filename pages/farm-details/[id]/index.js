@@ -67,7 +67,8 @@ const FarmDetails = () => {
         <ReviewCard
           image={require("../../../public/galleryImages/Rectangle 234.jpg")}
           name={"Jennifer"}
-          description="Agro-tourism is a form of tourism that involves visiting & staying in farms or rural areas. It is a way to experience the culture, lifestyle, and environment of the countryside. Agro-tourism can offer various benefits to both visitors and hosts, such as........"
+          description="Agro-tourism is a form of tourism that involves visiting and staying on farms or in rural areas. It is a way to experience the culture, lifestyle and environment of the countryside. Agro-tourism offers various benefits to both visitors and hosts such as..."
+
           ratings={{
             overall: 5,
             location: 5,

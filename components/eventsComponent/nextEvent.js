@@ -43,13 +43,15 @@ const NextEvent = ({ nextEventData }) => {
 
   return (
     <div className="relative w-screen h-auto  font-inter">
-      <Image
-        src={imageSrc}
-        alt="Description of the event"
-        layout="responsive"
-        className="object-cover"
-        style={{ maxHeight: '100%', maxWidth: '100%' }}
-      />
+      <div className="w-screen h-auto lg:h-[628px]">
+        <Image
+          src={imageSrc}
+          alt="Description of the event"
+          layout="responsive"
+          className="object-cover"
+          style={{ maxHeight: '100%', maxWidth: '100%' }}
+        />
+      </div>
       <div className="absolute inset-0 flex flex-col items-center justify-center p-4 lg:p-8 ">
         <div className="text-center text-white font-extrabold" style={{fontSize:'3vw' ,marginTop:'8vw'}}>
           Upcoming Event 2024

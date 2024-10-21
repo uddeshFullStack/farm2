@@ -74,7 +74,7 @@ const FarmCardList = ({ propMinWidth, propWidth }) => {
               setState(e.target.value);
               setDistrict(""); // Reset district when state changes
             }}
-            className="w-[70%] lg:w-full text-[4vw] sm:text-[3vw] md:text-[2.5vw] lg:text-[1.5vw] font-medium text-gray-600"
+            className="w-[100%] lg:w-full text-[4vw] sm:text-[3vw] md:text-[2.5vw] lg:text-[1.5vw] font-medium text-gray-600"
           >
             <option value="" disabled className="text-[2vw]">Select Farm State</option>
             {Object.keys(stateDistricts).map((stateName) => (
@@ -89,7 +89,7 @@ const FarmCardList = ({ propMinWidth, propWidth }) => {
           <select
             value={district}
             onChange={(e) => setDistrict(e.target.value)}
-            className="w-[70%] lg:w-full text-[4vw] sm:text-[3vw] md:text-[2.5vw] lg:text-[1.5vw] font-medium text-gray-600"
+            className="w-[100%] lg:w-full text-[4vw] sm:text-[3vw] md:text-[2.5vw] lg:text-[1.5vw] font-medium text-gray-600"
             disabled={!state} // Disable district dropdown if no state is selected
           >
             <option value="" disabled className="text-[2vw]">Select Farm District</option>

@@ -19,7 +19,7 @@ const InputField = ({
   <div className={classNameTop || `flex mb-4`}>
     {label && (
       <label className={classNameLabel || "block w-40"}>
-        {label}
+        {label}:
         {required && <span className="text-red-500 ">*</span>}
       </label>
     )}

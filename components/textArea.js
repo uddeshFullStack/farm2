@@ -1,17 +1,17 @@
 import React from 'react';
 
 export const TextArea = ({ label, name, register, errors, style, className, placeholder }) => {
-  const words = label.split(' ');
+  const words = label?.split(' ');
   let firstLine, secondLine;
 
-  if (words.length === 1) {
+  if (words?.length === 1) {
     // If there's only one word, add a colon after it
     firstLine = `${words[0]}:`;
     secondLine = '';
   } else {
     // Add a colon after the second word if both words are present
-    firstLine = `${words.slice(0, 2).join(' ')}`;
-    secondLine = `${words.slice(2).join(' ')}:`; // Remaining words
+    firstLine = `${words?.slice(0, 2)?.join(' ')}`;
+    secondLine = `${words?.slice(2)?.join(' ')}:`; // Remaining words
   }
 
   return (

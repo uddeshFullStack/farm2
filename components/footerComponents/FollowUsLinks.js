@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const FollowUsLinks = () => {
   return (
-    <div className="mt-4">
+    <div className="mt-4 lg:mt-0">
       <h2 className="m-0 text-inherit font-semibold font-inherit mq450:text-3xl">
         Follow us:
       </h2>

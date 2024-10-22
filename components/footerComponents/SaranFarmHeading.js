@@ -16,12 +16,12 @@ const SaranFarmHeading = () => {
                 <span className="font-medium font-inter">Saran Farm</span>
               </span>
               <span className="whitespace-pre-wrap">
-                {`, where nature, culture and authentic farm experiences come together to create unforgettable memories. `}
+                {`, where nature, culture and authentic farm experiences come together to create unforgettable memories."`}
               </span>
             
             <p>
               <span className="font-medium font-inter text-secondary-colour">
-                Saran Farm
+                "Saran Farm
               </span>
               <span className="font-inter text-white">
                 {` Where city dwellers find solace, farmers find prosperity and the beauty of rural life is cherished."`}

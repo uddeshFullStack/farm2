@@ -4,12 +4,15 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination, Autoplay } from "swiper/modules";
 import Image from "next/image";
+import Link from "next/link";
 
-const AssociateImageSwiper = ({ images, classNameAssociateChannelsMobile }) => {
+const AssociateImageSwiper = ({ images, classNameAssociateChannelsMobile, linksPages }) => {
   // Create a helper function to group images into pairs
   const groupedImages = [];
+  const groupedLinks = [];
   for (let i = 0; i < images.length; i += 2) {
     groupedImages.push([images[i], images[i + 1]]);
+    groupedLinks.push([linksPages[i], linksPages[i + 1]]);
   }
 
   return (
@@ -28,32 +31,34 @@ const AssociateImageSwiper = ({ images, classNameAssociateChannelsMobile }) => {
     >
       {groupedImages.map((imagePair, index) => (
         <SwiperSlide key={index}>
-          <div className="relative flex flex-col h-[75%] w-full">
-            {/* First image */}
-            {imagePair[0] && (
-              <div className="w-full h-[50%]">
-                <Image
-                  className={`h-full w-full object-cover ${classNameAssociateChannelsMobile ? "rounded-full" : ""}`}
-                  alt={`Image ${index * 2 + 1}`}
-                  src={imagePair[0]}
-                  width={1400}
-                  height={628}
-                  layout="intrinsic"
-                />
-              </div>
+          <div className="relative flex flex-col h-auto w-full gap-2">
+            {/* First image with link */}
+            {imagePair[0] && groupedLinks[index][0] && (
+              <Link href={groupedLinks[index][0]} target="_blank" rel="noopener noreferrer">
+                <div className="w-[200px] h-[200px] rounded-full overflow-hidden flex justify-center items-center bg-white">
+                  <Image
+                    alt={`Image ${index * 2 + 1}`}
+                    src={imagePair[0]}
+                    width={200}  // Keep the image dimensions to ensure quality
+                    height={200}
+                    layout="intrinsic"
+                  />
+                </div>
+              </Link>
             )}
-            {/* Second image */}
-            {imagePair[1] && (
-              <div className="w-full h-[50%] mt-4">
-                <Image
-                  className={`h-full w-full object-cover ${classNameAssociateChannelsMobile ? "rounded-full" : ""}`}
-                  alt={`Image ${index * 2 + 2}`}
-                  src={imagePair[1]}
-                  width={1400}
-                  height={628}
-                  layout="intrinsic"
-                />
-              </div>
+            {/* Second image with link */}
+            {imagePair[1] && groupedLinks[index][1] && (
+              <Link href={groupedLinks[index][1]} target="_blank" rel="noopener noreferrer">
+                <div className="w-[200px] h-[200px] rounded-full overflow-hidden flex justify-center items-center bg-white">
+                  <Image
+                    alt={`Image ${index * 2 + 2}`}
+                    src={imagePair[1]}
+                    width={200}  // Keep the image dimensions to ensure quality
+                    height={200}
+                    layout="intrinsic"
+                  />
+                </div>
+              </Link>
             )}
           </div>
         </SwiperSlide>

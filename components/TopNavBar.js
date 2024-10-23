@@ -28,14 +28,14 @@ const TopNavBar = ({ className = "" }) => {
         <div className="hidden md:flex  flex-row space-x-2 md:space-x-8">
           <div className="flex items-center space-x-2">
             <img src="/vector.svg" alt="Phone Icon" className="h-7 w-5" />
-            <a href="tel:+123654897" className="text-lg text-white">
-              +123654897
+            <a href="tel:+91 98282 01118" className="text-lg text-white">
+              +91 98282 01118
             </a>
           </div>
           <div className="flex items-center space-x-1 md:space-x-2">
             <img src="/vector-2.svg" alt="Email Icon" className="h-7 w-10" />
-            <a href="mailto:udh..........ei@gmail.com" className="text-lg text-white">
-              udh..........ei@gmail.com
+            <a href="saranfarmoffice@gmail.com" className="text-lg text-white">
+              saranfarmoffice@gmail.com
             </a>
           </div>
           <div className="flex items-center justify-start space-x-1 md:space-x-2">

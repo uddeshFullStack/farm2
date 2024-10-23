@@ -10,7 +10,7 @@ const GetTouchWith = () => {
   ];
 
   return (
-    <div className='flex flex-col justify-center items-center mb-2'>
+    <div className=' w-screen flex flex-col justify-center items-center mb-2'>
       <div className='font-bold text-primary-colour text-5xl md:text-7xl pt-16 text-center'>
         Get in Touch With Us!
       </div>

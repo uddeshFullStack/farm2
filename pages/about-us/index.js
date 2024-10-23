@@ -19,7 +19,7 @@ const AboutUs = () => {
   return (
     <Layout>
       <div className='font-inter'>   
-        <div className='self-stretch relative'>
+        <div className='w-screen relative'>
           <Image src={AboutImage} alt='image1' className='w-full h-[628px]' />
           <div className='absolute inset-0 flex justify-center items-start'>
             <h1 className='text-4xl font-bold text-black'>About Us</h1>

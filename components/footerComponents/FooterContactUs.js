@@ -29,20 +29,20 @@ const FooterContactUs = () => {
 
         <div className="flex-1 flex flex-col items-start justify-start pt-[1.5px] px-0 pb-0">
           <div className="self-stretch flex flex-col items-start justify-start gap-[10.5px]">
-            <div className="relative whitespace-nowrap">+91 9680524270</div>
+            <div className="relative whitespace-nowrap">+91 98282 01118</div>
             <div className="flex flex-col sp:flex-row sm:flex-col gap-2 md:gap-x-0 md:gap-y-[10.5px]">
               <div className="self-stretch flex flex-col items-start justify-start pt-0 px-0 pb-[11.5px] gap-[10px]">
                 <div className="relative whitespace-nowrap">
-                  moshinkhanrander@gmail.com
+                  saranfarmoffice@gmail.com
                 </div>
                 <div className="self-stretch relative">
                   <p className="[margin-block-start:0] [margin-block-end:2px]">
-                    R-CAT, Tonk Rd, Panch Batti,
+                    Bhamashah Techno Hub, Sansthan Path,
                   </p>
                   <p className="[margin-block-start:0] [margin-block-end:2px]">
-                    Sangram Colony, Ashok Nagar,
+                    Jhalana Gram, Malviya Nagar,
                   </p>
-                  <p className="m-0">Jaipur, Rajasthan 302007</p>
+                  <p className="m-0">Jaipur, Rajasthan 302017</p>
                 </div>
               </div>
               <div className="pr-10 sm:w-[30vw] w-[25vw] md:w-[116.9px] md:h-[108px]">
